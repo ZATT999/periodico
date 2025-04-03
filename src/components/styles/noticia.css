@@ -1,0 +1,152 @@
+/* Estilos generales */
+.noticia {
+  max-width: 850px;
+  margin: 50px auto;
+  padding: 35px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  font-family: "Inter", sans-serif;
+  line-height: 1.75;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.noticia a {
+  text-decoration: none;
+  color: #0066cc;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  transition: color 0.2s ease;
+  padding: 4px 0;
+}
+
+.noticia a:hover {
+  text-decoration: underline;
+  color: #004d99;
+}
+
+.titleNoticia {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #111;
+  font-family: "Merriweather", serif;
+  border-bottom: 4px solid #0066cc;
+  padding-bottom: 12px;
+  margin-bottom: 25px;
+  letter-spacing: -0.5px;
+}
+
+.noticia-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.05rem;
+  color: #555;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.fecha {
+  font-weight: 600;
+  color: #0066cc;
+  letter-spacing: 0.3px;
+}
+
+.noticia-body {
+  text-align: justify;
+  padding-top: 15px;
+}
+
+.noticia-body h2 {
+  font-size: 2.2rem;
+  color: #111;
+  margin-bottom: 15px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.3px;
+}
+
+.noticia-body h3 {
+  font-size: 1.6rem;
+  color: #333;
+  margin-bottom: 18px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.noticia-body p {
+  font-size: 1.25rem;
+  color: #444;
+  margin-bottom: 24px;
+  line-height: 1.8;
+}
+
+.noticia img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 14px;
+  display: block;
+  margin: 30px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .noticia {
+    padding: 25px 20px;
+    margin: 30px auto;
+  }
+
+  .titleNoticia {
+    font-size: 2.3rem;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+
+  .noticia-header {
+    flex-direction: column;
+    text-align: center;
+    font-size: 0.95rem;
+    gap: 8px;
+  }
+
+  .fecha {
+    margin-top: 5px;
+  }
+
+  .noticia-body h2 {
+    font-size: 1.9rem;
+    text-align: left;
+  }
+
+  .noticia-body h3 {
+    font-size: 1.4rem;
+    text-align: left;
+  }
+
+  .noticia-body p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+}
+
+/* Mejora para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .noticia {
+    padding: 20px 16px;
+    border-radius: 12px;
+  }
+
+  .titleNoticia {
+    font-size: 2rem;
+  }
+
+  .noticia-body h2 {
+    font-size: 1.7rem;
+  }
+}

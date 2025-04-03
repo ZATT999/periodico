@@ -1,0 +1,32 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 70px 0;
+}
+
+.titlePage {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #111;
+  font-family: "Merriweather", serif;
+  border-bottom: 4px solid #0066cc;
+  padding-bottom: 12px;
+  margin-bottom: 25px;
+  letter-spacing: -0.5px;
+}
+
+a {
+  width: 200px;
+}

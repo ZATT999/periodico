@@ -1,0 +1,94 @@
+.ContentCards {
+  display: flex;
+  margin-left: 30px;
+  width: auto;
+}
+.ContentCardsColums {
+  padding-left: 10px;
+  background-clip: padding-box;
+}
+.NoticiaCard {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  background: #fafafa;
+  border: 1px solid #bdbdbdf5;
+  border-radius: 10px;
+  padding: 10px;
+  height: auto;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  transition: transform 0.1s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  & img {
+    width: 100px;
+    height: auto;
+    border-radius: 10px;
+  }
+}
+
+.title {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #111;
+  font-family: "Merriweather", serif;
+  border-bottom: 4px solid #0066cc;
+  padding-bottom: 12px;
+  margin: 25px 0;
+  letter-spacing: -0.5px;
+}
+
+.ultimaNoticia {
+  max-width: 1200px;
+  width: 100%;
+  position: relative;
+  height: 70vh;
+  border-radius: 10px;
+  overflow: hidden;
+
+  & div {
+    margin-top: 30px;
+    padding: 20px;
+  }
+
+  & h1 {
+    font-size: 3em;
+  }
+  .ntR {
+    font-size: 2em;
+    text-align: center;
+  }
+
+  & p {
+    max-width: 600px;
+  }
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: -1;
+    animation: recienteAnimacion 2s infinite forwards;
+  }
+}
+
+@keyframes recienteAnimacion {
+  0% {
+    transform: scale(1.003);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.003);
+  }
+}
