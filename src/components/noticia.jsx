@@ -1,8 +1,9 @@
 import { Link } from "react-router"
 import "./styles/noticia.css"
 import { useState, useEffect } from "react"
+import HTMLReactParser from "html-react-parser/lib/index"
 
-export default function Noticia({ title, p, image, subtitle }) {
+export default function Noticia({ title, content, image, subtitle }) {
   const [fechaActual, setFechaActual] = useState("")
 
   useEffect(() => {
@@ -33,7 +34,7 @@ export default function Noticia({ title, p, image, subtitle }) {
         <article className="noticia-body">
           <h2>{title}</h2>
           {subtitle && <h3>{subtitle}</h3>}
-          <p>{p}</p>
+          <div>{HTMLReactParser(content)}</div>
           {image && (
             <img
               src={image}

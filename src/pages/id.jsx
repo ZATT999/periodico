@@ -14,7 +14,7 @@ export default function NoticiaId() {
     <>
       <Noticia
         image={noticia[0].image}
-        p={noticia[0].p}
+        content={noticia[0].content}
         subtitle={noticia[0].subtitle}
         title={noticia[0].title}
       />
