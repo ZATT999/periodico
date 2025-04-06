@@ -1,11 +1,9 @@
 /* Estilos generales */
 .noticia {
   max-width: 850px;
-  margin: 50px auto;
   padding: 35px;
   background: #ffffff;
   border-radius: 16px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
   font-family: "Inter", sans-serif;
   line-height: 1.75;
   color: #333;
@@ -151,21 +149,13 @@
   }
 }
 
-.mostInfo {
-  text-align: center;
-
-  & h1 {
-    font-size: 3em;
-    text-wrap: wrap;
-  }
-}
-
 .ContentCards {
   display: flex;
   margin-left: 30px;
   width: auto;
   gap: 5px;
 }
+
 .ContentCardsColums {
   padding-left: 10px;
   background-clip: padding-box;
