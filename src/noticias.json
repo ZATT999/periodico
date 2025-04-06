@@ -6,1047 +6,144 @@
         "slug": "nuevo-record-mundial-en-natacion",
         "images": [
             {
-                "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAvBswabIcX9JAJJUs0UcSkJffnWkmGAIt5w&s",
+                "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW51g_NqzIWAocvb5U8JVr42pngbsKHNzj9Q&s",
                 "alt": "Jóvenes participando en clase virtual"
-            },
-            {
-                "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnEs07ki2ru0S6Jrosro2o080havmI3BrHOw&s",
-                "alt": "Bosque afectado por el cambio climático"
             }
         ],
-        "content": "<p>Expertos analizan los efectos inmediatos. Celebración de la identidad. Política en auge.</p>",
+        "content": "<h2>Récord mundial en los 100 metros libres</h2><p>El nadador estadounidense Michael Carter ha establecido un nuevo récord mundial en la categoría de 100 metros estilo libre con un tiempo de 46.70 segundos, superando la marca anterior por 0.12 segundos.</p><h3>Una hazaña histórica</h3><p>La competencia se llevó a cabo en Tokio, Japón, durante el Campeonato Mundial de Natación. Carter mostró una técnica impecable desde el inicio de la carrera, manteniendo un ritmo constante y una excelente entrada en la última vuelta.</p><img src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW51g_NqzIWAocvb5U8JVr42pngbsKHNzj9Q&s\" alt=\"Jóvenes participando en clase virtual\"><p>El entrenador de Carter declaró que este resultado es fruto de años de trabajo, disciplina y una preparación física y mental sin precedentes.</p><h3>Reacciones en todo el mundo</h3><p>Deportistas, federaciones y fanáticos han reaccionado en redes sociales celebrando el triunfo. Las autoridades deportivas de EE.UU. anunciaron un homenaje nacional.</p>",
         "date": "Domingo, 6 de abril de 2025",
         "description": "Expertos analizan los efectos inmediatos.",
         "author": "Esteban Duarte",
-        "category": "Política"
+        "category": "Deportes"
     },
     {
         "id": "2",
-        "title": "Campaña por el reciclaje urbano",
-        "subtitle": "Nuevos horizontes",
-        "slug": "campana-por-el-reciclaje-urbano",
+        "title": "Crecimiento exponencial de la energía solar en Latinoamérica",
+        "subtitle": "Transición energética en marcha",
+        "slug": "energia-solar-en-latinoamerica",
         "images": [
             {
-                "src": "https://cdn.pixabay.com/photo/2017/10/11/10/51/environmental-protection-2847472_1280.jpg",
-                "alt": "Manifestaciones por el medio ambiente"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2018/03/01/14/53/technology-3190194_1280.jpg",
-                "alt": "Innovación tecnológica en dispositivos móviles"
+                "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW51g_NqzIWAocvb5U8JVr42pngbsKHNzj9Q&s",
+                "alt": "Paneles solares instalados en un techo"
             }
         ],
-        "content": "<p>La comunidad internacional reacciona. Nuevos horizontes. Medio Ambiente en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "La comunidad internacional reacciona.",
-        "author": "Esteban Duarte",
-        "category": "Medio Ambiente"
+        "content": "<h2>La revolución solar</h2><p>En los últimos cinco años, la instalación de paneles solares en países como Chile, México y Colombia ha crecido más de un 200%. Esta transformación ha sido impulsada por incentivos estatales y la reducción del costo de los paneles.</p><h3>Chile lidera el camino</h3><p>Chile cuenta con el parque solar más grande de la región, con una capacidad instalada de más de 3 GW. El desierto de Atacama, con su elevada radiación solar, ha sido el escenario ideal para estos desarrollos.</p><img src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW51g_NqzIWAocvb5U8JVr42pngbsKHNzj9Q&s\" alt=\"Paneles solares\"><h3>Impacto ambiental positivo</h3><p>Según estudios de la CEPAL, la adopción de energía solar ha reducido significativamente las emisiones de CO2 en países que tradicionalmente dependían del carbón.</p>",
+        "date": "Sábado, 5 de abril de 2025",
+        "description": "La región avanza hacia una matriz energética más limpia.",
+        "author": "Camila Ríos",
+        "category": "Ciencia y Tecnología"
     },
     {
         "id": "3",
-        "title": "Crisis energética en Europa",
-        "subtitle": "Celebración de la identidad",
-        "slug": "crisis-energetica-en-europa",
+        "title": "Nueva ley de educación incluye formación en programación desde primaria",
+        "subtitle": "Colombia apuesta por el futuro digital",
+        "slug": "ley-educacion-programacion-colombia",
         "images": [
             {
-                "src": "https://cdn.pixabay.com/photo/2015/09/18/20/20/student-944232_1280.jpg",
-                "alt": "Jóvenes participando en clase virtual"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2018/03/01/14/53/technology-3190194_1280.jpg",
-                "alt": "Innovación tecnológica en dispositivos móviles"
+                "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW51g_NqzIWAocvb5U8JVr42pngbsKHNzj9Q&s",
+                "alt": "Niños programando en clase"
             }
         ],
-        "content": "<p>La comunidad internacional reacciona. Celebración de la identidad. Medio Ambiente en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "La comunidad internacional reacciona.",
-        "author": "Esteban Duarte",
-        "category": "Medio Ambiente"
+        "content": "<h2>Educación del siglo XXI</h2><p>El Congreso colombiano ha aprobado una ley que introduce la enseñanza de la programación y pensamiento computacional desde primer grado de primaria.</p><h3>¿Qué incluye la ley?</h3><p>Los colegios deberán implementar módulos de lógica computacional, robótica básica y lenguajes como Scratch y Python a lo largo de la educación básica.</p><img src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW51g_NqzIWAocvb5U8JVr42pngbsKHNzj9Q&s\" alt=\"Niños programando\"><h3>Formación docente clave</h3><p>El Ministerio de Educación también anunció programas de capacitación para maestros, en colaboración con universidades y empresas tecnológicas como Google y Microsoft.</p>",
+        "date": "Viernes, 4 de abril de 2025",
+        "description": "Una apuesta nacional por la alfabetización digital.",
+        "author": "Natalia Gómez",
+        "category": "Educación"
     },
     {
-        "id": "4",
-        "title": "Festival cultural ilumina Bogotá",
-        "subtitle": "Nuevos horizontes",
-        "slug": "festival-cultural-ilumina-bogota",
+        "id": "9f13857c-3e88-4f84-8a01-5a5a08f97e31",
+        "title": "Innovaciones tecnológicas que transforman la educación",
+        "slug": "innovaciones-tecnologicas-educacion",
         "images": [
             {
-                "src": "https://cdn.pixabay.com/photo/2018/03/01/14/53/technology-3190194_1280.jpg",
-                "alt": "Innovación tecnológica en dispositivos móviles"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2017/10/11/10/51/environmental-protection-2847472_1280.jpg",
-                "alt": "Manifestaciones por el medio ambiente"
+                "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW51g_NqzIWAocvb5U8JVr42pngbsKHNzj9Q&s",
+                "alt": "Estudiantes con dispositivos digitales"
             }
         ],
-        "content": "<p>Una oportunidad para repensar nuestro presente. Nuevos horizontes. Sociedad en auge.</p>",
+        "content": "<h2>La revolución digital en el aula</h2><p>La implementación de herramientas como realidad aumentada, plataformas adaptativas y robótica educativa está cambiando la forma en la que los estudiantes aprenden.</p><h3>Una nueva forma de enseñar</h3><p>Los docentes ahora combinan métodos tradicionales con herramientas digitales que permiten personalizar el aprendizaje.</p><img src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW51g_NqzIWAocvb5U8JVr42pngbsKHNzj9Q&s\" alt=\"Tecnología en el aula\"><p>Plataformas como Khan Academy, Google Classroom y Edmodo se integran cada vez más al currículo escolar.</p><h3>Beneficios y desafíos</h3><p>El acceso a estas herramientas ha mejorado la motivación de los estudiantes, pero también plantea retos de conectividad, formación docente y brechas digitales.</p><p>El futuro de la educación será híbrido, integrando lo mejor del mundo presencial y digital.</p>",
         "date": "Domingo, 6 de abril de 2025",
-        "description": "Una oportunidad para repensar nuestro presente.",
-        "author": "Felipe Torres",
-        "category": "Sociedad"
+        "description": "Herramientas digitales como realidad aumentada y plataformas virtuales están cambiando el aula.",
+        "author": "Carolina Torres",
+        "category": "Educación"
     },
     {
-        "id": "5",
-        "title": "La economía global se recupera",
-        "subtitle": "Impacto en la sociedad",
-        "slug": "la-economia-global-se-recupera",
+        "id": "c05af946-2f6f-4074-9d08-9f6c00f1b547",
+        "title": "Jóvenes emprendedores impulsan negocios sostenibles",
+        "slug": "emprendimiento-sostenible-jovenes",
         "images": [
             {
-                "src": "https://cdn.pixabay.com/photo/2015/09/18/20/20/student-944232_1280.jpg",
-                "alt": "Jóvenes participando en clase virtual"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2018/03/01/14/53/technology-3190194_1280.jpg",
-                "alt": "Innovación tecnológica en dispositivos móviles"
+                "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW51g_NqzIWAocvb5U8JVr42pngbsKHNzj9Q&s",
+                "alt": "Jóvenes emprendedores"
             }
         ],
-        "content": "<p>La comunidad internacional reacciona. Impacto en la sociedad. Tecnología en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "La comunidad internacional reacciona.",
-        "author": "Martín Salazar",
-        "category": "Tecnología"
-    },
-    {
-        "id": "6",
-        "title": "Descubrimiento en la Amazonía",
-        "subtitle": "Una mirada al futuro",
-        "slug": "descubrimiento-en-la-amazonia",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2018/03/01/14/53/technology-3190194_1280.jpg",
-                "alt": "Innovación tecnológica en dispositivos móviles"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2016/03/23/17/59/fashion-1279349_1280.jpg",
-                "alt": "Pasarela con nuevos estilos de temporada"
-            }
-        ],
-        "content": "<p>Líderes opinan sobre los próximos pasos. Una mirada al futuro. Tecnología en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "Líderes opinan sobre los próximos pasos.",
-        "author": "Martín Salazar",
-        "category": "Tecnología"
-    },
-    {
-        "id": "7",
-        "title": "La economía global se recupera",
-        "subtitle": "Celebración de la identidad",
-        "slug": "la-economia-global-se-recupera",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2016/03/23/17/59/fashion-1279349_1280.jpg",
-                "alt": "Pasarela con nuevos estilos de temporada"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2017/10/11/10/51/environmental-protection-2847472_1280.jpg",
-                "alt": "Manifestaciones por el medio ambiente"
-            }
-        ],
-        "content": "<p>Líderes opinan sobre los próximos pasos. Celebración de la identidad. Economía en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "Líderes opinan sobre los próximos pasos.",
-        "author": "Esteban Duarte",
+        "content": "<h2>Una nueva generación de líderes</h2><p>Con ideas frescas y compromiso con el planeta, jóvenes de todo el país están creando emprendimientos enfocados en la sostenibilidad.</p><h3>Ejemplos que inspiran</h3><p>Desde botellas biodegradables hasta ropa hecha con residuos plásticos, los proyectos no solo son innovadores, sino también ambientalmente responsables.</p><img src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW51g_NqzIWAocvb5U8JVr42pngbsKHNzj9Q&s\" alt=\"Ideas verdes\"><p>Muchos reciben apoyo de incubadoras universitarias y fondos de inversión con enfoque verde.</p><h3>Un movimiento en expansión</h3><p>Los jóvenes emprendedores no solo buscan ganar dinero, sino dejar una huella positiva en el mundo. Este cambio de mentalidad es clave para el futuro empresarial.</p>",
+        "date": "Sábado, 5 de abril de 2025",
+        "description": "Emprendimientos verdes liderados por jóvenes ganan protagonismo.",
+        "author": "Samuel Rojas",
         "category": "Economía"
     },
     {
-        "id": "8",
-        "title": "Cambio en la política ambiental de Brasil",
-        "subtitle": "Tradición y modernidad",
-        "slug": "cambio-en-la-politica-ambiental-de-brasil",
+        "id": "5aaf6e08-afe5-4608-9db2-7ecb4c3e2db5",
+        "title": "Colombia se prepara para su primera misión satelital autónoma",
+        "slug": "colombia-mision-satelital",
         "images": [
             {
-                "src": "https://cdn.pixabay.com/photo/2015/12/01/20/28/forest-1072828_1280.jpg",
-                "alt": "Bosque afectado por el cambio climático"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2015/09/18/20/20/student-944232_1280.jpg",
-                "alt": "Jóvenes participando en clase virtual"
+                "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW51g_NqzIWAocvb5U8JVr42pngbsKHNzj9Q&s",
+                "alt": "Satélite colombiano"
             }
         ],
-        "content": "<p>El evento ha marcado un antes y un después. Tradición y modernidad. Ciencia en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "El evento ha marcado un antes y un después.",
-        "author": "Ana María Mejía",
+        "content": "<h2>Un hito histórico para la ciencia nacional</h2><p>El satélite 'Libertad II', desarrollado por la Universidad Sergio Arboleda, será lanzado al espacio en junio desde una base en Japón.</p><h3>¿Qué hará el satélite?</h3><p>Realizará mediciones atmosféricas y transmitirá datos en tiempo real que serán analizados por estudiantes colombianos.</p><img src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW51g_NqzIWAocvb5U8JVr42pngbsKHNzj9Q&s\" alt=\"Tecnología espacial\"><p>Este logro posiciona a Colombia como un nuevo jugador en el campo de la exploración y monitoreo satelital.</p><h3>Educación y tecnología de la mano</h3><p>Más de 50 estudiantes de ingeniería participaron en su diseño, integración y prueba, lo que impulsa la formación de talento local.</p>",
+        "date": "Viernes, 4 de abril de 2025",
+        "description": "El país marcará un antes y un después con el lanzamiento del satélite 'Libertad II'.",
+        "author": "Diana Castillo",
         "category": "Ciencia"
     },
     {
-        "id": "9",
-        "title": "Nuevo récord mundial en natación",
-        "subtitle": "Camino hacia la innovación",
-        "slug": "nuevo-record-mundial-en-natacion",
+        "id": "fae2d34f-ff97-4fe6-90d7-b63b84c7c17d",
+        "title": "La alimentación saludable entra en las escuelas públicas",
+        "slug": "alimentacion-saludable-escuelas",
         "images": [
             {
-                "src": "https://cdn.pixabay.com/photo/2016/03/23/17/59/fashion-1279349_1280.jpg",
-                "alt": "Pasarela con nuevos estilos de temporada"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2015/12/01/20/28/forest-1072828_1280.jpg",
-                "alt": "Bosque afectado por el cambio climático"
+                "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW51g_NqzIWAocvb5U8JVr42pngbsKHNzj9Q&s",
+                "alt": "Niños comiendo frutas"
             }
         ],
-        "content": "<p>El evento ha marcado un antes y un después. Camino hacia la innovación. Sociedad en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "El evento ha marcado un antes y un después.",
-        "author": "Lucía Vargas",
-        "category": "Sociedad"
+        "content": "<h2>Un cambio en los menús escolares</h2><p>Desde el próximo semestre, las escuelas públicas en Colombia ofrecerán menús basados en frutas, vegetales y alimentos naturales.</p><h3>Objetivo: combatir la obesidad infantil</h3><p>Según el Ministerio de Salud, el 24% de los menores presentan sobrepeso. Esta política busca revertir esa tendencia.</p><img src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW51g_NqzIWAocvb5U8JVr42pngbsKHNzj9Q&s\" alt=\"Alimentación escolar\"><p>Se eliminarán productos ultraprocesados y se incluirán talleres de cocina saludable en primaria y secundaria.</p><h3>Impacto en las comunidades</h3><p>Las familias también serán capacitadas para replicar los hábitos saludables en casa, creando una red integral de bienestar.</p>",
+        "date": "Jueves, 3 de abril de 2025",
+        "description": "Nuevo programa de alimentación transformará el bienestar de estudiantes en Colombia.",
+        "author": "Natalia Gómez",
+        "category": "Salud"
     },
     {
-        "id": "10",
-        "title": "Campaña por el reciclaje urbano",
-        "subtitle": "Decisiones que transforman",
-        "slug": "campana-por-el-reciclaje-urbano",
+        "id": "de1a776a-7a97-41a5-9e6a-63e4fc4d305f",
+        "title": "La lectura digital gana terreno entre jóvenes",
+        "slug": "lectura-digital-jovenes",
         "images": [
             {
-                "src": "https://cdn.pixabay.com/photo/2016/03/23/17/59/fashion-1279349_1280.jpg",
-                "alt": "Pasarela con nuevos estilos de temporada"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2015/12/01/20/28/forest-1072828_1280.jpg",
-                "alt": "Bosque afectado por el cambio climático"
+                "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW51g_NqzIWAocvb5U8JVr42pngbsKHNzj9Q&s",
+                "alt": "Lectura digital"
             }
         ],
-        "content": "<p>Líderes opinan sobre los próximos pasos. Decisiones que transforman. Cultura en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "Líderes opinan sobre los próximos pasos.",
-        "author": "Lucía Vargas",
+        "content": "<h2>Un hábito que se reinventa</h2><p>Con el auge de plataformas como Wattpad, Kindle y Libros de Google Play, los jóvenes leen más que nunca, pero de forma digital.</p><h3>Nuevos formatos, mismos beneficios</h3><p>La lectura digital permite acceso a miles de libros desde cualquier lugar y en cualquier momento, facilitando la formación de hábitos lectores.</p><img src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW51g_NqzIWAocvb5U8JVr42pngbsKHNzj9Q&s\" alt=\"Tableta de lectura\"><p>Docentes están incorporando e-books y audiolibros como recursos dentro del aula.</p><h3>El reto: mantener el espíritu crítico</h3><p>Expertos sugieren fomentar espacios de análisis y discusión para que los jóvenes no solo consuman, sino también comprendan y reflexionen sobre lo que leen.</p>",
+        "date": "Miércoles, 2 de abril de 2025",
+        "description": "Las plataformas digitales están impulsando la lectura en nuevas generaciones.",
+        "author": "Luis Martínez",
         "category": "Cultura"
     },
     {
-        "id": "11",
-        "title": "Mujeres líderes en tecnología",
-        "subtitle": "Impacto en la sociedad",
-        "slug": "mujeres-lideres-en-tecnologia",
+        "id": "460b42df-1c2d-4322-86a2-fbb4f6bfcf84",
+        "title": "Estudiantes crean app para personas con discapacidad visual",
+        "slug": "app-discapacidad-visual",
         "images": [
             {
-                "src": "https://cdn.pixabay.com/photo/2015/09/18/20/20/student-944232_1280.jpg",
-                "alt": "Jóvenes participando en clase virtual"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2016/03/23/17/59/fashion-1279349_1280.jpg",
-                "alt": "Pasarela con nuevos estilos de temporada"
+                "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW51g_NqzIWAocvb5U8JVr42pngbsKHNzj9Q&s",
+                "alt": "App accesible"
             }
         ],
-        "content": "<p>Líderes opinan sobre los próximos pasos. Impacto en la sociedad. Deportes en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "Líderes opinan sobre los próximos pasos.",
-        "author": "Ana María Mejía",
-        "category": "Deportes"
-    },
-    {
-        "id": "12",
-        "title": "Detectan exoplaneta habitable",
-        "subtitle": "Decisiones que transforman",
-        "slug": "detectan-exoplaneta-habitable",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2015/12/01/20/28/forest-1072828_1280.jpg",
-                "alt": "Bosque afectado por el cambio climático"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2018/03/01/14/53/technology-3190194_1280.jpg",
-                "alt": "Innovación tecnológica en dispositivos móviles"
-            }
-        ],
-        "content": "<p>Un fenómeno que crece día a día. Decisiones que transforman. Medio Ambiente en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "Un fenómeno que crece día a día.",
-        "author": "Andrés Castillo",
-        "category": "Medio Ambiente"
-    },
-    {
-        "id": "13",
-        "title": "Redes sociales bajo lupa judicial",
-        "subtitle": "Impacto en la sociedad",
-        "slug": "redes-sociales-bajo-lupa-judicial",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2016/03/23/17/59/fashion-1279349_1280.jpg",
-                "alt": "Pasarela con nuevos estilos de temporada"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2015/12/01/20/28/forest-1072828_1280.jpg",
-                "alt": "Bosque afectado por el cambio climático"
-            }
-        ],
-        "content": "<p>Líderes opinan sobre los próximos pasos. Impacto en la sociedad. Deportes en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "Líderes opinan sobre los próximos pasos.",
-        "author": "Esteban Duarte",
-        "category": "Deportes"
-    },
-    {
-        "id": "14",
-        "title": "Detectan exoplaneta habitable",
-        "subtitle": "Un reto global",
-        "slug": "detectan-exoplaneta-habitable",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2015/09/18/20/20/student-944232_1280.jpg",
-                "alt": "Jóvenes participando en clase virtual"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2018/03/01/14/53/technology-3190194_1280.jpg",
-                "alt": "Innovación tecnológica en dispositivos móviles"
-            }
-        ],
-        "content": "<p>Expertos analizan los efectos inmediatos. Un reto global. Cultura en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "Expertos analizan los efectos inmediatos.",
-        "author": "Lucía Vargas",
-        "category": "Cultura"
-    },
-    {
-        "id": "15",
-        "title": "Inauguración de puente binacional",
-        "subtitle": "Nuevos horizontes",
-        "slug": "inauguracion-de-puente-binacional",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2015/12/01/20/28/forest-1072828_1280.jpg",
-                "alt": "Bosque afectado por el cambio climático"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2015/09/18/20/20/student-944232_1280.jpg",
-                "alt": "Jóvenes participando en clase virtual"
-            }
-        ],
-        "content": "<p>El evento ha marcado un antes y un después. Nuevos horizontes. Tecnología en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "El evento ha marcado un antes y un después.",
-        "author": "Ana María Mejía",
+        "content": "<h2>Innovación con propósito social</h2><p>Un grupo de estudiantes universitarios desarrolló una aplicación móvil que traduce texto en tiempo real a audio para personas con baja visión o ceguera.</p><h3>Cómo funciona</h3><p>Usa inteligencia artificial para identificar texto en imágenes y leerlo en voz alta. También integra reconocimiento de objetos y señales de tránsito.</p><img src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW51g_NqzIWAocvb5U8JVr42pngbsKHNzj9Q&s\" alt=\"Tecnología inclusiva\"><p>El proyecto ha sido premiado en ferias de ciencia y ya busca financiación para su masificación.</p><h3>Impacto en la comunidad</h3><p>Personas con discapacidad visual han reportado una mejora en su autonomía diaria gracias a esta herramienta.</p>",
+        "date": "Martes, 1 de abril de 2025",
+        "description": "Aplicación creada por jóvenes busca mejorar la vida de personas con discapacidad visual.",
+        "author": "Andrea Sánchez",
         "category": "Tecnología"
-    },
-    {
-        "id": "16",
-        "title": "Mujeres líderes en tecnología",
-        "subtitle": "Un movimiento creciente",
-        "slug": "mujeres-lideres-en-tecnologia",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2015/09/18/20/20/student-944232_1280.jpg",
-                "alt": "Jóvenes participando en clase virtual"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2015/12/01/20/28/forest-1072828_1280.jpg",
-                "alt": "Bosque afectado por el cambio climático"
-            }
-        ],
-        "content": "<p>Expertos analizan los efectos inmediatos. Un movimiento creciente. Cultura en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "Expertos analizan los efectos inmediatos.",
-        "author": "Andrés Castillo",
-        "category": "Cultura"
-    },
-    {
-        "id": "17",
-        "title": "Campaña por el reciclaje urbano",
-        "subtitle": "Celebración de la identidad",
-        "slug": "campana-por-el-reciclaje-urbano",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2015/12/01/20/28/forest-1072828_1280.jpg",
-                "alt": "Bosque afectado por el cambio climático"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2018/03/01/14/53/technology-3190194_1280.jpg",
-                "alt": "Innovación tecnológica en dispositivos móviles"
-            }
-        ],
-        "content": "<p>Una oportunidad para repensar nuestro presente. Celebración de la identidad. Economía en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "Una oportunidad para repensar nuestro presente.",
-        "author": "Andrés Castillo",
-        "category": "Economía"
-    },
-    {
-        "id": "18",
-        "title": "Nuevo récord mundial en natación",
-        "subtitle": "Un reto global",
-        "slug": "nuevo-record-mundial-en-natacion",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2016/03/23/17/59/fashion-1279349_1280.jpg",
-                "alt": "Pasarela con nuevos estilos de temporada"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2017/10/11/10/51/environmental-protection-2847472_1280.jpg",
-                "alt": "Manifestaciones por el medio ambiente"
-            }
-        ],
-        "content": "<p>El evento ha marcado un antes y un después. Un reto global. Medio Ambiente en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "El evento ha marcado un antes y un después.",
-        "author": "Esteban Duarte",
-        "category": "Medio Ambiente"
-    },
-    {
-        "id": "19",
-        "title": "Campaña por el reciclaje urbano",
-        "subtitle": "Decisiones que transforman",
-        "slug": "campana-por-el-reciclaje-urbano",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2016/03/23/17/59/fashion-1279349_1280.jpg",
-                "alt": "Pasarela con nuevos estilos de temporada"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2018/03/01/14/53/technology-3190194_1280.jpg",
-                "alt": "Innovación tecnológica en dispositivos móviles"
-            }
-        ],
-        "content": "<p>La comunidad internacional reacciona. Decisiones que transforman. Medio Ambiente en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "La comunidad internacional reacciona.",
-        "author": "Ana María Mejía",
-        "category": "Medio Ambiente"
-    },
-    {
-        "id": "20",
-        "title": "Turismo sostenible gana terreno",
-        "subtitle": "Celebración de la identidad",
-        "slug": "turismo-sostenible-gana-terreno",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2015/09/18/20/20/student-944232_1280.jpg",
-                "alt": "Jóvenes participando en clase virtual"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2017/10/11/10/51/environmental-protection-2847472_1280.jpg",
-                "alt": "Manifestaciones por el medio ambiente"
-            }
-        ],
-        "content": "<p>El evento ha marcado un antes y un después. Celebración de la identidad. Medio Ambiente en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "El evento ha marcado un antes y un después.",
-        "author": "Paula Gómez",
-        "category": "Medio Ambiente"
-    },
-    {
-        "id": "21",
-        "title": "Se estrena película inspirada en Gabriel García Márquez",
-        "subtitle": "Impacto en la sociedad",
-        "slug": "se-estrena-pelicula-inspirada-en-gabriel-garcia-marquez",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2015/12/01/20/28/forest-1072828_1280.jpg",
-                "alt": "Bosque afectado por el cambio climático"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2018/03/01/14/53/technology-3190194_1280.jpg",
-                "alt": "Innovación tecnológica en dispositivos móviles"
-            }
-        ],
-        "content": "<p>El evento ha marcado un antes y un después. Impacto en la sociedad. Economía en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "El evento ha marcado un antes y un después.",
-        "author": "Camila Rojas",
-        "category": "Economía"
-    },
-    {
-        "id": "22",
-        "title": "Turismo sostenible gana terreno",
-        "subtitle": "Celebración de la identidad",
-        "slug": "turismo-sostenible-gana-terreno",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2018/03/01/14/53/technology-3190194_1280.jpg",
-                "alt": "Innovación tecnológica en dispositivos móviles"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2016/03/23/17/59/fashion-1279349_1280.jpg",
-                "alt": "Pasarela con nuevos estilos de temporada"
-            }
-        ],
-        "content": "<p>La comunidad internacional reacciona. Celebración de la identidad. Tecnología en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "La comunidad internacional reacciona.",
-        "author": "Paula Gómez",
-        "category": "Tecnología"
-    },
-    {
-        "id": "23",
-        "title": "El renacer del rock latino",
-        "subtitle": "Un movimiento creciente",
-        "slug": "el-renacer-del-rock-latino",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2015/12/01/20/28/forest-1072828_1280.jpg",
-                "alt": "Bosque afectado por el cambio climático"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2016/03/23/17/59/fashion-1279349_1280.jpg",
-                "alt": "Pasarela con nuevos estilos de temporada"
-            }
-        ],
-        "content": "<p>La comunidad internacional reacciona. Un movimiento creciente. Economía en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "La comunidad internacional reacciona.",
-        "author": "Martín Salazar",
-        "category": "Economía"
-    },
-    {
-        "id": "24",
-        "title": "Descubrimiento en la Amazonía",
-        "subtitle": "Expectativa mundial",
-        "slug": "descubrimiento-en-la-amazonia",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2016/03/23/17/59/fashion-1279349_1280.jpg",
-                "alt": "Pasarela con nuevos estilos de temporada"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2015/12/01/20/28/forest-1072828_1280.jpg",
-                "alt": "Bosque afectado por el cambio climático"
-            }
-        ],
-        "content": "<p>La comunidad internacional reacciona. Expectativa mundial. Sociedad en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "La comunidad internacional reacciona.",
-        "author": "Lucía Vargas",
-        "category": "Sociedad"
-    },
-    {
-        "id": "25",
-        "title": "México y Colombia firman acuerdo comercial",
-        "subtitle": "Camino hacia la innovación",
-        "slug": "mexico-y-colombia-firman-acuerdo-comercial",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2015/12/01/20/28/forest-1072828_1280.jpg",
-                "alt": "Bosque afectado por el cambio climático"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2016/03/23/17/59/fashion-1279349_1280.jpg",
-                "alt": "Pasarela con nuevos estilos de temporada"
-            }
-        ],
-        "content": "<p>Un fenómeno que crece día a día. Camino hacia la innovación. Deportes en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "Un fenómeno que crece día a día.",
-        "author": "Martín Salazar",
-        "category": "Deportes"
-    },
-    {
-        "id": "26",
-        "title": "Nueva ley de protección animal",
-        "subtitle": "Tradición y modernidad",
-        "slug": "nueva-ley-de-proteccion-animal",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2018/03/01/14/53/technology-3190194_1280.jpg",
-                "alt": "Innovación tecnológica en dispositivos móviles"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2017/10/11/10/51/environmental-protection-2847472_1280.jpg",
-                "alt": "Manifestaciones por el medio ambiente"
-            }
-        ],
-        "content": "<p>Una oportunidad para repensar nuestro presente. Tradición y modernidad. Política en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "Una oportunidad para repensar nuestro presente.",
-        "author": "Lucía Vargas",
-        "category": "Política"
-    },
-    {
-        "id": "27",
-        "title": "Turismo sostenible gana terreno",
-        "subtitle": "Un reto global",
-        "slug": "turismo-sostenible-gana-terreno",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2018/03/01/14/53/technology-3190194_1280.jpg",
-                "alt": "Innovación tecnológica en dispositivos móviles"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2015/09/18/20/20/student-944232_1280.jpg",
-                "alt": "Jóvenes participando en clase virtual"
-            }
-        ],
-        "content": "<p>La comunidad internacional reacciona. Un reto global. Economía en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "La comunidad internacional reacciona.",
-        "author": "Lucía Vargas",
-        "category": "Economía"
-    },
-    {
-        "id": "28",
-        "title": "Nueva ley de protección animal",
-        "subtitle": "Una mirada al futuro",
-        "slug": "nueva-ley-de-proteccion-animal",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2018/03/01/14/53/technology-3190194_1280.jpg",
-                "alt": "Innovación tecnológica en dispositivos móviles"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2015/12/01/20/28/forest-1072828_1280.jpg",
-                "alt": "Bosque afectado por el cambio climático"
-            }
-        ],
-        "content": "<p>Un fenómeno que crece día a día. Una mirada al futuro. Economía en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "Un fenómeno que crece día a día.",
-        "author": "Martín Salazar",
-        "category": "Economía"
-    },
-    {
-        "id": "29",
-        "title": "Turismo sostenible gana terreno",
-        "subtitle": "Impacto en la sociedad",
-        "slug": "turismo-sostenible-gana-terreno",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2015/12/01/20/28/forest-1072828_1280.jpg",
-                "alt": "Bosque afectado por el cambio climático"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2018/03/01/14/53/technology-3190194_1280.jpg",
-                "alt": "Innovación tecnológica en dispositivos móviles"
-            }
-        ],
-        "content": "<p>La comunidad internacional reacciona. Impacto en la sociedad. Sociedad en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "La comunidad internacional reacciona.",
-        "author": "Felipe Torres",
-        "category": "Sociedad"
-    },
-    {
-        "id": "30",
-        "title": "México y Colombia firman acuerdo comercial",
-        "subtitle": "Un reto global",
-        "slug": "mexico-y-colombia-firman-acuerdo-comercial",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2015/09/18/20/20/student-944232_1280.jpg",
-                "alt": "Jóvenes participando en clase virtual"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2017/10/11/10/51/environmental-protection-2847472_1280.jpg",
-                "alt": "Manifestaciones por el medio ambiente"
-            }
-        ],
-        "content": "<p>Expertos analizan los efectos inmediatos. Un reto global. Deportes en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "Expertos analizan los efectos inmediatos.",
-        "author": "Esteban Duarte",
-        "category": "Deportes"
-    },
-    {
-        "id": "31",
-        "title": "Nueva ley de protección animal",
-        "subtitle": "Camino hacia la innovación",
-        "slug": "nueva-ley-de-proteccion-animal",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2015/12/01/20/28/forest-1072828_1280.jpg",
-                "alt": "Bosque afectado por el cambio climático"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2018/03/01/14/53/technology-3190194_1280.jpg",
-                "alt": "Innovación tecnológica en dispositivos móviles"
-            }
-        ],
-        "content": "<p>Expertos analizan los efectos inmediatos. Camino hacia la innovación. Sociedad en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "Expertos analizan los efectos inmediatos.",
-        "author": "Felipe Torres",
-        "category": "Sociedad"
-    },
-    {
-        "id": "32",
-        "title": "Redes sociales bajo lupa judicial",
-        "subtitle": "Una mirada al futuro",
-        "slug": "redes-sociales-bajo-lupa-judicial",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2017/10/11/10/51/environmental-protection-2847472_1280.jpg",
-                "alt": "Manifestaciones por el medio ambiente"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2015/12/01/20/28/forest-1072828_1280.jpg",
-                "alt": "Bosque afectado por el cambio climático"
-            }
-        ],
-        "content": "<p>Una oportunidad para repensar nuestro presente. Una mirada al futuro. Economía en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "Una oportunidad para repensar nuestro presente.",
-        "author": "Camila Rojas",
-        "category": "Economía"
-    },
-    {
-        "id": "33",
-        "title": "Mujeres líderes en tecnología",
-        "subtitle": "Impacto en la sociedad",
-        "slug": "mujeres-lideres-en-tecnologia",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2015/09/18/20/20/student-944232_1280.jpg",
-                "alt": "Jóvenes participando en clase virtual"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2015/12/01/20/28/forest-1072828_1280.jpg",
-                "alt": "Bosque afectado por el cambio climático"
-            }
-        ],
-        "content": "<p>Líderes opinan sobre los próximos pasos. Impacto en la sociedad. Deportes en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "Líderes opinan sobre los próximos pasos.",
-        "author": "Esteban Duarte",
-        "category": "Deportes"
-    },
-    {
-        "id": "34",
-        "title": "Nuevo récord mundial en natación",
-        "subtitle": "Un reto global",
-        "slug": "nuevo-record-mundial-en-natacion",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2018/03/01/14/53/technology-3190194_1280.jpg",
-                "alt": "Innovación tecnológica en dispositivos móviles"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2015/09/18/20/20/student-944232_1280.jpg",
-                "alt": "Jóvenes participando en clase virtual"
-            }
-        ],
-        "content": "<p>El evento ha marcado un antes y un después. Un reto global. Política en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "El evento ha marcado un antes y un después.",
-        "author": "Paula Gómez",
-        "category": "Política"
-    },
-    {
-        "id": "35",
-        "title": "Crisis energética en Europa",
-        "subtitle": "Tradición y modernidad",
-        "slug": "crisis-energetica-en-europa",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2016/03/23/17/59/fashion-1279349_1280.jpg",
-                "alt": "Pasarela con nuevos estilos de temporada"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2015/12/01/20/28/forest-1072828_1280.jpg",
-                "alt": "Bosque afectado por el cambio climático"
-            }
-        ],
-        "content": "<p>La comunidad internacional reacciona. Tradición y modernidad. Deportes en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "La comunidad internacional reacciona.",
-        "author": "Felipe Torres",
-        "category": "Deportes"
-    },
-    {
-        "id": "36",
-        "title": "Inauguración de puente binacional",
-        "subtitle": "Una mirada al futuro",
-        "slug": "inauguracion-de-puente-binacional",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2015/12/01/20/28/forest-1072828_1280.jpg",
-                "alt": "Bosque afectado por el cambio climático"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2015/09/18/20/20/student-944232_1280.jpg",
-                "alt": "Jóvenes participando en clase virtual"
-            }
-        ],
-        "content": "<p>El evento ha marcado un antes y un después. Una mirada al futuro. Economía en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "El evento ha marcado un antes y un después.",
-        "author": "Camila Rojas",
-        "category": "Economía"
-    },
-    {
-        "id": "37",
-        "title": "Crecen los emprendimientos juveniles",
-        "subtitle": "Impacto en la sociedad",
-        "slug": "crecen-los-emprendimientos-juveniles",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2015/12/01/20/28/forest-1072828_1280.jpg",
-                "alt": "Bosque afectado por el cambio climático"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2015/09/18/20/20/student-944232_1280.jpg",
-                "alt": "Jóvenes participando en clase virtual"
-            }
-        ],
-        "content": "<p>Expertos analizan los efectos inmediatos. Impacto en la sociedad. Economía en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "Expertos analizan los efectos inmediatos.",
-        "author": "Felipe Torres",
-        "category": "Economía"
-    },
-    {
-        "id": "38",
-        "title": "Detectan exoplaneta habitable",
-        "subtitle": "Tradición y modernidad",
-        "slug": "detectan-exoplaneta-habitable",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2016/03/23/17/59/fashion-1279349_1280.jpg",
-                "alt": "Pasarela con nuevos estilos de temporada"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2018/03/01/14/53/technology-3190194_1280.jpg",
-                "alt": "Innovación tecnológica en dispositivos móviles"
-            }
-        ],
-        "content": "<p>El evento ha marcado un antes y un después. Tradición y modernidad. Economía en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "El evento ha marcado un antes y un después.",
-        "author": "Andrés Castillo",
-        "category": "Economía"
-    },
-    {
-        "id": "39",
-        "title": "Inauguración de puente binacional",
-        "subtitle": "Decisiones que transforman",
-        "slug": "inauguracion-de-puente-binacional",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2016/03/23/17/59/fashion-1279349_1280.jpg",
-                "alt": "Pasarela con nuevos estilos de temporada"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2018/03/01/14/53/technology-3190194_1280.jpg",
-                "alt": "Innovación tecnológica en dispositivos móviles"
-            }
-        ],
-        "content": "<p>Líderes opinan sobre los próximos pasos. Decisiones que transforman. Economía en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "Líderes opinan sobre los próximos pasos.",
-        "author": "Martín Salazar",
-        "category": "Economía"
-    },
-    {
-        "id": "40",
-        "title": "Descubrimiento en la Amazonía",
-        "subtitle": "Un reto global",
-        "slug": "descubrimiento-en-la-amazonia",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2018/03/01/14/53/technology-3190194_1280.jpg",
-                "alt": "Innovación tecnológica en dispositivos móviles"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2017/10/11/10/51/environmental-protection-2847472_1280.jpg",
-                "alt": "Manifestaciones por el medio ambiente"
-            }
-        ],
-        "content": "<p>Líderes opinan sobre los próximos pasos. Un reto global. Medio Ambiente en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "Líderes opinan sobre los próximos pasos.",
-        "author": "Camila Rojas",
-        "category": "Medio Ambiente"
-    },
-    {
-        "id": "41",
-        "title": "Campaña por el reciclaje urbano",
-        "subtitle": "Un reto global",
-        "slug": "campana-por-el-reciclaje-urbano",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2018/03/01/14/53/technology-3190194_1280.jpg",
-                "alt": "Innovación tecnológica en dispositivos móviles"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2015/09/18/20/20/student-944232_1280.jpg",
-                "alt": "Jóvenes participando en clase virtual"
-            }
-        ],
-        "content": "<p>La comunidad internacional reacciona. Un reto global. Deportes en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "La comunidad internacional reacciona.",
-        "author": "Andrés Castillo",
-        "category": "Deportes"
-    },
-    {
-        "id": "42",
-        "title": "Nueva ley de protección animal",
-        "subtitle": "Nuevos horizontes",
-        "slug": "nueva-ley-de-proteccion-animal",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2015/12/01/20/28/forest-1072828_1280.jpg",
-                "alt": "Bosque afectado por el cambio climático"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2015/09/18/20/20/student-944232_1280.jpg",
-                "alt": "Jóvenes participando en clase virtual"
-            }
-        ],
-        "content": "<p>El evento ha marcado un antes y un después. Nuevos horizontes. Política en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "El evento ha marcado un antes y un después.",
-        "author": "Martín Salazar",
-        "category": "Política"
-    },
-    {
-        "id": "43",
-        "title": "La economía global se recupera",
-        "subtitle": "Un movimiento creciente",
-        "slug": "la-economia-global-se-recupera",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2015/12/01/20/28/forest-1072828_1280.jpg",
-                "alt": "Bosque afectado por el cambio climático"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2016/03/23/17/59/fashion-1279349_1280.jpg",
-                "alt": "Pasarela con nuevos estilos de temporada"
-            }
-        ],
-        "content": "<p>La comunidad internacional reacciona. Un movimiento creciente. Política en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "La comunidad internacional reacciona.",
-        "author": "Andrés Castillo",
-        "category": "Política"
-    },
-    {
-        "id": "44",
-        "title": "Avances en vacunas contra el cáncer",
-        "subtitle": "Un reto global",
-        "slug": "avances-en-vacunas-contra-el-cancer",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2017/10/11/10/51/environmental-protection-2847472_1280.jpg",
-                "alt": "Manifestaciones por el medio ambiente"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2018/03/01/14/53/technology-3190194_1280.jpg",
-                "alt": "Innovación tecnológica en dispositivos móviles"
-            }
-        ],
-        "content": "<p>Líderes opinan sobre los próximos pasos. Un reto global. Política en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "Líderes opinan sobre los próximos pasos.",
-        "author": "Martín Salazar",
-        "category": "Política"
-    },
-    {
-        "id": "45",
-        "title": "Festival cultural ilumina Bogotá",
-        "subtitle": "Expectativa mundial",
-        "slug": "festival-cultural-ilumina-bogota",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2016/03/23/17/59/fashion-1279349_1280.jpg",
-                "alt": "Pasarela con nuevos estilos de temporada"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2018/03/01/14/53/technology-3190194_1280.jpg",
-                "alt": "Innovación tecnológica en dispositivos móviles"
-            }
-        ],
-        "content": "<p>Un fenómeno que crece día a día. Expectativa mundial. Tecnología en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "Un fenómeno que crece día a día.",
-        "author": "Esteban Duarte",
-        "category": "Tecnología"
-    },
-    {
-        "id": "46",
-        "title": "Turismo sostenible gana terreno",
-        "subtitle": "Decisiones que transforman",
-        "slug": "turismo-sostenible-gana-terreno",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2015/09/18/20/20/student-944232_1280.jpg",
-                "alt": "Jóvenes participando en clase virtual"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2015/12/01/20/28/forest-1072828_1280.jpg",
-                "alt": "Bosque afectado por el cambio climático"
-            }
-        ],
-        "content": "<p>Expertos analizan los efectos inmediatos. Decisiones que transforman. Medio Ambiente en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "Expertos analizan los efectos inmediatos.",
-        "author": "Martín Salazar",
-        "category": "Medio Ambiente"
-    },
-    {
-        "id": "47",
-        "title": "Se estrena película inspirada en Gabriel García Márquez",
-        "subtitle": "Una mirada al futuro",
-        "slug": "se-estrena-pelicula-inspirada-en-gabriel-garcia-marquez",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2017/10/11/10/51/environmental-protection-2847472_1280.jpg",
-                "alt": "Manifestaciones por el medio ambiente"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2015/09/18/20/20/student-944232_1280.jpg",
-                "alt": "Jóvenes participando en clase virtual"
-            }
-        ],
-        "content": "<p>Expertos analizan los efectos inmediatos. Una mirada al futuro. Economía en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "Expertos analizan los efectos inmediatos.",
-        "author": "Paula Gómez",
-        "category": "Economía"
-    },
-    {
-        "id": "48",
-        "title": "Detectan exoplaneta habitable",
-        "subtitle": "Un reto global",
-        "slug": "detectan-exoplaneta-habitable",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2017/10/11/10/51/environmental-protection-2847472_1280.jpg",
-                "alt": "Manifestaciones por el medio ambiente"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2016/03/23/17/59/fashion-1279349_1280.jpg",
-                "alt": "Pasarela con nuevos estilos de temporada"
-            }
-        ],
-        "content": "<p>Líderes opinan sobre los próximos pasos. Un reto global. Economía en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "Líderes opinan sobre los próximos pasos.",
-        "author": "Camila Rojas",
-        "category": "Economía"
-    },
-    {
-        "id": "49",
-        "title": "Detectan exoplaneta habitable",
-        "subtitle": "Celebración de la identidad",
-        "slug": "detectan-exoplaneta-habitable",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2016/03/23/17/59/fashion-1279349_1280.jpg",
-                "alt": "Pasarela con nuevos estilos de temporada"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2015/12/01/20/28/forest-1072828_1280.jpg",
-                "alt": "Bosque afectado por el cambio climático"
-            }
-        ],
-        "content": "<p>La comunidad internacional reacciona. Celebración de la identidad. Economía en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "La comunidad internacional reacciona.",
-        "author": "Martín Salazar",
-        "category": "Economía"
-    },
-    {
-        "id": "50",
-        "title": "La economía global se recupera",
-        "subtitle": "Un reto global",
-        "slug": "la-economia-global-se-recupera",
-        "images": [
-            {
-                "src": "https://cdn.pixabay.com/photo/2016/03/23/17/59/fashion-1279349_1280.jpg",
-                "alt": "Pasarela con nuevos estilos de temporada"
-            },
-            {
-                "src": "https://cdn.pixabay.com/photo/2017/10/11/10/51/environmental-protection-2847472_1280.jpg",
-                "alt": "Manifestaciones por el medio ambiente"
-            }
-        ],
-        "content": "<p>El evento ha marcado un antes y un después. Un reto global. Ciencia en auge.</p>",
-        "date": "Domingo, 6 de abril de 2025",
-        "description": "El evento ha marcado un antes y un después.",
-        "author": "Camila Rojas",
-        "category": "Ciencia"
     }
 ]

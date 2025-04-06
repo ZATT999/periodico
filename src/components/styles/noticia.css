@@ -150,3 +150,53 @@
     font-size: 1.7rem;
   }
 }
+
+.mostInfo {
+  text-align: center;
+
+  & h1 {
+    font-size: 3em;
+    text-wrap: wrap;
+  }
+}
+
+.ContentCards {
+  display: flex;
+  margin-left: 30px;
+  width: auto;
+  gap: 5px;
+}
+.ContentCardsColums {
+  padding-left: 10px;
+  background-clip: padding-box;
+}
+.NoticiaCard {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  background: #fafafa;
+  border: 1px solid #bdbdbdf5;
+  border-radius: 10px;
+  padding: 10px 5px;
+  height: auto;
+  width: 200px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  transition: transform 0.1s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  & img {
+    width: 100px;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  & h3 {
+    color: rgb(80, 80, 80);
+  }
+}
