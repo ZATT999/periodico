@@ -16,7 +16,7 @@ export default function MapNoticias() {
       className="ContentCards"
       columnClassName="ContentCardsColums"
     >
-      {noticias.noticias.map((noticia) => (
+      {noticias.map((noticia) => (
         <Link to={`noticia/${noticia.id}`} key={noticia.id}>
           <div className="NoticiaCard">
             <img src={noticia.image} alt="Evento" />
