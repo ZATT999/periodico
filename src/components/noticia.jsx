@@ -1,49 +1,29 @@
 import { Link } from "react-router"
 import "./styles/noticia.css"
-import { useState, useEffect } from "react"
 import HTMLReactParser from "html-react-parser/lib/index"
 
-export default function Noticia({ title, content, image, subtitle }) {
-  const [fechaActual, setFechaActual] = useState("")
-
-  useEffect(() => {
-    const fecha = new Date().toLocaleDateString("es-ES", {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    })
-    // Capitalizar primera letra
-    const fechaCapitalizada = fecha.charAt(0).toUpperCase() + fecha.slice(1)
-    setFechaActual(fechaCapitalizada)
-  }, [])
-
+export default function Noticia({ content, date, author, category }) {
   return (
-    <>
-      <article className="noticia">
-        <Link to="/">
-          <span className="icon-home">&#8592;</span> Inicio
-        </Link>
-        <h1 className="titleNoticia">DIARIO CTE: Visión empresarial</h1>
-        <header className="noticia-header">
-          <p>
-            El periódico favorito del colegio <br />
-          </p>
-          <p className="fecha">{fechaActual}</p>
-        </header>
-        <article className="noticia-body">
-          <h2>{title}</h2>
-          {subtitle && <h3>{subtitle}</h3>}
-          <div>{HTMLReactParser(content)}</div>
-          {image && (
-            <img
-              src={image}
-              alt={title || "Imagen del artículo"}
-              loading="lazy"
-            />
-          )}
-        </article>
-      </article>
-    </>
+    <article className="noticia">
+      <Link to="/" className="volver-inicio">
+        <span className="icon-home">&#8592;</span> Inicio
+      </Link>
+
+      <h1 className="titleNoticia">DIARIO CTE: Visión empresarial</h1>
+
+      <header className="noticia-header">
+        <p>El periódico favorito del colegio</p>
+        <p className="fecha">{date}</p>
+
+        <p className="categoria">
+          <strong>Categoría:</strong> {category}
+        </p>
+      </header>
+
+      <section className="noticia-body">
+        <strong>Autor:</strong> {author}
+        <div className="noticia-content">{HTMLReactParser(content)}</div>
+      </section>
+    </article>
   )
 }
