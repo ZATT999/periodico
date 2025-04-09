@@ -17,12 +17,6 @@
   border-radius: 10px;
   overflow: hidden;
 
-  & div {
-    margin-top: 30px;
-    padding: 20px;
-    z-index: 11;
-  }
-
   & h1 {
     font-size: 3em;
     z-index: 11;
@@ -51,6 +45,15 @@
   & img:nth-child(1) {
     animation: chageImage 20s infinite forwards;
   }
+}
+
+.carouselContent {
+  bottom: 0px;
+  position: absolute;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.096);
+  padding: 40px;
 }
 
 @keyframes chageImage {
