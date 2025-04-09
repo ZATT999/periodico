@@ -20,6 +20,8 @@ body {
 .titlePage {
   position: sticky;
   top: 0;
+  max-width: 1100px;
+  width: 100%;
   text-align: center;
   font-size: 2.8rem;
   font-weight: 800;
