@@ -14,7 +14,7 @@ export default function NoticiasPage() {
   useEffect(() => {
     const intervalo = setInterval(() => {
       setIndex((prev) => (prev + 1) % noticiasData.length)
-    }, 5000) // Cambia cada 5 segundos
+    }, 10000)
 
     return () => clearInterval(intervalo)
   }, [noticiasData.length])
