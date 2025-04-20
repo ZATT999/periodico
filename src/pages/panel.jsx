@@ -1,6 +1,7 @@
 import { useContext, useState } from "react"
 import { NewsContext, UserContext } from "../context/context"
 import { Link } from "react-router"
+import { getDate } from "../utils/getDate"
 
 export default function Panel() {
   const { user } = useContext(UserContext)
@@ -10,14 +11,7 @@ export default function Panel() {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    const fecha = new Date().toLocaleDateString("es-ES", {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    })
-
-    const date = fecha.charAt(0).toUpperCase() + fecha.slice(1)
+    const date = getDate
     const title = e.target.elements[0].value
     const description = e.target.elements[1].value
     const category = e.target.elements[2].value
