@@ -12,10 +12,10 @@ export default function MapNews() {
     <div className="bg-white min-h-screen px-6 py-10">
       <h1 className="text-2xl font-bold text-black mb-6">Últimas noticias</h1>
 
-      <div className="mansory mx-auto">
+      <section className="mansory mx-auto">
         {getNewsVisible.map((news) => (
           <Link to={`/noticia/${news._id}`} key={news._id}>
-            <div className="w-[250px] h-auto  mb-[10px]  rounded-2xl overflow-hidden shadow-md border-[2px] border-blue-200 transition-transform hover:scale-101 duration-200 ">
+            <article className="w-[250px] h-auto  mb-[10px]  rounded-2xl overflow-hidden shadow-md border-[2px] border-blue-200 transition-transform hover:scale-101 duration-200 ">
               <img
                 src={news.image}
                 alt="Evento"
@@ -38,10 +38,10 @@ export default function MapNews() {
                   </span>
                 </div>
               </div>
-            </div>
+            </article>
           </Link>
         ))}
-      </div>
+      </section>
     </div>
   )
 }
