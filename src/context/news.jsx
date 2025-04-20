@@ -5,7 +5,7 @@ export const NewsProvider = ({ children }) => {
   const [news, setNews] = useState([])
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/news?limit=10?page=1")
+    fetch("http://localhost:3000/api/news")
       .then((res) => res.json())
       .then((data) => setNews(data.news))
       .catch((err) => console.log(err))
