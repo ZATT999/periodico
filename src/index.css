@@ -18,3 +18,8 @@ body,
   height: auto;
   overflow: auto;
 }
+
+.mansory {
+  columns: 3 200px;
+  column-gap: 10px;
+}
