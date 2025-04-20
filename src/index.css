@@ -20,6 +20,9 @@ body,
 }
 
 .mansory {
-  columns: 3 200px;
+  columns: 3 250px;
   column-gap: 10px;
+  margin: auto;
+  justify-items: center;
+  width: auto;
 }
