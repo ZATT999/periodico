@@ -1,7 +1,6 @@
 import { useContext, useState } from "react"
 import { useNavigate } from "react-router"
 import { UserContext } from "../context/context"
-import User from "../../../backEnd/models/user"
 
 export default function Login() {
   const [error, setError] = useState("")
