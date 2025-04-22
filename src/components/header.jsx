@@ -7,7 +7,9 @@ export default function Header() {
 
   return (
     <header className="z-40 fixed top-0 flex justify-between px-3 pt-6  border-b-1 border-blue-500 max-w-[800px] w-full m-auto backdrop-blur-md ">
-      <h1 className="text-4xl  font-bold font-[roboto]">CTE</h1>
+      <Link to="/">
+        <h1 className="text-4xl  font-bold font-[roboto]">CTE</h1>
+      </Link>
       {!user ? (
         <Link to="/login">
           <span className="text-2xl  hover:text-blue-400 transition-all">

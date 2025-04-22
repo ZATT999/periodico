@@ -2,6 +2,7 @@ import { useContext, useState } from "react"
 import { NewsContext, UserContext } from "../context/context"
 import { Link } from "react-router"
 import { getDate } from "../utils/getDate"
+import Headers from "../components/header"
 import {
   DeleteIcon,
   EditIcon,
@@ -13,8 +14,38 @@ export default function Panel() {
   const { user } = useContext(UserContext)
   const { news, setNews } = useContext(NewsContext)
   const [idNewsEdit, setIdNewsEdit] = useState("")
+  const [editFormData, setEditFormData] = useState({
+    title: "",
+    description: "",
+    category: "",
+    image: "",
+    content: "",
+  })
 
-  const handleSubmit = (e) => {
+  const prepareEdit = (id) => {
+    const newsToEdit = news.find((item) => item.id === id)
+    if (newsToEdit) {
+      setIdNewsEdit(id)
+      setEditFormData({
+        title: newsToEdit.title,
+        description: newsToEdit.description,
+        category: newsToEdit.category,
+        image: newsToEdit.image,
+        content: newsToEdit.content,
+      })
+      document.querySelector("#edit").showModal()
+    }
+  }
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target
+    setEditFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }))
+  }
+
+  const handleCreate = (e) => {
     e.preventDefault()
 
     const date = getDate
@@ -28,7 +59,7 @@ export default function Panel() {
 
     setNews((news) => [
       ...news,
-      { title, description, category, image, content, author, date },
+      { title, description, category, image, content, author, date, id },
     ])
 
     fetch("http://localhost:3000/api/news", {
@@ -55,7 +86,7 @@ export default function Panel() {
   }
 
   const handleDelete = (id) => {
-    setNews((news) => news.filter((newsItem) => newsItem._id !== id))
+    setNews((news) => news.filter((newsItem) => newsItem.id !== id))
 
     fetch(`http://localhost:3000/api/news/${id}`, {
       method: "DELETE",
@@ -71,7 +102,7 @@ export default function Panel() {
   const handleVisible = (id) => {
     setNews((news) =>
       news.map((newsItem) =>
-        newsItem._id === id
+        newsItem.id === id
           ? { ...newsItem, visible: !newsItem.visible }
           : newsItem
       )
@@ -89,20 +120,18 @@ export default function Panel() {
   }
 
   const handleEdit = (e) => {
+    e.preventDefault()
+
+    // Usar directamente los valores del estado editFormData
+    const { title, description, category, image, content } = editFormData
+
     setNews((news) =>
       news.map((newsItem) =>
-        newsItem._id === idNewsEdit
+        newsItem.id === idNewsEdit
           ? { ...newsItem, title, description, category, image, content }
           : newsItem
       )
     )
-
-    e.preventDefault()
-    const title = e.target.elements[0].value
-    const description = e.target.elements[1].value
-    const category = e.target.elements[2].value
-    const image = e.target.elements[3].value
-    const content = e.target.elements[4].value
 
     fetch(`http://localhost:3000/api/news/${idNewsEdit}`, {
       method: "PUT",
@@ -120,11 +149,12 @@ export default function Panel() {
       .then((res) => res.json())
       .then((data) => console.log(data))
       .catch((err) => console.log(err))
-      .finally(() => document.querySelector("#create").close())
+      .finally(() => document.querySelector("#edit").close())
   }
 
   return (
-    <main className="bg-white min-h-screen px-6 py-10 text-black">
+    <main className=" min-h-screen px-6 py-10 text-black">
+      <Headers />
       <div className="flex flex-col items-center justify-center my-15">
         <h1 className="text-5xl font-bold mb-15 text-center">
           Panel de noticias
@@ -148,7 +178,7 @@ export default function Panel() {
         <form
           method="dialog"
           className="modal-box space-y-4"
-          onSubmit={handleSubmit}
+          onSubmit={handleCreate}
         >
           <input
             type="text"
@@ -210,32 +240,42 @@ export default function Panel() {
         >
           <input
             type="text"
+            name="title"
             placeholder="Título"
+            value={editFormData.title}
+            onChange={handleInputChange}
             className="input input-bordered w-full border-2 border-blue-100 rounded-xl p-2 outline-none"
-            required
           />
           <input
             type="text"
+            name="description"
             placeholder="Descripción"
+            value={editFormData.description}
+            onChange={handleInputChange}
             className="input input-bordered w-full border-2 border-blue-100 rounded-xl p-2 outline-none"
-            required
           />
           <input
             type="text"
+            name="category"
             placeholder="Categoría"
+            value={editFormData.category}
+            onChange={handleInputChange}
             className="input input-bordered w-full border-2 border-blue-100 rounded-xl p-2 outline-none"
-            required
           />
           <input
             type="text"
+            name="image"
             placeholder="Imagen"
+            value={editFormData.image}
+            onChange={handleInputChange}
             className="input input-bordered w-full border-2 border-blue-100 rounded-xl p-2 outline-none"
-            required
           />
           <textarea
+            name="content"
             placeholder="Contenido"
+            value={editFormData.content}
+            onChange={handleInputChange}
             className="textarea textarea-bordered resize-none w-full h-40 border-2  border-blue-100 rounded-xl p-1 px-2 outline-none"
-            required
           />
           <div className="flex justify-end gap-2">
             <button
@@ -259,13 +299,13 @@ export default function Panel() {
         {news.map((newsItem) => (
           <article
             className="w-[250px] h-auto  mb-[10px]  rounded-2xl overflow-hidden shadow-md border-[2px] border-blue-200 transition-transform hover:scale-101 duration-200 "
-            key={newsItem._id}
+            key={newsItem.id}
           >
-            <Link to={`/noticia/${newsItem._id}`} className="block">
+            <Link to={`/noticia/${newsItem.id}`} className="block">
               <img
                 src={newsItem.image}
                 alt="Evento"
-                className="w-full h-40 object-cover "
+                className="w-full h-full object-cover"
               />
             </Link>
             <div className="p-4 bg-blue-50 ">
@@ -278,22 +318,19 @@ export default function Panel() {
                 />
                 <div className="flex gap-3 items-center justify-end ">
                   <button
-                    onClick={() => handleDelete(newsItem._id)}
+                    onClick={() => handleDelete(newsItem.id)}
                     className="text-red-600 hover:underline text-sm cursor-pointer"
                   >
                     <DeleteIcon size={20} />
                   </button>
                   <button
-                    onClick={() => {
-                      setIdNewsEdit(newsItem._id)
-                      document.querySelector("#edit").showModal()
-                    }}
+                    onClick={() => prepareEdit(newsItem.id)}
                     className="text-blue-600 hover:underline text-sm cursor-pointer"
                   >
                     <EditIcon size={20} />
                   </button>
                   <button
-                    onClick={() => handleVisible(newsItem._id)}
+                    onClick={() => handleVisible(newsItem.id)}
                     className="text-black hover:underline text-sm cursor-pointer"
                   >
                     {newsItem.visible ? (

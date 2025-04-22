@@ -3,6 +3,7 @@ import { NewsContext } from "./context"
 
 export const NewsProvider = ({ children }) => {
   const [news, setNews] = useState([])
+  console.log(news)
 
   useEffect(() => {
     fetch("http://localhost:3000/api/news")

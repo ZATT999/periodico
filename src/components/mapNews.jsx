@@ -9,12 +9,12 @@ export default function MapNews() {
   const getNewsVisible = news.filter((news) => news.visible === true)
 
   return (
-    <div className="bg-white min-h-screen px-6 py-10">
+    <div className=" min-h-screen px-6 py-10">
       <h1 className="text-2xl font-bold text-black mb-6">Últimas noticias</h1>
 
       <section className="mansory mx-auto">
         {getNewsVisible.map((news) => (
-          <Link to={`/noticia/${news._id}`} key={news._id}>
+          <Link to={`/noticia/${news.id}`} key={news.id}>
             <article className="w-[250px] h-auto  mb-[10px]  rounded-2xl overflow-hidden shadow-md border-[2px] border-blue-200 transition-transform hover:scale-101 duration-200 ">
               <img
                 src={news.image}
