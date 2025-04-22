@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react"
 import { UserContext } from "./context"
+import { urlForFetchs } from "../utils/urlForFetchs"
 
 export const UserProvider = ({ children }) => {
   const [user, setUser] = useState({})
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/user/me", {
+    fetch(`${urlForFetchs()}/api/user/me`, {
       credentials: "include",
       method: "GET",
       headers: {
@@ -16,7 +17,7 @@ export const UserProvider = ({ children }) => {
         if (res.status === 200) return res.json()
 
         if (res.status === 401)
-          fetch("http://localhost:3000/api/auth/refresh", {
+          fetch(`${urlForFetchs()}/api/auth/refresh`, {
             method: "POST",
             credentials: "include",
           })

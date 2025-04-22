@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { urlForFetchs } from "../utils/urlForFetchs"
 
 export default function useIsAdmin() {
   const [isAdmin, setIsAdmin] = useState(false)
@@ -9,7 +10,7 @@ export default function useIsAdmin() {
 
     const checkAdmin = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/user/isAdmin", {
+        const res = await fetch(`${urlForFetchs()}/api/user/isAdmin`, {
           method: "GET",
           credentials: "include",
           headers: {

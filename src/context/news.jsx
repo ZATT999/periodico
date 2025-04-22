@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react"
 import { NewsContext } from "./context"
+import { urlForFetchs } from "../utils/urlForFetchs"
 
 export const NewsProvider = ({ children }) => {
   const [news, setNews] = useState([])
   console.log(news)
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/news")
+    fetch(`${urlForFetchs()}/api/news`)
       .then((res) => res.json())
       .then((data) => setNews(data.news))
       .catch((err) => console.log(err))

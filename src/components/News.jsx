@@ -11,7 +11,7 @@ export default function News({ news = {} }) {
   }
 
   return (
-    <article className="bg-[#fef9f4] min-h-screen w-[800px] px-6 sm:px-16 py-16 font-sans text-[#1e1b18] transition-all duration-300">
+    <article className="bg-[#fef9f4] min-h-screen max-w-[800px] px-6 sm:px-16 py-16 font-sans text-[#1e1b18] transition-all duration-300">
       <button
         onClick={handleClick}
         className="text-blue-300 hover:text-blue-200 text-base font-semibold mb-10 transition-colors duration-200 cursor-pointer"

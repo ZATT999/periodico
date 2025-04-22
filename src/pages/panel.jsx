@@ -9,6 +9,7 @@ import {
   OpenLockIcon,
   OpenLockOffIcon,
 } from "../components/icons"
+import { urlForFetchs } from "../utils/urlForFetchs"
 
 export default function Panel() {
   const { user } = useContext(UserContext)
@@ -62,7 +63,7 @@ export default function Panel() {
       { title, description, category, image, content, author, date, id },
     ])
 
-    fetch("http://localhost:3000/api/news", {
+    fetch(`${urlForFetchs()}/api/news`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -88,7 +89,7 @@ export default function Panel() {
   const handleDelete = (id) => {
     setNews((news) => news.filter((newsItem) => newsItem.id !== id))
 
-    fetch(`http://localhost:3000/api/news/${id}`, {
+    fetch(`${urlForFetchs()}/api/news/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -108,7 +109,7 @@ export default function Panel() {
       )
     )
 
-    fetch(`http://localhost:3000/api/news/${id}/visible`, {
+    fetch(`${urlForFetchs()}/api/news/${id}/visible`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -133,7 +134,7 @@ export default function Panel() {
       )
     )
 
-    fetch(`http://localhost:3000/api/news/${idNewsEdit}`, {
+    fetch(`${urlForFetchs()}/api/news/${idNewsEdit}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

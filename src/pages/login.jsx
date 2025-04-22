@@ -1,6 +1,7 @@
 import { useContext, useState } from "react"
 import { useNavigate } from "react-router"
 import { UserContext } from "../context/context"
+import { urlForFetchs } from "../utils/urlForFetchs"
 
 export default function Login() {
   const [error, setError] = useState("")
@@ -10,7 +11,7 @@ export default function Login() {
   const onSubmit = (e) => {
     e.preventDefault()
 
-    fetch("http://localhost:3000/api/auth/login", {
+    fetch(`${urlForFetchs()}/api/auth/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -23,7 +24,7 @@ export default function Login() {
     })
       .then((res) => {
         if (res.status === 200) {
-          fetch("http://localhost:3000/api/user/me", {
+          fetch(`${urlForFetchs()}/api/user/me`, {
             method: "GET",
             credentials: "include",
             headers: {
