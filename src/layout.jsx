@@ -5,7 +5,7 @@ export default function Layout() {
   return (
     <>
       <Header />
-      <main className="p-10 py-20 text-gray-800">
+      <main className="py-20 text-gray-800">
         <Outlet />
       </main>
     </>

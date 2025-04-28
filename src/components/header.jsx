@@ -68,7 +68,7 @@ export default function Header() {
                 <li>
                   <button
                     onClick={handleLogout}
-                    className="w-full py-2 px-4 bg-red-500 text-white rounded hover:bg-red-400"
+                    className="w-full py-2 px-4 bg-red-500 text-white rounded hover:bg-red-400 cursor-pointer"
                   >
                     Cerrar Sesión
                   </button>

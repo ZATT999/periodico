@@ -11,7 +11,7 @@ export default function News({ news = {} }) {
   }
 
   return (
-    <article className="bg-[#fef9f4] min-h-screen max-w-[800px] px-6 sm:px-16 py-16 font-sans text-[#1e1b18] transition-all duration-300">
+    <article className="bg-[#fef9f4] min-h-screen max-w-[800px] px-6 sm:px-16 py-10 font-sans text-[#1e1b18] transition-all duration-300">
       <button
         onClick={handleClick}
         className="text-blue-300 hover:text-blue-200 text-base font-semibold mb-10 transition-colors duration-200 cursor-pointer"
@@ -21,14 +21,16 @@ export default function News({ news = {} }) {
       <h1 className="text-4xl sm:text-5xl font-black text-[#1e1b18] mb-4 leading-snug drop-shadow-sm text-center">
         DIARIO CTE: <span className="text-blue-500">Visión empresarial</span>
       </h1>
-      <header className=" space-y-1">
-        <div className="flex items-center justify-between px-4 py-5 ">
-          <p className="text-xl text-[#78716c] italic">
+      <header className="space-y-1">
+        <div className="flex items-center justify-between px-4 py-5 max-sm:flex-col max-sm:gap-4">
+          <p className="text-xl text-[#78716c] italic flex items-center">
             El periódico favorito del colegio
           </p>
-          <p className="text-sm">
-            <span className="font-bold text-[#1e1b18]">Categoría:</span>{" "}
-            <span className="bg-blue-400  px-2 py-1 rounded-full">
+          <p className="text-sm flex ">
+            <span className="font-bold text-[#1e1b18] flex items-center">
+              Categoría:
+            </span>{" "}
+            <span className="bg-blue-400 px-2 h-[25px] rounded-full flex items-center">
               {category}
             </span>
           </p>

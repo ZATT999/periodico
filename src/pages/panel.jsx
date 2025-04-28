@@ -150,13 +150,13 @@ export default function Panel() {
       <div className="flex justify-center mb-8 gap-4">
         <button
           onClick={() => openDialog(createNewsRef)}
-          className="bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700"
+          className="bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 cursor-pointer"
         >
           Crear Noticia
         </button>
         <button
           onClick={() => openDialog(userCreatedRef)}
-          className="bg-green-600 text-white py-2 px-6 rounded-lg hover:bg-green-700"
+          className="bg-green-600 text-white py-2 px-6 rounded-lg hover:bg-green-700 cursor-pointer"
         >
           Crear Usuario
         </button>
@@ -186,13 +186,13 @@ export default function Panel() {
             <button
               type="button"
               onClick={() => closeDialog(userCreatedRef)}
-              className="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600"
+              className="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 cursor-pointer"
             >
               Cancelar
             </button>
             <button
               type="submit"
-              className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600"
+              className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 cursor-pointer"
             >
               Crear
             </button>
@@ -247,13 +247,13 @@ export default function Panel() {
             <button
               type="button"
               onClick={() => closeDialog(createNewsRef)}
-              className="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600"
+              className="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 cursor-pointer"
             >
               Cancelar
             </button>
             <button
               type="submit"
-              className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
+              className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 cursor-pointer"
             >
               Crear
             </button>
@@ -303,7 +303,7 @@ export default function Panel() {
             name="content"
             value={editFormData.content}
             onChange={handleInputChange}
-            className="w-full p-2 border border-gray-300 rounded-lg"
+            className="w-full p-2 border border-gray-300 rounded-lg resize-none"
             rows="5"
             required
           />
@@ -311,13 +311,13 @@ export default function Panel() {
             <button
               type="button"
               onClick={() => closeDialog(editNewsRef)}
-              className="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600"
+              className="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 cursor-pointer"
             >
               Cancelar
             </button>
             <button
               type="submit"
-              className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
+              className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 cursor-pointer"
             >
               Guardar Cambios
             </button>
@@ -348,24 +348,24 @@ export default function Panel() {
                 />
                 <div className="flex gap-2">
                   <button
-                    className="text-red-500"
+                    className="text-red-500 cursor-pointer"
                     onClick={() => handleDelete(newsItem.id)}
                   >
                     <DeleteIcon size={20} />
                   </button>
                   <button
-                    className="text-blue-500"
+                    className="text-blue-500 cursor-pointer"
                     onClick={() => prepareEdit(newsItem.id)}
                   >
                     <EditIcon size={20} />
                   </button>
                   <button onClick={() => handleVisible(newsItem.id)}>
                     {newsItem.visible ? (
-                      <span className="text-green-500">
+                      <span className="text-green-500 cursor-pointer">
                         <OpenLockIcon size={20} />
                       </span>
                     ) : (
-                      <span className="text-red-500">
+                      <span className="text-red-500 cursor-pointer">
                         <OpenLockOffIcon size={20} />
                       </span>
                     )}
