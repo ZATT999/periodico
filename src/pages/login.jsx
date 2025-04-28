@@ -1,56 +1,32 @@
-import { useContext, useState } from "react"
-import { useNavigate } from "react-router"
+import { LoginUser } from "../services/UserServices"
 import { UserContext } from "../context/context"
-import { urlForFetchs } from "../utils/urlForFetchs"
+import { useContext, useState } from "react"
+import { Navigate, useNavigate } from "react-router"
+import { toast } from "sonner"
 
 export default function Login() {
-  const [error, setError] = useState("")
   const navigate = useNavigate()
   const { user, setUser } = useContext(UserContext)
 
-  const onSubmit = (e) => {
+  if (user) return <Navigate to="/" />
+
+  const onSubmit = async (e) => {
     e.preventDefault()
+    const formData = new FormData(e.target)
+    const id = formData.get("id")
+    const password = formData.get("password")
 
-    fetch(`${urlForFetchs()}/api/auth/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      credentials: "include",
-      body: JSON.stringify({
-        id: e.target.elements[0].value,
-        password: e.target.elements[1].value,
-      }),
-    })
-      .then((res) => {
-        if (res.status === 200) {
-          fetch(`${urlForFetchs()}/api/user/me`, {
-            method: "GET",
-            credentials: "include",
-            headers: {
-              "Content-Type": "application/json",
-            },
-          })
-            .then((res) => res.json())
-            .then((data) => setUser(data))
-            .catch((err) => console.log(err))
+    const res = await LoginUser({ id, password })
 
-          return res.json()
-        } else {
-          throw new Error("Error al ingresar")
-        }
-      })
-      .then((data) => {
-        console.log(data)
-      })
-      .catch((err) => setError(err.message))
-      .finally(() => {
-        navigate("/")
-      })
-  }
+    const data = await res.json()
+    if (res.status === 401)
+      return toast.error("Usuario o contraseña incorrectos")
 
-  if (user) {
+    if (!res.ok) return toast.error("Error en el servidor")
+
+    setUser(data.user)
     navigate("/")
+    navigate(0)
   }
 
   return (
@@ -83,7 +59,6 @@ export default function Login() {
           >
             Ingresar
           </button>
-          {error && <p className="text-red-500 text-center">{error}</p>}
         </form>
       </div>
     </main>

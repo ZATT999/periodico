@@ -3,31 +3,52 @@ import { UserContext } from "./context"
 import { urlForFetchs } from "../utils/urlForFetchs"
 
 export const UserProvider = ({ children }) => {
-  const [user, setUser] = useState({})
+  const [user, setUser] = useState()
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    fetch(`${urlForFetchs()}/api/user/me`, {
-      credentials: "include",
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((res) => {
-        if (res.status === 200) return res.json()
+    const fetchUser = async () => {
+      setLoading(true)
+      try {
+        const response = await fetch(`${urlForFetchs()}/api/user/me`, {
+          method: "GET",
+          credentials: "include",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
 
-        if (res.status === 401)
-          fetch(`${urlForFetchs()}/api/auth/refresh`, {
-            method: "POST",
+        if (response.status === 401) {
+          const response = await fetch(`${urlForFetchs()}/api/auth/refresh`, {
+            method: "GET",
             credentials: "include",
+            headers: {
+              "Content-Type": "application/json",
+            },
           })
-      })
-      .then((data) => setUser(data))
-      .catch((err) => console.log(err))
+
+          if (response.ok) {
+            fetchUser()
+            return
+          }
+        }
+
+        const data = await response.json()
+
+        if (response.ok) {
+          setLoading(false)
+          setUser(data)
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    fetchUser()
   }, [])
 
   return (
-    <UserContext.Provider value={{ user, setUser }}>
+    <UserContext.Provider value={{ user, setUser, loading }}>
       {children}
     </UserContext.Provider>
   )

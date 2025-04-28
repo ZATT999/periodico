@@ -4,17 +4,33 @@ import { urlForFetchs } from "../utils/urlForFetchs"
 
 export const NewsProvider = ({ children }) => {
   const [news, setNews] = useState([])
-  console.log(news)
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    fetch(`${urlForFetchs()}/api/news`)
-      .then((res) => res.json())
-      .then((data) => setNews(data.news))
-      .catch((err) => console.log(err))
+    const fetchNews = async () => {
+      setLoading(true)
+      try {
+        const response = await fetch(`${urlForFetchs()}/api/news`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+        const data = await response.json()
+
+        if (response.ok) {
+          setNews(data.news)
+        }
+        setLoading(false)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    fetchNews()
   }, [])
 
   return (
-    <NewsContext.Provider value={{ news, setNews }}>
+    <NewsContext.Provider value={{ news, setNews, loading }}>
       {children}
     </NewsContext.Provider>
   )
