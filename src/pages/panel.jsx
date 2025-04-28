@@ -239,7 +239,7 @@ export default function Panel() {
           <textarea
             name="content"
             placeholder="Contenido"
-            className="w-full p-2 border border-gray-300 rounded-lg"
+            className="w-full p-2 border border-gray-300 rounded-lg resize-none"
             rows="5"
             required
           />
@@ -325,7 +325,7 @@ export default function Panel() {
         </form>
       </dialog>
 
-      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-[">
         {news.map((newsItem) => (
           <article
             key={newsItem.id}

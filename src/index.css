@@ -16,8 +16,26 @@ body,
   position: relative;
   width: 100%;
   height: auto;
-  overflow: auto;
   background-color: #fef9f4;
+}
+
+body {
+  overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+  width: 8px; /* ancho del scrollbar */
+}
+
+/* La "barra" que se mueve */
+body::-webkit-scrollbar-thumb {
+  background-color: #97c8ff; /* color gris suave */
+  border-radius: 4px; /* bordes redondeados */
+}
+
+/* Opcional: cambiar el fondo de la pista */
+body::-webkit-scrollbar-track {
+  background: transparent; /* fondo transparente */
 }
 
 .mansory {
