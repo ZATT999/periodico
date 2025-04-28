@@ -9,7 +9,7 @@ export default function MapNews() {
   const getNewsVisible = news.filter((news) => news.visible === true)
 
   return (
-    <div className=" min-h-screen px-6 py-10">
+    <>
       <h1 className="text-2xl font-bold text-black mb-6">Últimas noticias</h1>
 
       <section className="mansory mx-auto">
@@ -42,6 +42,6 @@ export default function MapNews() {
           </Link>
         ))}
       </section>
-    </div>
+    </>
   )
 }

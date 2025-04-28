@@ -24,23 +24,21 @@ body {
 }
 
 body::-webkit-scrollbar {
-  width: 8px; /* ancho del scrollbar */
+  width: 8px;
 }
 
-/* La "barra" que se mueve */
 body::-webkit-scrollbar-thumb {
-  background-color: #97c8ff; /* color gris suave */
-  border-radius: 4px; /* bordes redondeados */
+  background-color: #97c8ff;
+  border-radius: 4px;
 }
 
-/* Opcional: cambiar el fondo de la pista */
 body::-webkit-scrollbar-track {
-  background: transparent; /* fondo transparente */
+  background: transparent;
 }
 
 .mansory {
-  columns: 3 250px;
-  column-gap: 10px;
+  columns: 3 200px;
+  column-gap: 15px;
   justify-items: center;
   width: auto;
 }

@@ -325,26 +325,26 @@ export default function Panel() {
         </form>
       </dialog>
 
-      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-[">
+      <section className="mansory mx-auto mt-30 px-4">
         {news.map((newsItem) => (
           <article
             key={newsItem.id}
-            className="rounded-lg overflow-hidden shadow-md border-2 border-blue-200 hover:scale-105 transition-transform duration-300"
+            className="w-[250px] h-auto rounded-lg overflow-hidden shadow-md border-2 border-blue-200 hover:scale-105 transition-transform duration-300 mb-5"
           >
             <Link to={`/noticia/${newsItem.id}`}>
               <img
                 src={newsItem.image}
                 alt={newsItem.title}
-                className="w-full h-48 object-cover"
+                className="w-full h-full object-cover "
               />
             </Link>
-            <div className="p-4 bg-blue-50">
+            <div className="w-full flex flex-col gap-4 px-4 py-5 bg-blue-50 ">
               <h3 className="text-lg font-semibold mb-2">{newsItem.title}</h3>
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between mt-3">
                 <img
                   src={newsItem.author.avatar}
                   alt={newsItem.author.name}
-                  className="w-8 h-8 rounded-full border-2 border-blue-400"
+                  className="w-7 h-7 rounded-full border-1 border-blue-500"
                 />
                 <div className="flex gap-2">
                   <button
