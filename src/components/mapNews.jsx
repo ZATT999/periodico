@@ -12,7 +12,7 @@ export default function MapNews() {
     <>
       <h1 className="text-2xl font-bold text-black mb-6">Últimas noticias</h1>
 
-      <section className="mansory mx-auto">
+      <section className="mansory px-5">
         {getNewsVisible.map((news) => (
           <Link to={`/noticia/${news.id}`} key={news.id}>
             <article className="w-[250px] h-auto  mb-[10px]  rounded-2xl overflow-hidden shadow-md border-[2px] border-blue-200 transition-transform hover:scale-101 duration-200 ">
