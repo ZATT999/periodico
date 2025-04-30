@@ -1,5 +1,4 @@
 import MapNews from "../components/mapNews"
-import Header from "../components/header"
 
 export default function NewsPage() {
   return (
