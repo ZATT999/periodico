@@ -10,7 +10,7 @@ export default function MapNews() {
 
   return (
     <>
-      <h1 className="text-2xl font-bold text-black mb-6">Últimas noticias</h1>
+      <h1 className="text-2xl font-bold text-black mb-6">Noticias</h1>
 
       <section className="mansory px-5">
         {getNewsVisible.map((news) => (
@@ -19,7 +19,7 @@ export default function MapNews() {
               <img
                 src={news.image}
                 alt="Evento"
-                className="w-full h-full object-cover "
+                className="w-full h-full max-h-[300px] object-contain"
               />
               <div className="w-full flex flex-col gap-4 px-4 py-5 bg-blue-50 ">
                 <h3 className="text-[15px] font-semibold text-black">

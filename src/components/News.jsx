@@ -11,54 +11,61 @@ export default function News({ news = {} }) {
   }
 
   return (
-    <article className="bg-[#fef9f4] min-h-screen max-w-[800px] px-6 sm:px-16 py-10 font-sans text-[#1e1b18] transition-all duration-300">
+    <article className=" min-h-screen max-w-[1100px] mx-auto px-3  py-10 font-serif text-[#1e1b18]">
+      {/* Botón de volver */}
       <button
         onClick={handleClick}
-        className="text-blue-300 hover:text-blue-200 text-base font-semibold mb-10 transition-colors duration-200 cursor-pointer"
+        className="text-blue-500 hover:text-blue-700 text-sm font-medium mb-8 transition cursor-pointer"
       >
         ← Volver al inicio
       </button>
-      <h1 className="text-4xl sm:text-5xl font-black text-[#1e1b18] mb-4 leading-snug drop-shadow-sm text-center">
-        DIARIO CTE: <span className="text-blue-500">Visión empresarial</span>
-      </h1>
-      <header className="space-y-1">
-        <div className="flex items-center justify-between px-4 py-5 max-sm:flex-col max-sm:gap-4">
-          <p className="text-xl text-[#78716c] italic flex items-center">
-            El periódico favorito del colegio
-          </p>
-          <p className="text-sm flex ">
-            <span className="font-bold text-[#1e1b18] flex items-center">
-              Categoría:
-            </span>{" "}
-            <span className="bg-blue-400 px-2 h-[25px] rounded-full flex items-center">
-              {category}
-            </span>
-          </p>
-        </div>
-        <div className="flex justify-between px-4 py-5 bg-blue-50 ">
-          <div className="flex items-center gap-4 ">
-            {author?.avatar ? (
-              <img
-                src={author.avatar}
-                alt={`Autor ${author.name}`}
-                className="w-8 h-8 rounded-full border-2 border-blue-800 shadow-sm"
-              />
-            ) : (
-              <div className="w-12 h-12 bg-[#e2e8f0] rounded-full flex items-center justify-center text-[#64748b] text-lg font-bold">
-                Img
-              </div>
-            )}
-            <p className="text-lg font-semibold text-[#1e1b18]">
-              {author?.name}
-            </p>
-          </div>
-          <span className="text-xl flex gap-1 items-center">
-            <DateIcon size={20} /> {date}
-          </span>
-        </div>
+
+      {/* Encabezado principal */}
+      <header className="border-y border-black py-6 text-center">
+        <h1 className="text-4xl sm:text-5xl font-extrabold tracking-wider uppercase">
+          CTE: Visión Empresarial
+        </h1>
+        <p className="italic text-base text-[#4b5563] mt-2">
+          Infórmate bien, decide mejor
+        </p>
       </header>
-      <hr className="border-t border-[#e4e4e7] mb-10" />
-      <section className="prose lg:prose-xl max-w-4xl prose-h1:text-[#f97316] prose-h2:text-[#f97316] prose-p:text-[#1e1b18] prose-img:rounded-xl prose-a:text-[#ea580c]">
+
+      <section className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-10 border-b p-4 bg-[#f9fafb]">
+        <div className="flex items-center gap-4">
+          {author?.avatar ? (
+            <img
+              src={author.avatar}
+              alt={`Autor ${author.name}`}
+              className="w-10 h-10 rounded-full border"
+            />
+          ) : (
+            <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold">
+              ?
+            </div>
+          )}
+          <p className="text-lg font-medium">{author?.name}</p>
+        </div>
+        <div className="flex items-center gap-2 mt-4 sm:mt-0 text-gray-600">
+          <DateIcon size={18} />
+          <span>{date}</span>
+        </div>
+        <div className="mt-4 sm:mt-0 text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded-full">
+          {category}
+        </div>
+      </section>
+
+      {/* Subtítulo tipo "Contenido del periódico" */}
+      <div className="text-center mb-12">
+        <h2 className="uppercase text-lg sm:text-xl tracking-widest font-semibold border-y border-[#d1d5db] inline-block px-4 py-2 text-[#1f2937]">
+          Un vistazo a nuestro contenido
+        </h2>
+      </div>
+
+      {/* Línea divisoria */}
+      <hr className="border-gray-300 my-6" />
+
+      {/* Contenido principal */}
+      <section className="prose lg:prose-xl prose-h1:text-orange-600 prose-h2:text-orange-600 prose-p:text-[#111827] prose-img:rounded-xl prose-a:text-blue-700">
         {content ? HTMLReactParser(content) : ""}
       </section>
     </article>
