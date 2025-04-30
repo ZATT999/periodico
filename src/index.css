@@ -37,8 +37,8 @@ body::-webkit-scrollbar-track {
 }
 
 .mansory {
-  columns: 3 200px;
-  column-gap: 15px;
+  columns: 3 240px;
+  column-gap: 5px;
   justify-items: center;
-  width: auto;
+  width: 100%;
 }

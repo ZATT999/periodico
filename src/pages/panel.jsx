@@ -325,11 +325,11 @@ export default function Panel() {
         </form>
       </dialog>
 
-      <section className="mansory mx-auto mt-30 px-4">
+      <section className="mansory  px-5">
         {news.map((newsItem) => (
           <article
             key={newsItem.id}
-            className="w-[250px] h-auto rounded-lg overflow-hidden shadow-md border-2 border-blue-200 hover:scale-105 transition-transform duration-300 mb-5"
+            className="w-[240px] h-auto rounded-lg overflow-hidden shadow-md border-2 border-blue-200 hover:scale-105 transition-transform duration-300 mb-5"
           >
             <Link to={`/noticia/${newsItem.id}`}>
               <img
