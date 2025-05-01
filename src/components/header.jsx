@@ -2,13 +2,11 @@ import { useContext, useState } from "react"
 import { UserContext } from "../context/context"
 import { Link, useNavigate } from "react-router"
 import { LogoutUser } from "../services/UserServices"
-import useIsAdmin from "../hooks/useIsAdmin"
 
 export default function Header() {
   const { user, setUser } = useContext(UserContext)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const navigate = useNavigate()
-  const { isAdmin } = useIsAdmin()
 
   const handleLogout = () => {
     navigate("/")
@@ -44,17 +42,10 @@ export default function Header() {
               className="w-8 h-8 rounded-full border-1 border-black cursor-pointer"
             />
           </div>
-          {/* Modal de opciones */}
           {isModalOpen && (
             <div className="absolute top-10 right-[-12px] bg-white p-4 rounded-b-lg  shadow-lg w-48 text-center z-50">
               <ul className="space-y-4">
-                <li>
-                  <button className="w-full text-md cursor-pointer hover:text-blue-400">
-                    Cambiar Contraseña
-                  </button>
-                </li>
-                <li></li>
-                {isAdmin && (
+                {user.isAdmin && (
                   <li>
                     <Link
                       to="/admin/panel"
