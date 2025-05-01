@@ -10,7 +10,9 @@ export default function MapNews() {
 
   return (
     <>
-      <h1 className="text-2xl font-bold text-black mb-6">Noticias</h1>
+      <h1 className="text-2xl border-y py-3 pl-5 font-semibold font-serif mb-10">
+        Noticias
+      </h1>
 
       <section className="mansory px-5">
         {getNewsVisible.map((news) => (
