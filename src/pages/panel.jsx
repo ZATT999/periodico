@@ -143,11 +143,20 @@ export default function Panel() {
 
   return (
     <>
-      <h1 className="text-4xl font-bold text-center mb-10 text-blue-600">
-        Panel de Noticias
-      </h1>
+      <header className="py-6 mb-2 text-center">
+        <h1 className="text-5xl md:text-6xl font-serif font-bold uppercase tracking-wider leading-tight">
+          CTE: Visión Empresarial
+        </h1>
+        <p className="text-sm mt-2 italic">
+          Información, desde mejor perspectiva
+        </p>
+      </header>
 
-      <div className="flex justify-center mb-8 gap-4">
+      <h3 className="text-2xl border-y py-3 pl-5 md:text-3xl font-semibold font-serif mb-20">
+        Panel de Administración
+      </h3>
+
+      <div className="flex justify-center mb-20 gap-4">
         <button
           onClick={() => openDialog(createNewsRef)}
           className="bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 cursor-pointer"
