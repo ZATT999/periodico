@@ -9,14 +9,14 @@ export default function NewsPage() {
 
   return (
     <>
-      <div className="py-6 mb-2 text-center">
+      <header className="py-6 mb-2 text-center">
         <h1 className="text-5xl md:text-6xl font-serif font-bold uppercase tracking-wider leading-tight">
           CTE: Visión Empresarial
         </h1>
         <p className="text-sm mt-2 italic">
           Información, desde mejor perspectiva
         </p>
-      </div>
+      </header>
 
       <h3 className="text-2xl border-y py-3 pl-5 md:text-3xl font-semibold font-serif mb-4">
         Última Noticia
