@@ -2,10 +2,11 @@ import { useContext } from "react"
 import MapNews from "../components/mapNews"
 import { NewsContext } from "../context/context"
 import { Link } from "react-router"
+import { changeTitle } from "../utils/changeTitle"
 
 export default function NewsPage() {
   const { news } = useContext(NewsContext)
-
+  changeTitle("Noticias")
   const mainNews = news[0]
 
   return (
