@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router"
 import HTMLReactParser from "html-react-parser/lib/index"
-import { DateIcon } from "./icons"
+import { ArrowNarrowLeft, DateIcon } from "./icons"
 
 export default function News({ news = {} }) {
   const { category, date, author, content } = news
@@ -11,15 +11,15 @@ export default function News({ news = {} }) {
   }
 
   return (
-    <article className=" min-h-screen max-w-[1100px] mx-auto px-3  py-10 font-serif text-[#1e1b18]">
+    <article className=" min-h-screen max-w-[1100px] mx-auto px-3  pb-10 font-serif text-[#1e1b18]">
       <button
         onClick={handleClick}
-        className="text-blue-500 hover:text-blue-700 text-sm font-medium mb-8 transition cursor-pointer"
+        className="text-blue-500 hover:text-blue-700 text-xl font-medium mb-8 transition cursor-pointer flex items-center gap-2"
       >
-        ← Volver al inicio
+        <ArrowNarrowLeft size={24} /> Volver al inicio
       </button>
 
-      <header className="border-y border-black py-6 text-center">
+      <header className="border-b border-black pb-6 text-center">
         <h1 className="text-4xl sm:text-5xl font-extrabold tracking-wider uppercase">
           CTE: Visión Empresarial
         </h1>
@@ -28,27 +28,26 @@ export default function News({ news = {} }) {
         </p>
       </header>
 
-      <section className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-10 border-b p-4 bg-[#f9fafb]">
-        <div className="flex items-center gap-4">
-          {author?.avatar ? (
+      <section className="border-y  p-4 mb-10 bg-[#f9fafb] flex flex-col  items-center">
+        <div className="flex items-center gap-2 mb-5">
+          {author?.avatar && (
             <img
               src={author.avatar}
               alt={`Autor ${author.name}`}
-              className="w-10 h-10 rounded-full border"
+              className="w-7 h-7 rounded-full border"
             />
-          ) : (
-            <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold">
-              ?
-            </div>
           )}
-          <p className="text-lg font-medium">{author?.name}</p>
+          <p className="text-base font-medium">{author?.name}</p>
         </div>
-        <div className="flex items-center gap-2 mt-4 sm:mt-0 text-gray-600">
-          <DateIcon size={18} />
-          <span>{date}</span>
-        </div>
-        <div className="mt-4 sm:mt-0 text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded-full">
-          {category}
+        <div className="flex w-full justify-between gap-2">
+          <div className="flex items-center gap-2 text-gray-600">
+            <DateIcon size={18} />
+            <span className="text-sm">{date}</span>
+          </div>
+
+          <div className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded-full w-fit">
+            {category}
+          </div>
         </div>
       </section>
 

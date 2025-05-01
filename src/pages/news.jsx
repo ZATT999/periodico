@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import MapNews from "../components/mapNews"
 import { NewsContext } from "../context/context"
+import { Link } from "react-router"
 
 export default function NewsPage() {
   const { news } = useContext(NewsContext)
@@ -32,12 +33,13 @@ export default function NewsPage() {
             {mainNews?.description}
           </p>
         </div>
-
-        <img
-          src={mainNews?.image}
-          alt={mainNews?.title}
-          className="w-full h-[400px] max-w-[400px] m-auto object-cover rounded shadow-md"
-        />
+        <Link to={`/noticia/${mainNews?.id}`}>
+          <img
+            src={mainNews?.image}
+            alt={mainNews?.title}
+            className="w-full h-[400px] max-w-[400px] m-auto object-cover rounded shadow-md"
+          />
+        </Link>
       </article>
 
       <MapNews />
