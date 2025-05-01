@@ -12,7 +12,6 @@ export default function News({ news = {} }) {
 
   return (
     <article className=" min-h-screen max-w-[1100px] mx-auto px-3  py-10 font-serif text-[#1e1b18]">
-      {/* Botón de volver */}
       <button
         onClick={handleClick}
         className="text-blue-500 hover:text-blue-700 text-sm font-medium mb-8 transition cursor-pointer"
@@ -20,7 +19,6 @@ export default function News({ news = {} }) {
         ← Volver al inicio
       </button>
 
-      {/* Encabezado principal */}
       <header className="border-y border-black py-6 text-center">
         <h1 className="text-4xl sm:text-5xl font-extrabold tracking-wider uppercase">
           CTE: Visión Empresarial
@@ -54,17 +52,14 @@ export default function News({ news = {} }) {
         </div>
       </section>
 
-      {/* Subtítulo tipo "Contenido del periódico" */}
       <div className="text-center mb-12">
         <h2 className="uppercase text-lg sm:text-xl tracking-widest font-semibold border-y border-[#d1d5db] inline-block px-4 py-2 text-[#1f2937]">
           Un vistazo a nuestro contenido
         </h2>
       </div>
 
-      {/* Línea divisoria */}
       <hr className="border-gray-300 my-6" />
 
-      {/* Contenido principal */}
       <section className="prose lg:prose-xl prose-h1:text-orange-600 prose-h2:text-orange-600 prose-p:text-[#111827] prose-img:rounded-xl prose-a:text-blue-700">
         {content ? HTMLReactParser(content) : ""}
       </section>
