@@ -26,7 +26,6 @@ export default function Login() {
 
     setUser(data.user)
     navigate("/")
-    navigate(0)
   }
 
   return (
