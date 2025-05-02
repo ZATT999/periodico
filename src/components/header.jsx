@@ -2,6 +2,7 @@ import { useContext, useState } from "react"
 import { UserContext } from "../context/context"
 import { Link, useNavigate } from "react-router"
 import { LogoutUser } from "../services/UserServices"
+import { ArrowDownIcon, LogoutIcon, UserIcon } from "./ui/icons"
 
 export default function Header() {
   const { user, setUser } = useContext(UserContext)
@@ -19,13 +20,15 @@ export default function Header() {
   }
 
   return (
-    <header className="z-40 fixed top-0 flex justify-between px-3 pt-6 border-b-1 border-blue-500 max-w-[800px] w-full m-auto backdrop-blur-md">
+    <header className="z-40 fixed top-0 flex justify-between items-center px-4 h-15 sm:h-20  w-full m-auto bg-white shadow-lg ">
       <Link to="/">
-        <h1 className="text-4xl font-bold font-[roboto]">CTE</h1>
+        <h1 className="text-3xl font-bold font-[roboto] text-gray-800 sm:text-4xl ">
+          CTE Noticias
+        </h1>
       </Link>
       {!user ? (
         <Link to="/login">
-          <span className="text-2xl hover:text-blue-400 transition-all">
+          <span className="text-xl hover:bg-blue-400 transition-all bg-blue-500 text-white px-3 py-2 rounded-lg">
             Iniciar sesión
           </span>
         </Link>
@@ -35,23 +38,34 @@ export default function Header() {
             onClick={handleModalToggle}
             className="flex items-center gap-2 cursor-pointer"
           >
-            <span className="text-xl font-bold">{user.name}</span>
             <img
               src={user.avatar}
               alt={`${user.name}`}
               className="w-8 h-8 rounded-full border-1 border-black cursor-pointer"
             />
+            <ArrowDownIcon size={20} />
           </div>
           {isModalOpen && (
-            <div className="absolute top-10 right-[-12px] bg-white p-4 rounded-b-lg  shadow-lg w-48 text-center z-50">
-              <ul className="space-y-4">
+            <div className="absolute top-10 -right-1 bg-white border-1 border-gray-100 rounded-lg  shadow-md  w-45 text-center z-50">
+              <ul className=" flex flex-col ">
+                <li className="flex items-center justify-center gap-2 px-4 py-2 border-b-1 border-gray-300">
+                  <img
+                    src={user.avatar}
+                    alt={`${user.name}`}
+                    className="w-8 h-8 rounded-full border-1 border-black"
+                  />
+                  <span>{user.name}</span>
+                </li>
                 {user.isAdmin && (
-                  <li>
+                  <li className="flex items-center gap-2">
                     <Link
                       to="/admin/panel"
-                      className="w-full  hover:text-blue-400"
+                      className="w-full p-3 rounded hover:bg-gray-50 cursor-pointer flex items-center justify-center gap-2"
                       onClick={handleModalToggle}
                     >
+                      <span className="text-blue-500">
+                        <UserIcon />
+                      </span>
                       Ir al Panel
                     </Link>
                   </li>
@@ -59,9 +73,12 @@ export default function Header() {
                 <li>
                   <button
                     onClick={handleLogout}
-                    className="w-full py-2 px-4 bg-red-500 text-white rounded hover:bg-red-400 cursor-pointer"
+                    className="w-full p-3 rounded hover:bg-gray-50 cursor-pointer flex items-center justify-center gap-2"
                   >
-                    Cerrar Sesión
+                    <span className="text-red-500">
+                      <LogoutIcon />
+                    </span>
+                    <span>Cerrar Sesión</span>
                   </button>
                 </li>
               </ul>

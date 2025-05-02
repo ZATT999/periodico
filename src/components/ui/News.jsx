@@ -4,21 +4,9 @@ import { ArrowNarrowLeft, DateIcon } from "./icons"
 
 export default function News({ news = {} }) {
   const { category, date, author, content } = news
-  const navigate = useNavigate()
-
-  const handleClick = () => {
-    navigate(-1)
-  }
 
   return (
-    <article className=" min-h-screen max-w-[1100px] mx-auto px-3  pb-10 font-serif text-[#1e1b18]">
-      <button
-        onClick={handleClick}
-        className="text-blue-500 hover:text-blue-700 text-xl font-medium mb-8 transition cursor-pointer flex items-center gap-2"
-      >
-        <ArrowNarrowLeft size={24} /> Volver al inicio
-      </button>
-
+    <article className=" min-h-screen max-w-[1100px] mx-auto px-3   py-15 font-serif text-[#1e1b18]">
       <header className="border-b border-black pb-6 text-center">
         <h1 className="text-4xl sm:text-5xl font-extrabold tracking-wider uppercase">
           CTE: Visión Empresarial

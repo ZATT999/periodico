@@ -1,14 +1,13 @@
 import { NewsContext, UserContext } from "../context/context"
 import { useContext, useState, useRef } from "react"
 import { getDate } from "../utils/getDate"
-import Headers from "../components/header"
 import { Link } from "react-router"
 import {
   DeleteIcon,
   EditIcon,
   OpenLockIcon,
   OpenLockOffIcon,
-} from "../components/icons"
+} from "../components/ui/icons"
 import {
   createNews,
   deleteNews,

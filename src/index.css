@@ -7,6 +7,10 @@
   text-decoration: none;
 }
 
+@theme {
+  --primary-color: #8aca2d;
+}
+
 body,
 #root {
   display: flex;

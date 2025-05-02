@@ -1,5 +1,5 @@
 import { useParams } from "react-router"
-import News from "../components/News"
+import News from "../components/ui/News"
 import { NewsContext } from "../context/context"
 import { useContext } from "react"
 import { changeTitle } from "../utils/changeTitle"
