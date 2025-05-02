@@ -12,8 +12,8 @@ export default function NewsPage() {
   return (
     <>
       <header className="py-6 mb-2 text-center">
-        <h1 className="text-5xl md:text-6xl font-serif font-bold uppercase tracking-wider leading-tight">
-          CTE: Visión Empresarial
+        <h1 className="text-5xl md:text-6xl mb-2 font-serif font-bold uppercase tracking-wider leading-tight">
+          CTE: Visión empresarial
         </h1>
         <p className="text-sm mt-2 italic">
           Información, desde mejor perspectiva

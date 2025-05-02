@@ -17,7 +17,7 @@ export default function MapNews() {
       <section className="mansory px-2 md:px-5 ">
         {getNewsVisible.map((news) => (
           <Link to={`/noticia/${news.id}`} key={news.id}>
-            <article className="group w-[240px] h-auto mb-[10px] rounded-2xl overflow-hidden shadow-md border-[2px] border-blue-200 transition-transform hover:scale-101 duration-200 ">
+            <article className="group w-auto h-auto mb-[10px] rounded-2xl overflow-hidden shadow-md border-[2px] border-blue-200 transition-transform hover:scale-101 duration-200 ">
               <img
                 src={news.image}
                 alt="Evento"

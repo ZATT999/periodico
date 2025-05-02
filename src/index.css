@@ -41,17 +41,25 @@ body::-webkit-scrollbar-track {
 }
 
 .mansory {
-  columns: 3 240px;
+  columns: 3 auto;
   column-gap: 5px;
   justify-items: center;
-  width: 100%;
+  width: auto;
 }
 
-@media (width < 550px) {
+@media (width < 600px) {
   .mansory {
     columns: 2 auto;
     & article {
       width: auto;
+    }
+  }
+}
+@media (width < 350px) {
+  .mansory {
+    columns: 1 auto;
+    & article {
+      width: 100%;
     }
   }
 }

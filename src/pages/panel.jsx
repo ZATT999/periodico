@@ -333,17 +333,17 @@ export default function Panel() {
         </form>
       </dialog>
 
-      <section className="mansory  px-5">
+      <section className="mansory px-2 md:px-5 ">
         {news.map((newsItem) => (
           <article
             key={newsItem.id}
-            className="w-[240px] h-auto rounded-lg overflow-hidden shadow-md border-2 border-blue-200 hover:scale-105 transition-transform duration-300 mb-5"
+            className="group w-[240px] h-auto group rounded-lg overflow-hidden shadow-md border-2 border-blue-200 hover:scale-105 transition-transform duration-300 mb-5"
           >
             <Link to={`/noticia/${newsItem.id}`}>
               <img
                 src={newsItem.image}
                 alt={newsItem.title}
-                className="w-full h-full object-cover "
+                className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
               />
             </Link>
             <div className="w-full flex flex-col gap-4 px-4 py-5 bg-blue-50 ">
