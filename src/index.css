@@ -9,6 +9,7 @@
 
 @theme {
   --primary-color: #8aca2d;
+  --breakpoint-ml: 370px;
 }
 
 body,
@@ -42,7 +43,7 @@ body::-webkit-scrollbar-track {
 
 .mansory {
   columns: 3 auto;
-  column-gap: 5px;
+  column-gap: 10px;
   justify-items: center;
   width: auto;
 }

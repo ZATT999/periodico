@@ -9,7 +9,7 @@ export default function NewsId() {
   const { news } = useContext(NewsContext)
   window.scrollTo(0, 0)
   const newsFilter = news.find((newsItem) => newsItem.id === params.slug)
-  changeTitle(newsFilter.title)
+  changeTitle(newsFilter?.title)
 
   return (
     <>

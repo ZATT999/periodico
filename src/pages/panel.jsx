@@ -143,7 +143,7 @@ export default function Panel() {
   return (
     <>
       <header className="py-6 mb-2 text-center">
-        <h1 className="text-5xl md:text-6xl font-serif font-bold uppercase tracking-wider leading-tight">
+        <h1 className="text-4xl ml:text-5xl md:text-6xl font-serif font-bold uppercase tracking-wider leading-tight">
           CTE: Visión Empresarial
         </h1>
         <p className="text-sm mt-2 italic">
@@ -337,7 +337,7 @@ export default function Panel() {
         {news.map((newsItem) => (
           <article
             key={newsItem.id}
-            className="group w-auto h-auto group rounded-lg overflow-hidden shadow-md border-2 border-blue-200 hover:scale-105 transition-transform duration-300 mb-5"
+            className="group w-auto h-auto group rounded-lg overflow-hidden shadow-md border-2 border-blue-200 hover:scale-101 transition-transform duration-300 mb-5"
           >
             <Link to={`/noticia/${newsItem.id}`}>
               <img
