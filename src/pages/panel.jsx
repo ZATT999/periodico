@@ -337,7 +337,7 @@ export default function Panel() {
         {news.map((newsItem) => (
           <article
             key={newsItem.id}
-            className="group w-[240px] h-auto group rounded-lg overflow-hidden shadow-md border-2 border-blue-200 hover:scale-105 transition-transform duration-300 mb-5"
+            className="group w-auto h-auto group rounded-lg overflow-hidden shadow-md border-2 border-blue-200 hover:scale-105 transition-transform duration-300 mb-5"
           >
             <Link to={`/noticia/${newsItem.id}`}>
               <img
