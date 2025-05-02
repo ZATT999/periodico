@@ -46,3 +46,12 @@ body::-webkit-scrollbar-track {
   justify-items: center;
   width: 100%;
 }
+
+@media (width < 550px) {
+  .mansory {
+    columns: 2 auto;
+    & article {
+      width: auto;
+    }
+  }
+}

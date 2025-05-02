@@ -14,14 +14,14 @@ export default function MapNews() {
         Noticias
       </h1>
 
-      <section className="mansory px-5">
+      <section className="mansory px-2 md:px-5 ">
         {getNewsVisible.map((news) => (
           <Link to={`/noticia/${news.id}`} key={news.id}>
-            <article className="group w-[240px] h-auto  mb-[10px]  rounded-2xl overflow-hidden shadow-md border-[2px] border-blue-200 transition-transform hover:scale-101 duration-200 ">
+            <article className="group w-[240px] h-auto mb-[10px] rounded-2xl overflow-hidden shadow-md border-[2px] border-blue-200 transition-transform hover:scale-101 duration-200 ">
               <img
                 src={news.image}
                 alt="Evento"
-                className="w-full h-full max-h-[300px] object-contain group-hover:scale-105 transition-all duration-300"
+                className="w-full h-full  max-h-[300px] object-contain group-hover:scale-105 transition-all duration-300"
               />
               <div className="w-full flex flex-col gap-4 px-4 py-5 bg-blue-50 ">
                 <h3 className="text-[15px] font-semibold text-black">
