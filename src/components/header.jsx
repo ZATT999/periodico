@@ -32,7 +32,7 @@ export default function Header() {
       </Link>
       {!user ? (
         <Link to="/login">
-          <span className="text-xl hover:bg-blue-400 transition-all bg-blue-500 text-white px-3 py-2 rounded-lg">
+          <span className="text-xl hover:bg-[#4d9d30] transition-all bg-primary text-white px-3 py-2 rounded-lg">
             Iniciar sesión
           </span>
         </Link>

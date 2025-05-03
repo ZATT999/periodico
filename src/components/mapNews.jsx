@@ -6,7 +6,7 @@ import { DateIcon } from "./ui/icons"
 export default function MapNews({ news }) {
   return (
     <>
-      <h1 className="text-2xl border-y py-3 pl-5 font-semibold font-serif mb-10">
+      <h1 className="text-2xl bg-[#f9fafb] border-y py-3 pl-5 font-semibold font-serif mb-10">
         Noticias
       </h1>
 
