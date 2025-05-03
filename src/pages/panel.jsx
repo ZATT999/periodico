@@ -15,7 +15,7 @@ import {
   toggleVisibility,
 } from "../services/newsService"
 import { createUser } from "../services/UserServices"
-import { toast } from "sonner" 
+import { toast } from "sonner"
 
 export default function Panel() {
   const { user } = useContext(UserContext)
@@ -151,7 +151,7 @@ export default function Panel() {
         </p>
       </header>
 
-      <h3 className="text-2xl border-y py-3 pl-5 md:text-3xl font-semibold font-serif mb-20">
+      <h3 className="text-2xl border-y py-3 pl-5 bg-[#f9fafb] md:text-3xl font-semibold font-serif mb-20">
         Panel de Administración
       </h3>
 
