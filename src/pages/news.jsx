@@ -1,13 +1,16 @@
-import { useContext } from "react"
-import MapNews from "../components/mapNews"
-import { NewsContext } from "../context/context"
 import { changeTitle } from "../utils/changeTitle"
 import LastNews from "../components/ui/lastNews"
+import { NewsContext } from "../context/context"
+import MapNews from "../components/mapNews"
+import { useContext } from "react"
 
 export default function NewsPage() {
   const { news } = useContext(NewsContext)
   changeTitle("Noticias")
-  const mainNews = news[0]
+
+  const visibleNews = news.filter((news) => news.visible === true)
+
+  const lastNew = visibleNews[0]
 
   return (
     <>
@@ -20,9 +23,9 @@ export default function NewsPage() {
         </p>
       </header>
 
-      <LastNews news={mainNews} />
+      <LastNews news={lastNew} />
 
-      <MapNews />
+      <MapNews news={visibleNews} />
     </>
   )
 }

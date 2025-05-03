@@ -3,11 +3,7 @@ import { useContext } from "react"
 import { NewsContext } from "../context/context"
 import { DateIcon } from "./ui/icons"
 
-export default function MapNews() {
-  const { news } = useContext(NewsContext)
-
-  const getNewsVisible = news.filter((news) => news.visible === true)
-
+export default function MapNews({ news }) {
   return (
     <>
       <h1 className="text-2xl border-y py-3 pl-5 font-semibold font-serif mb-10">
@@ -15,7 +11,7 @@ export default function MapNews() {
       </h1>
 
       <section className="mansory px-2 md:px-5 ">
-        {getNewsVisible.map((news) => (
+        {news.map((news) => (
           <Link to={`/noticia/${news.id}`} key={news.id}>
             <article className="group w-auto h-auto mb-[10px] rounded-2xl overflow-hidden shadow-md border-[2px] border-blue-200 transition-transform hover:scale-101 duration-200 ">
               <img

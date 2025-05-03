@@ -15,7 +15,7 @@ import {
   toggleVisibility,
 } from "../services/newsService"
 import { createUser } from "../services/UserServices"
-import { toast, Toaster } from "sonner" // <--- Añadido aquí
+import { toast } from "sonner" 
 
 export default function Panel() {
   const { user } = useContext(UserContext)

@@ -1,29 +1,24 @@
 import { useState, useEffect } from "react"
 import { NewsContext } from "./context"
-import { urlForFetchs } from "../utils/urlForFetchs"
+import { getAllNews } from "../services/newsService"
 
 export const NewsProvider = ({ children }) => {
   const [news, setNews] = useState([])
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const fetchNews = async () => {
-      setLoading(true)
       try {
-        const response = await fetch(`${urlForFetchs()}/api/news`, {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
-        const data = await response.json()
+        const res = await getAllNews()
+        const data = await res.json()
 
-        if (response.ok) {
-          setNews(data.news)
-        }
+        if (!res.ok) throw new Error("Error al cargar las noticias")
+
+        setNews(data.news)
         setLoading(false)
       } catch (error) {
-        console.log(error)
+      } finally {
+        setLoading(false)
       }
     }
     fetchNews()
@@ -35,5 +30,3 @@ export const NewsProvider = ({ children }) => {
     </NewsContext.Provider>
   )
 }
-
-export default NewsContext

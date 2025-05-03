@@ -1,8 +1,9 @@
-import { BrowserRouter, Link, Navigate, Route, Routes } from "react-router"
+import { BrowserRouter, Link, Route, Routes } from "react-router"
 import NewsPage from "./pages/news"
 import NewsId from "./pages/id"
 import Login from "./pages/login"
 import Panel from "./pages/panel"
+import NotFound from "./pages/notFound"
 import Spinner from "./components/ui/loading"
 import { Toaster } from "sonner"
 import Layout from "./layout"
@@ -42,18 +43,8 @@ export default function App() {
                 }
               />
             )}
-
-            <Route
-              path="*"
-              element={
-                <main>
-                  <h1>404</h1>
-                  <p>No existe esa pagina</p>
-                  <Link to="/">Ir al inicio</Link>
-                </main>
-              }
-            />
           </Route>
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </>
