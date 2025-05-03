@@ -3,6 +3,7 @@ import { UserContext } from "../context/context"
 import { Link, useNavigate } from "react-router"
 import { LogoutUser } from "../services/UserServices"
 import { ArrowDownIcon, LogoutIcon, UserIcon } from "./ui/icons"
+import logo from "../../public/logo.webp"
 
 export default function Header() {
   const { user, setUser } = useContext(UserContext)
@@ -22,9 +23,12 @@ export default function Header() {
   return (
     <header className="z-40 fixed top-0 flex justify-between items-center px-4 h-15 sm:h-20  w-full m-auto bg-white shadow-lg ">
       <Link to="/">
-        <h1 className="text-3xl font-bold font-[roboto] text-gray-800 sm:text-4xl ">
-          CTE Noticias
-        </h1>
+        <div className="flex items-center gap-1">
+          <img src={logo} alt="logo" className="w-15 h-15 mr-2" />
+          <h1 className="text-3xl font-bold font-[roboto] text-gray-800 sm:text-4xl ">
+            Noticias
+          </h1>
+        </div>
       </Link>
       {!user ? (
         <Link to="/login">
