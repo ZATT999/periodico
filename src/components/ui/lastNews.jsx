@@ -33,12 +33,12 @@ export default function LastNews({ news = {} }) {
         </div>
         <Link
           to={`/noticia/${news.id}`}
-          className="overflow-hidden h-[300px] w-[400px] m-auto rounded shadow-md"
+          className="overflow-hidden h-[300px] max-w-[400px] m-auto rounded shadow-md"
         >
           <img
             src={news.image}
             alt={news.title}
-            className="object-cover rounded h-[300px] w-[400px] hover:scale-105 transition-all duration-300"
+            className="object-cover rounded h-[300px] max-w-[400px]  mhover:scale-105 transition-all duration-300"
           />
         </Link>
       </article>
