@@ -38,7 +38,7 @@ export default function LastNews({ news = {} }) {
           <img
             src={news.image}
             alt={news.title}
-            className="object-cover rounded h-[300px] max-w-[400px]  mhover:scale-105 transition-all duration-300"
+            className="object-cover rounded h-[300px] max-w-[400px] w-full hover:scale-105 transition-all duration-300"
           />
         </Link>
       </article>
