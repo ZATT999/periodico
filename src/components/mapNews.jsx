@@ -17,7 +17,7 @@ export default function MapNews({ news }) {
               <img
                 src={news.image}
                 alt="Evento"
-                className="w-full h-full  max-h-[300px] object-contain group-hover:scale-105 transition-all duration-300"
+                className="w-full h-full  max-h-[300px] object-cover group-hover:scale-105 transition-all duration-300"
               />
               <div className="w-full flex flex-col gap-4 px-4 py-5 bg-blue-50 ">
                 <h3 className="text-[15px] font-semibold text-black">

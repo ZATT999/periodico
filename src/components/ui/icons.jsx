@@ -70,12 +70,11 @@ export const OpenLockIcon = ({ size = 24 }) => (
     strokeWidth={2}
     strokeLinecap="round"
     strokeLinejoin="round"
-    className="icon icon-tabler icons-tabler-outline icon-tabler-lock-open"
+    className="icon icon-tabler icons-tabler-outline icon-tabler-eye"
   >
     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-    <path d="M5 11m0 2a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2z" />
-    <path d="M12 16m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
-    <path d="M8 11v-5a4 4 0 0 1 8 0" />
+    <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+    <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" />
   </svg>
 )
 export const OpenLockOffIcon = ({ size = 24 }) => (
@@ -89,12 +88,11 @@ export const OpenLockOffIcon = ({ size = 24 }) => (
     strokeWidth={2}
     strokeLinecap="round"
     strokeLinejoin="round"
-    className="icon icon-tabler icons-tabler-outline icon-tabler-lock-open-off"
+    className="icon icon-tabler icons-tabler-outline icon-tabler-eye-off"
   >
     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-    <path d="M15 11h2a2 2 0 0 1 2 2v2m0 4a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6a2 2 0 0 1 2 -2h4" />
-    <path d="M12 16m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
-    <path d="M8 11v-3m.347 -3.631a4 4 0 0 1 7.653 1.631" />
+    <path d="M10.585 10.587a2 2 0 0 0 2.829 2.828" />
+    <path d="M16.681 16.673a8.717 8.717 0 0 1 -4.681 1.327c-3.6 0 -6.6 -2 -9 -6c1.272 -2.12 2.712 -3.678 4.32 -4.674m2.86 -1.146a9.055 9.055 0 0 1 1.82 -.18c3.6 0 6.6 2 9 6c-.666 1.11 -1.379 2.067 -2.138 2.87" />
     <path d="M3 3l18 18" />
   </svg>
 )
