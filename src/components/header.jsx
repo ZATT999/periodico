@@ -21,11 +21,11 @@ export default function Header() {
   }
 
   return (
-    <header className="z-40 fixed top-0 flex justify-between items-center px-4 h-15 sm:h-20  w-full m-auto bg-white shadow-lg ">
+    <header className="z-40 fixed top-0 flex justify-between items-center px-2 ml:px-4 h-15 sm:h-20  w-full m-auto bg-white shadow-lg">
       <Link to="/">
         <div className="flex items-center gap-1">
-          <img src={logo} alt="logo" className="size-10 mr-2 sm:size-15" />
-          <h1 className="text-2xl font-bold font-[roboto] text-gray-800 sm:text-4xl ">
+          <img src={logo} alt="logo" className="size-10 mr-2 ml:size-15" />
+          <h1 className="text-2xl font-bold font-[roboto] text-gray-800 ml:text-4xl ">
             Noticias
           </h1>
         </div>
