@@ -66,6 +66,8 @@ export default function Panel() {
       if (res.status === 500) toast.error("Error inesperado al crear usuario")
     } catch (error) {
       toast.error("Error inesperado al crear usuario")
+    } finally {
+      e.target.reset()
     }
     closeDialog(userCreatedRef)
   }
