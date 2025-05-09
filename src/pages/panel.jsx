@@ -55,9 +55,10 @@ export default function Panel() {
     e.preventDefault()
     const id = e.target.elements.id.value
     const name = e.target.elements.name.value
+    const isAdmin = e.target.elements.isAdmin.value
 
     try {
-      const res = await createUser({ id, name })
+      const res = await createUser({ id, name, isAdmin })
 
       if (res.status === 201) toast.success("Usuario creado correctamente")
       if (res.status === 409)
@@ -190,6 +191,17 @@ export default function Panel() {
             className="w-full p-2 border border-gray-300 rounded-lg"
             required
           />
+          <label htmlFor="isAdmin">¿Es administrador?</label>
+          <select
+            name="isAdmin"
+            className="w-full p-2 border border-gray-300 rounded-lg"
+          >
+            <option value="true">Si</option>
+            <option value="false" selected>
+              No
+            </option>
+          </select>
+
           <div className="flex justify-end gap-3 mt-4">
             <button
               type="button"
