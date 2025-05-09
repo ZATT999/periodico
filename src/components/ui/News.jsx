@@ -6,9 +6,9 @@ export default function News({ news = {} }) {
   const { category, date, author, content } = news
 
   return (
-    <article className=" min-h-screen max-w-[1100px] mx-auto px-3   py-15 font-serif text-[#1e1b18]">
+    <article className="min-h-screen max-w-[1100px] mx-auto px-3 py-15 font-serif text-[#1e1b18]">
       <header className="border-b border-black pb-6 text-center">
-        <h1 className="text-4xl ml:text-5xl md:text-6xl font-extrabold tracking-wider uppercase text-gray-800">
+        <h1 className="text-2xl @[250px]:text-3xl ml:text-5xl md:text-6xl font-extrabold tracking-wider uppercase text-gray-800">
           CTE: Visión Empresarial
         </h1>
         <p className="italic text-base text-[#4b5563] mt-2">
