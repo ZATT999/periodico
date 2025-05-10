@@ -3,7 +3,7 @@ import { UserContext } from "../context/context"
 import { Link, useNavigate } from "react-router"
 import { LogoutUser } from "../services/UserServices"
 import { ArrowDownIcon, LogoutIcon, UserIcon } from "./ui/icons"
-import logo from "../../public/logo.webp"
+import logo from "../asset/logo.webp"
 
 export default function Header() {
   const { user, setUser } = useContext(UserContext)

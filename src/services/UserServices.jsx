@@ -1,13 +1,19 @@
-import { urlForFetchs } from "../utils/urlForFetchs"
+import { urlFetchs } from "../const/urlfetch"
+
+export const refreshToken = () =>
+  fetch(`${urlFetchs}/api/auth/refresh`, {
+    method: "GET",
+    credentials: "include",
+  })
 
 export const getUser = () =>
-  fetch(`${urlForFetchs()}/api/user/me`, {
+  fetch(`${urlFetchs}/api/user/me`, {
     method: "GET",
     credentials: "include",
   })
 
 export const updateUser = (user) =>
-  fetch(`${urlForFetchs()}/api/user/update`, {
+  fetch(`${urlFetchs}/api/user/update`, {
     method: "POST",
     credentials: "include",
     headers: { "Content-Type": "application/json" },
@@ -15,19 +21,19 @@ export const updateUser = (user) =>
   })
 
 export const validateUser = () =>
-  fetch(`${urlForFetchs()}/api/user/validate`, {
+  fetch(`${urlFetchs}/api/user/validate`, {
     method: "GET",
     credentials: "include",
   })
 
 export const isAdmin = () =>
-  fetch(`${urlForFetchs()}/api/user/isAdmin`, {
+  fetch(`${urlFetchs}/api/user/isAdmin`, {
     method: "GET",
     credentials: "include",
   })
 
 export const createUser = (user) =>
-  fetch(`${urlForFetchs()}/api/user/create`, {
+  fetch(`${urlFetchs}/api/user/create`, {
     method: "POST",
     credentials: "include",
     headers: { "Content-Type": "application/json" },
@@ -35,7 +41,7 @@ export const createUser = (user) =>
   })
 
 export const LoginUser = (user) =>
-  fetch(`${urlForFetchs()}/api/auth/login`, {
+  fetch(`${urlFetchs}/api/auth/login`, {
     method: "POST",
     credentials: "include",
     headers: { "Content-Type": "application/json" },
@@ -43,7 +49,7 @@ export const LoginUser = (user) =>
   })
 
 export const LogoutUser = () =>
-  fetch(`${urlForFetchs()}/api/auth/logout`, {
+  fetch(`${urlFetchs}/api/auth/logout`, {
     method: "GET",
     credentials: "include",
   })

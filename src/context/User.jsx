@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { UserContext } from "./context"
-import { urlForFetchs } from "../utils/urlForFetchs"
+import { urlFetchs } from "../const/urlfetch"
 
 export const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null)
@@ -9,7 +9,7 @@ export const UserProvider = ({ children }) => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await fetch(`${urlForFetchs()}/api/user/me`, {
+        const res = await fetch(`${urlFetchs}/api/user/me`, {
           method: "GET",
           credentials: "include",
           headers: {
@@ -18,7 +18,7 @@ export const UserProvider = ({ children }) => {
         })
 
         if (res.status === 401) {
-          const refresh = await fetch(`${urlForFetchs()}/api/auth/refresh`, {
+          const refresh = await fetch(`${urlFetchs}/api/auth/refresh`, {
             method: "GET",
             credentials: "include",
             headers: {
