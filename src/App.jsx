@@ -1,14 +1,14 @@
 import { BrowserRouter, Link, Route, Routes } from "react-router"
+import { NewsContext, UserContext } from "./context/context"
+import Spinner from "./components/ui/spinner"
+import NotFound from "./pages/notFound"
 import NewsPage from "./pages/news"
-import NewsId from "./pages/id"
+import { useContext } from "react"
 import Login from "./pages/login"
 import Panel from "./pages/panel"
-import NotFound from "./pages/notFound"
-import Spinner from "./components/ui/loading"
 import { Toaster } from "sonner"
+import NewsId from "./pages/id"
 import Layout from "./layout"
-import { useContext } from "react"
-import { NewsContext, UserContext } from "./context/context"
 
 export default function App() {
   const { user, loading } = useContext(UserContext)
