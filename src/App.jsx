@@ -8,12 +8,13 @@ import Spinner from "./components/ui/loading"
 import { Toaster } from "sonner"
 import Layout from "./layout"
 import { useContext } from "react"
-import { UserContext } from "./context/context"
+import { NewsContext, UserContext } from "./context/context"
 
 export default function App() {
   const { user, loading } = useContext(UserContext)
+  const { loading: loadingNews } = useContext(NewsContext)
 
-  if (loading) return <Spinner />
+  if (loading || loadingNews) return <Spinner />
 
   return (
     <>
