@@ -30,66 +30,83 @@ export default function Header() {
           </h1>
         </div>
       </Link>
-      {!user ? (
-        <Link to="/login">
-          <span className="text-xl hover:bg-[#4d9d30] transition-all bg-primary text-white px-3 py-2 rounded-lg">
-            Iniciar sesión
-          </span>
-        </Link>
-      ) : (
-        <div className="relative flex justify-center gap-2">
-          <div
-            onClick={handleModalToggle}
-            className="flex items-center gap-2 cursor-pointer"
-          >
-            <img
-              src={user.avatar}
-              alt={`${user.name}`}
-              className="w-8 h-8 rounded-full border-1 border-black cursor-pointer"
-            />
-            <ArrowDownIcon size={20} />
-          </div>
-          {isModalOpen && (
-            <div className="absolute top-10 -right-1 bg-white border-1 border-gray-100 rounded-lg  shadow-md  w-45 text-center z-50">
-              <ul className=" flex flex-col ">
-                <li className="flex items-center justify-center gap-2 px-4 py-2 border-b-1 border-gray-300">
-                  <img
-                    src={user.avatar}
-                    alt={`${user.name}`}
-                    className="w-8 h-8 rounded-full border-1 border-black"
-                  />
-                  <span>{user.name}</span>
-                </li>
-                {user.isAdmin && (
-                  <li className="flex items-center gap-2">
-                    <Link
-                      to="/admin/panel"
-                      className="w-full p-3 rounded hover:bg-gray-50 cursor-pointer flex items-center justify-center gap-2"
-                      onClick={handleModalToggle}
-                    >
-                      <span className="text-blue-500">
-                        <UserIcon />
-                      </span>
-                      Ir al Panel
-                    </Link>
-                  </li>
-                )}
-                <li>
-                  <button
-                    onClick={handleLogout}
-                    className="w-full p-3 rounded hover:bg-gray-50 cursor-pointer flex items-center justify-center gap-2"
-                  >
-                    <span className="text-red-500">
-                      <LogoutIcon />
-                    </span>
-                    <span>Cerrar Sesión</span>
-                  </button>
-                </li>
-              </ul>
-            </div>
-          )}
+
+      <div className="relative flex justify-center gap-2">
+        <div
+          onClick={handleModalToggle}
+          className="flex items-center gap-2 cursor-pointer"
+        >
+          <img
+            src={
+              user?.avatar ??
+              "https://t4.ftcdn.net/jpg/01/24/65/69/360_F_124656969_x3y8YVzvrqFZyv3YLWNo6PJaC88SYxqM.jpg"
+            }
+            alt={`${user?.name ?? "anonymous"}`}
+            className="w-8 h-8 rounded-full border-1 border-black cursor-pointer"
+          />
+
+          <ArrowDownIcon size={20} />
         </div>
-      )}
+        {isModalOpen && (
+          <div className="absolute top-10 -right-1 bg-white border-1 border-gray-100 rounded-lg  shadow-md  w-45 text-center z-50">
+            <ul className=" flex flex-col ">
+              {!user ? (
+                <li>
+                  <Link
+                    to="/login"
+                    className="w-full p-3 rounded hover:bg-gray-50 cursor-pointer flex items-center justify-center gap-2"
+                    onClick={handleModalToggle}
+                  >
+                    <span className="text-blue-500">
+                      <UserIcon />
+                    </span>
+                    Iniciar Sesión
+                  </Link>
+                </li>
+              ) : (
+                <>
+                  <li className="flex items-center justify-center gap-2 px-4 py-2 border-b-1 border-gray-300">
+                    <img
+                      src={
+                        user.avatar ??
+                        "https://t4.ftcdn.net/jpg/01/24/65/69/360_F_124656969_x3y8YVzvrqFZyv3YLWNo6PJaC88SYxqM.jpg"
+                      }
+                      alt={`${user.name ?? "anonymous"}`}
+                      className="w-8 h-8 rounded-full border-1 border-black"
+                    />
+                    <span>{user.name ?? "anonymous"}</span>
+                  </li>
+                  {user.isAdmin && (
+                    <li className="flex items-center gap-2">
+                      <Link
+                        to="/admin/panel"
+                        className="w-full p-3 rounded hover:bg-gray-50 cursor-pointer flex items-center justify-center gap-2"
+                        onClick={handleModalToggle}
+                      >
+                        <span className="text-blue-500">
+                          <UserIcon />
+                        </span>
+                        Ir al Panel
+                      </Link>
+                    </li>
+                  )}
+                  <li>
+                    <button
+                      onClick={handleLogout}
+                      className="w-full p-3 rounded hover:bg-gray-50 cursor-pointer flex items-center justify-center gap-2"
+                    >
+                      <span className="text-red-500">
+                        <LogoutIcon />
+                      </span>
+                      <span>Cerrar Sesión</span>
+                    </button>
+                  </li>
+                </>
+              )}
+            </ul>
+          </div>
+        )}
+      </div>
     </header>
   )
 }
