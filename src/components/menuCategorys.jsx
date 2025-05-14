@@ -16,7 +16,7 @@ export default function MenuCategorys() {
         className="fixed inset-0 w-[250px] h-full bg-white z-50 m-0 p-0 shadow-lg "
       >
         <button
-          className="absolute top-4 right-4 text-gray-600 hover:text-gray-800 transition"
+          className="absolute top-4 right-4 text-gray-600 hover:text-gray-800 transition cursor-pointer"
           onClick={() => setIsOpen(false)}
         >
           <CloseIcon size={30} />

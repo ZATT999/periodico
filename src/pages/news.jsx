@@ -24,7 +24,7 @@ export default function NewsPage() {
   return (
     <>
       <section className="flex items-center justify-between gap-2 mb-4 text-gray-600 px-4">
-        <MenuCategorys ref={dialogMenuRef} />
+        <MenuCategorys />
         <span className="font-bold">{currentDate}</span>
       </section>
 
