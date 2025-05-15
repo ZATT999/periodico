@@ -19,7 +19,7 @@ import { toast } from "sonner"
 
 export default function Panel() {
   const { user } = useContext(UserContext)
-  const { news, setNews } = useContext(NewsContext)
+  const { news, setNews, categorys } = useContext(NewsContext) // Agregamos categorys del contexto
   const [idNewsEdit, setIdNewsEdit] = useState("")
   const [editFormData, setEditFormData] = useState({
     title: "",
@@ -244,13 +244,20 @@ export default function Panel() {
             className="w-full p-2 border border-gray-300 rounded-lg"
             required
           />
-          <input
-            type="text"
+          <select
             name="category"
-            placeholder="Categoría"
             className="w-full p-2 border border-gray-300 rounded-lg"
             required
-          />
+          >
+            <option value="" disabled selected>
+              Selecciona una categoría
+            </option>
+            {categorys.map((category) => (
+              <option key={category} value={category}>
+                {category}
+              </option>
+            ))}
+          </select>
           <input
             type="text"
             name="image"
@@ -305,14 +312,22 @@ export default function Panel() {
             className="w-full p-2 border border-gray-300 rounded-lg"
             required
           />
-          <input
-            type="text"
+          <select
             name="category"
             value={editFormData.category}
             onChange={handleInputChange}
             className="w-full p-2 border border-gray-300 rounded-lg"
             required
-          />
+          >
+            <option value="" disabled>
+              Selecciona una categoría
+            </option>
+            {categorys.map((category) => (
+              <option key={category} value={category}>
+                {category}
+              </option>
+            ))}
+          </select>
           <input
             type="text"
             name="image"

@@ -30,7 +30,9 @@ export default function MenuCategorys() {
         <main className="flex flex-col h-full max-w-[400px] w-full sm:w-[400px] mx-auto">
           <div className="flex items-center gap-3 p-4 border-b border-gray-200">
             <img src={logo} alt="logo" className="w-12 h-12" />
-            <h1 className="text-2xl font-bold text-gray-800">Noticias</h1>
+            <h1 className="text-2xl font-bold font-[roboto] text-gray-800">
+              Noticias
+            </h1>
           </div>
 
           <section className="flex-1 overflow-y-auto">
