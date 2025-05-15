@@ -7,12 +7,13 @@ import { useContext } from "react"
 import Login from "./pages/login"
 import Panel from "./pages/panel"
 import { Toaster } from "sonner"
-import NewsId from "./pages/id"
+import NewsId from "./pages/[id]"
 import Layout from "./layout"
+import CategorysId from "./pages/[category]"
 
 export default function App() {
   const { user, loading } = useContext(UserContext)
-  const { loading: loadingNews } = useContext(NewsContext)
+  const { loading: loadingNews, news } = useContext(NewsContext)
 
   if (loading || loadingNews) return <Spinner />
 
@@ -29,7 +30,11 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<Layout />}>
             <Route path="/" element={<NewsPage />} />
-            <Route path="/noticia/:slug" element={<NewsId />} />
+            <Route path="/noticia/:id" element={<NewsId />} />
+            <Route
+              path="/noticias/:category"
+              element={<CategorysId allNews={news} />}
+            />
             {user?.isAdmin ? (
               <Route path="/admin/panel" element={<Panel />} />
             ) : (
