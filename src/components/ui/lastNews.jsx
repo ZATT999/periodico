@@ -1,11 +1,11 @@
 import { Link } from "react-router"
 import { DateIcon } from "./icons"
 
-export default function LastNews({ news = {} }) {
+export default function LastNews({ news = {}, title }) {
   return (
     <>
       <h3 className="text-2xl bg-[#f9fafb] border-y py-3 pl-5 md:text-3xl font-semibold font-serif mb-4">
-        Última Noticia
+        {title ?? "Ultimas Noticias"}
       </h3>
 
       <article className="flex flex-col justify-center p-3 md:flex-row gap-8 py-6 ">

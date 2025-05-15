@@ -3,11 +3,11 @@ import { useContext } from "react"
 import { NewsContext } from "../context/context"
 import { DateIcon } from "./ui/icons"
 
-export default function MapNews({ news }) {
+export default function MapNews({ news, title }) {
   return (
     <>
       <h1 className="text-2xl bg-[#f9fafb] border-y py-3 pl-5 font-semibold font-serif mb-10">
-        Noticias
+        {title ?? "Noticias"}
       </h1>
 
       <section className="mansory px-2 md:px-5 ">

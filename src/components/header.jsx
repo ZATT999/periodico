@@ -48,8 +48,8 @@ export default function Header() {
           <ArrowDownIcon size={20} />
         </div>
         {isModalOpen && (
-          <div className="absolute top-10 -right-1 bg-white border-1 border-gray-100 rounded-lg  shadow-md  w-45 text-center z-50">
-            <ul className=" flex flex-col ">
+          <div className="absolute top-10 -right-1 bg-white border-1 border-gray-100 rounded-lg  shadow-md  w-45 text-center z-50 animate-fadeIn transition-all duration-300">
+            <ul className=" flex flex-col">
               {!user ? (
                 <li>
                   <Link

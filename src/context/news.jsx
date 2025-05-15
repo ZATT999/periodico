@@ -5,6 +5,7 @@ import { getAllNews } from "../services/newsService"
 export const NewsProvider = ({ children }) => {
   const [news, setNews] = useState([])
   const [loading, setLoading] = useState(true)
+  const [categorys, setCategorys] = useState([""])
 
   useEffect(() => {
     const fetchNews = async () => {
@@ -15,6 +16,7 @@ export const NewsProvider = ({ children }) => {
         if (!res.ok) throw new Error("Error al cargar las noticias")
 
         setNews(data.news)
+        setCategorys(data.categorys)
         setLoading(false)
       } catch (error) {
       } finally {
@@ -25,7 +27,7 @@ export const NewsProvider = ({ children }) => {
   }, [])
 
   return (
-    <NewsContext.Provider value={{ news, setNews, loading }}>
+    <NewsContext.Provider value={{ news, setNews, loading, categorys }}>
       {children}
     </NewsContext.Provider>
   )
