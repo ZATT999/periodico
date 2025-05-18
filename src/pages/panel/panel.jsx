@@ -1,64 +1,33 @@
-import { NewsContext, UserContext } from "../../context/context"
-import { useContext, useState, useRef } from "react"
-import { getDate } from "../../utils/getDate"
+import { deleteNews, toggleVisibility } from "../../services/newsService"
+import { createUser } from "../../services/UserServices"
+import { changeTitle } from "../../utils/changeTitle"
+import { NewsContext } from "../../context/context"
+import { useContext, useRef } from "react"
 import { Link } from "react-router"
+import { toast } from "sonner"
 import {
   DeleteIcon,
   EditIcon,
   OpenLockIcon,
   OpenLockOffIcon,
 } from "../../components/ui/icons"
-import {
-  createNews,
-  deleteNews,
-  updateNews,
-  toggleVisibility,
-} from "../../services/newsService"
-import { createUser } from "../../services/UserServices"
-import { toast } from "sonner"
 
 export default function Panel() {
-  const { user } = useContext(UserContext)
-  const { news, setNews, categorys } = useContext(NewsContext) // Agregamos categorys del contexto
-  const [idNewsEdit, setIdNewsEdit] = useState("")
-  const [editFormData, setEditFormData] = useState({
-    title: "",
-    description: "",
-    category: "",
-    image: "",
-    content: "",
-  })
-
-  const createNewsRef = useRef()
-  const editNewsRef = useRef()
+  const { news, setNews } = useContext(NewsContext)
   const userCreatedRef = useRef()
+  window.scrollTo(0, 0)
+  changeTitle("Panel de Administración")
 
   const openDialog = (ref) => ref.current?.showModal()
   const closeDialog = (ref) => ref.current?.close()
-
-  const prepareEdit = (id) => {
-    const newsToEdit = news.find((item) => item.id === id)
-    if (newsToEdit) {
-      setIdNewsEdit(id)
-      setEditFormData({
-        title: newsToEdit.title,
-        description: newsToEdit.description,
-        category: newsToEdit.category,
-        image: newsToEdit.image,
-        content: newsToEdit.content,
-      })
-      openDialog(editNewsRef)
-    }
-  }
 
   const handleCreateUser = async (e) => {
     e.preventDefault()
     const id = e.target.elements.id.value
     const name = e.target.elements.name.value
-    const isAdmin = e.target.elements.isAdmin.value
 
     try {
-      const res = await createUser({ id, name, isAdmin })
+      const res = await createUser({ id, name })
 
       if (res.status === 201) toast.success("Usuario creado correctamente")
       if (res.status === 409)
@@ -70,44 +39,6 @@ export default function Panel() {
       e.target.reset()
     }
     closeDialog(userCreatedRef)
-  }
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target
-    setEditFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }))
-  }
-
-  const handleCreate = (e) => {
-    e.preventDefault()
-
-    const title = e.target.elements.title.value
-    const description = e.target.elements.description.value
-    const category = e.target.elements.category.value
-    const image = e.target.elements.image.value
-    const content = e.target.elements.content.value
-    const author = { name: user.name, avatar: user.avatar }
-    const id = crypto.randomUUID()
-    const date = getDate
-
-    const newNews = {
-      title,
-      description,
-      category,
-      image,
-      content,
-      author,
-      date,
-      id,
-      visible: true,
-    }
-
-    setNews((prevNews) => [...prevNews, newNews])
-    createNews(newNews)
-    toast.success("Noticia creada exitosamente")
-    closeDialog(createNewsRef)
   }
 
   const handleDelete = (id) => {
@@ -126,23 +57,6 @@ export default function Panel() {
     toast.info("Visibilidad cambiada")
   }
 
-  const handleEdit = (e) => {
-    e.preventDefault()
-
-    const { title, description, category, image, content } = editFormData
-
-    setNews((prevNews) =>
-      prevNews.map((item) =>
-        item.id === idNewsEdit
-          ? { ...item, title, description, category, image, content }
-          : item
-      )
-    )
-    updateNews(idNewsEdit, { title, description, category, image, content })
-    toast.success("Noticia editada correctamente")
-    closeDialog(editNewsRef)
-  }
-
   return (
     <>
       <header className="py-6 mb-2 text-center">
@@ -159,11 +73,11 @@ export default function Panel() {
       </h3>
 
       <div className="flex justify-center mb-20 gap-4">
-          <Link to="/admin/panel/create-news">
-        <button className="bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 cursor-pointer">
-          Crear Noticia
-        </button>
-          </Link>
+        <Link to="/admin/panel/create-news">
+          <button className="bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 cursor-pointer">
+            Crear Noticia
+          </button>
+        </Link>
         <button
           onClick={() => openDialog(userCreatedRef)}
           className="bg-green-600 text-white py-2 px-6 rounded-lg hover:bg-green-700 cursor-pointer"
@@ -192,16 +106,6 @@ export default function Panel() {
             className="w-full p-2 border border-gray-300 rounded-lg"
             required
           />
-          <label htmlFor="isAdmin">¿Es administrador?</label>
-          <select
-            name="isAdmin"
-            className="w-full p-2 border border-gray-300 rounded-lg"
-          >
-            <option value="true">Si</option>
-            <option value="false" selected>
-              No
-            </option>
-          </select>
 
           <div className="flex justify-end gap-3 mt-4">
             <button
@@ -216,78 +120,6 @@ export default function Panel() {
               className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 cursor-pointer"
             >
               Crear
-            </button>
-          </div>
-        </form>
-      </dialog>
-
-      <dialog
-        ref={editNewsRef}
-        className="p-6 w-96 rounded-lg border border-blue-300 shadow-lg m-auto"
-      >
-        <h2 className="text-xl font-semibold mb-4">Editar Noticia</h2>
-        <form onSubmit={handleEdit} className="space-y-4">
-          <input
-            type="text"
-            name="title"
-            value={editFormData.title}
-            onChange={handleInputChange}
-            className="w-full p-2 border border-gray-300 rounded-lg"
-            required
-          />
-          <input
-            type="text"
-            name="description"
-            value={editFormData.description}
-            onChange={handleInputChange}
-            className="w-full p-2 border border-gray-300 rounded-lg"
-            required
-          />
-          <select
-            name="category"
-            value={editFormData.category}
-            onChange={handleInputChange}
-            className="w-full p-2 border border-gray-300 rounded-lg"
-            required
-          >
-            <option value="" disabled>
-              Selecciona una categoría
-            </option>
-            {categorys.map((category) => (
-              <option key={category} value={category}>
-                {category}
-              </option>
-            ))}
-          </select>
-          <input
-            type="text"
-            name="image"
-            value={editFormData.image}
-            onChange={handleInputChange}
-            className="w-full p-2 border border-gray-300 rounded-lg"
-            required
-          />
-          <textarea
-            name="content"
-            value={editFormData.content}
-            onChange={handleInputChange}
-            className="w-full p-2 border border-gray-300 rounded-lg resize-none"
-            rows="5"
-            required
-          />
-          <div className="flex justify-end gap-3 mt-4">
-            <button
-              type="button"
-              onClick={() => closeDialog(editNewsRef)}
-              className="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 cursor-pointer"
-            >
-              Cancelar
-            </button>
-            <button
-              type="submit"
-              className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 cursor-pointer"
-            >
-              Guardar Cambios
             </button>
           </div>
         </form>
@@ -314,27 +146,27 @@ export default function Panel() {
                   alt={newsItem.author.name}
                   className="w-7 h-7 rounded-full border-1 border-blue-500"
                 />
-                <div className="flex gap-2">
+                <div className="flex gap-3">
                   <button
                     className="text-red-500 cursor-pointer"
                     onClick={() => handleDelete(newsItem.id)}
                   >
-                    <DeleteIcon size={20} />
+                    <DeleteIcon size={30} />
                   </button>
-                  <button
-                    className="text-blue-500 cursor-pointer"
-                    onClick={() => prepareEdit(newsItem.id)}
+                  <Link
+                    to={`/admin/panel/edit-news/${newsItem.id}`}
+                    className="text-blue-500"
                   >
-                    <EditIcon size={20} />
-                  </button>
+                    <EditIcon size={30} />
+                  </Link>
                   <button onClick={() => handleVisible(newsItem.id)}>
                     {newsItem.visible ? (
                       <span className="text-green-500 cursor-pointer">
-                        <OpenLockIcon size={20} />
+                        <OpenLockIcon size={30} />
                       </span>
                     ) : (
                       <span className="text-red-500 cursor-pointer">
-                        <OpenLockOffIcon size={20} />
+                        <OpenLockOffIcon size={30} />
                       </span>
                     )}
                   </button>
