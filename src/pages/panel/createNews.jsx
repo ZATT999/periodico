@@ -1,11 +1,24 @@
-import { useContext, useState } from "react"
-import { NewsContext } from "../../context/context"
-import { Link } from "react-router"
-import { ArrowNarrowLeft } from "../../components/ui/icons"
+import { NewsContext, UserContext } from "../../context/context"
 import { createNews } from "../../services/newsService"
+import { changeTitle } from "../../utils/changeTitle"
+import { Link, useNavigate } from "react-router"
+import { getDate } from "../../utils/getDate"
+import { useContext, useState } from "react"
+import { toast } from "sonner"
+import {
+  ArrowDownIcon,
+  ArrowNarrowLeft,
+  ArrowUpIcon,
+  DeleteIcon,
+} from "../../components/ui/icons"
 
 export default function CreateNews() {
   const { categorys } = useContext(NewsContext)
+  const { user } = useContext(UserContext)
+  const { setNews } = useContext(NewsContext)
+  const navigate = useNavigate()
+  window.scrollTo(0, 0)
+  changeTitle("Crear Noticia")
 
   const [form, setForm] = useState({
     title: "",
@@ -15,12 +28,14 @@ export default function CreateNews() {
   })
 
   const [blocks, setBlocks] = useState([])
+  const [isPreview, setIsPreview] = useState(false) // Estado para alternar vista previa
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value })
+  }
 
   const addBlock = (type) => {
-    setBlocks([
-      ...blocks,
-      { id: crypto.randomUUID(), type, content: type === "image" ? "" : "" },
-    ])
+    setBlocks([...blocks, { id: crypto.randomUUID(), type, content: "" }])
   }
 
   const updateBlock = (id, value) => {
@@ -38,6 +53,7 @@ export default function CreateNews() {
   const moveBlock = (id, direction) => {
     const index = blocks.findIndex((b) => b.id === id)
     if (
+      index < 0 ||
       (direction === "up" && index === 0) ||
       (direction === "down" && index === blocks.length - 1)
     )
@@ -50,24 +66,37 @@ export default function CreateNews() {
   }
 
   const generateHTML = () => {
+    const blockStyles = {
+      title:
+        'style="color: black; font-size: 40px; text-align: center; font-weight: bold;"',
+      subtitle:
+        'style="font-size: 1.5rem; margin-top: 1.5em; color: rgb(71, 85, 105);"',
+      paragraph: 'style="line-height: 1.7;"',
+      image: 'style="max-width: 100%; border-radius: 12px; margin: 1em 0px;"',
+      list: 'style="margin-left: 2em; list-style-type: disc;"',
+      quote:
+        'style="background: rgb(241, 245, 249); border-left: 4px solid rgb(148, 163, 184); padding: 1em; margin: 2em 0px; color: rgb(71, 85, 105);"',
+    }
+
     return blocks
       .map((block) => {
+        const style = blockStyles[block.type] || ""
         switch (block.type) {
           case "title":
-            return `<h2 style="color: rgb(194, 65, 12); margin-top: 2em;">${block.content}</h2>`
+            return `<h1 ${style}>${block.content}</h1>`
           case "subtitle":
-            return `<h3 style="font-size: 1.5rem; margin-top: 1.5em; color: rgb(71, 85, 105);">${block.content}</h3>`
+            return `<h3 ${style}>${block.content}</h3>`
           case "paragraph":
-            return `<p style="line-height: 1.7;">${block.content}</p>`
+            return `<p ${style}>${block.content}</p>`
           case "image":
-            return `<img src="${block.content}" alt="" style="max-width: 100%; border-radius: 12px; margin: 1em 0px;" />`
+            return `<img src="${block.content}" alt="" ${style} />`
           case "list":
-            return `<ul style="margin-left: 2em;">${block.content
+            return `<ul ${style}>${block.content
               .split("\n")
-              .map((li) => `<li style="margin-bottom: 0.5em;">${li}</li>`)
+              .map((li) => `<li >${li}</li>`)
               .join("")}</ul>`
           case "quote":
-            return `<blockquote style="background: rgb(241, 245, 249); border-left: 4px solid rgb(148, 163, 184); padding: 1em; margin: 2em 0px; color: rgb(71, 85, 105);">${block.content}</blockquote>`
+            return `<blockquote ${style}>${block.content}</blockquote>`
           default:
             return ""
         }
@@ -75,342 +104,197 @@ export default function CreateNews() {
       .join("")
   }
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value })
-  }
-
   const handleSubmit = (e) => {
     e.preventDefault()
-    const html = `<div style="font-family: Georgia, serif; color: rgb(30, 27, 24); line-height: 1.7;">
-      <h1 style="font-size: 2.2rem; font-weight: bold; text-align: center; margin-bottom: 0.5em; letter-spacing: 1px;">
-        ${form.title}
-      </h1>
-      <p style="text-align: center; font-style: italic; color: rgb(85, 85, 85); margin-bottom: 2em;">
-        ${form.description}
-      </p>
-      ${generateHTML()}
-    </div>`
+    const html = `
+      <div style="font-family: Georgia, serif; color: rgb(30, 27, 24); line-height: 1.7;">
+        ${generateHTML()}
+      </div>
+    `
 
     const newsData = {
       ...form,
       content: html,
-      date: new Date().toISOString(),
-      author: {
-        name: "Admin", // o el nombre del autor actual
-      },
+      date: getDate,
+      author: { name: user.name, avatar: user.avatar },
       id: crypto.randomUUID(),
     }
 
-    // Aquí haces la llamada a tu API con `newsData`
     createNews(newsData)
+      .then(() => {
+        navigate("/admin/panel")
+        toast.success("Noticia creada exitosamente")
+      })
+      .catch((error) => {
+        console.error("Error al crear la noticia:", error)
+        toast.error("Error al crear la noticia")
+      })
+    setNews((prevNews) => [newsData, ...prevNews])
   }
 
-  // Styles for preview
-  const previewStyles = {
-    fontFamily: "Georgia, serif",
-    color: "rgb(30, 27, 24)",
-    lineHeight: "1.7",
-    padding: "20px",
-    border: "1px solid #e5e7eb",
-    borderRadius: "8px",
-    backgroundColor: "#fff",
-    marginTop: "20px",
+  const renderBlock = (block) => {
+    const placeholders = {
+      title: "Título",
+      subtitle: "Subtítulo",
+      paragraph: "Párrafo",
+      image: "URL de la imagen",
+      list: "Lista (una línea por elemento)",
+      quote: "Cita",
+    }
+
+    return (
+      <div key={block.id} className="border p-2 rounded bg-gray-50 mb-2">
+        <div className="flex justify-between items-center mb-2">
+          <span className="capitalize font-medium">
+            {placeholders[block.type]}
+          </span>
+          <div className="space-x-2">
+            <button type="button" onClick={() => moveBlock(block.id, "up")}>
+              <span className=" text-blue-400">
+                <ArrowUpIcon />
+              </span>
+            </button>
+            <button type="button" onClick={() => moveBlock(block.id, "down")}>
+              <span className="text-blue-400 ">
+                <ArrowDownIcon />
+              </span>
+            </button>
+            <button type="button" onClick={() => removeBlock(block.id)}>
+              <span className="text-red-500">
+                <DeleteIcon />
+              </span>
+            </button>
+          </div>
+        </div>
+        {block.type === "image" ? (
+          <input
+            type="text"
+            placeholder={placeholders[block.type]}
+            value={block.content}
+            onChange={(e) => updateBlock(block.id, e.target.value)}
+            className="w-full p-1 border border-gray-300 rounded"
+          />
+        ) : (
+          <textarea
+            placeholder={placeholders[block.type]}
+            value={block.content}
+            onChange={(e) => updateBlock(block.id, e.target.value)}
+            rows={block.type === "list" ? 4 : 2}
+            className="w-full p-1 border border-gray-300 rounded"
+          />
+        )}
+      </div>
+    )
   }
 
   return (
-    <main
-      className="flex flex-col items-center min-h-screen py-10 w-full max-w-xl mx-auto"
-      style={{ fontFamily: "Georgia, serif" }}
-    >
-      <Link to="/admin/panel" className="absolute top-4 left-2 text-blue-500">
-        <ArrowNarrowLeft />
+    <main className="flex flex-col items-center min-h-screen py-10 w-full max-w-[800px] mx-auto relative">
+      <Link to="/admin/panel" className="absolute top-4 left-2  text-blue-500">
+        <ArrowNarrowLeft size={30} />
       </Link>
+      <h2 className="text-3xl font-bold mb-6 text-center">Crear Noticia</h2>
 
-      <h2
-        className="text-3xl font-bold mb-6 text-center"
-        style={{ fontSize: "2.2rem", letterSpacing: "1px" }}
-      >
-        Crear Noticia
-      </h2>
-
-      <form onSubmit={handleSubmit} className="space-y-4 w-full">
-        <input
-          type="text"
-          name="title"
-          placeholder="Título"
-          value={form.title}
-          onChange={handleChange}
-          required
-          className="w-full p-2 border border-gray-300 rounded"
-        />
-        <input
-          type="text"
-          name="description"
-          placeholder="Descripción"
-          value={form.description}
-          onChange={handleChange}
-          required
-          className="w-full p-2 border border-gray-300 rounded"
-        />
-        <select
-          name="category"
-          value={form.category}
-          onChange={handleChange}
-          required
-          className="w-full p-2 border border-gray-300 rounded"
-        >
-          <option value="" disabled>
-            Selecciona una categoría
-          </option>
-          {categorys.map((cat) => (
-            <option key={cat} value={cat}>
-              {cat}
-            </option>
-          ))}
-        </select>
-        <input
-          type="text"
-          name="image"
-          placeholder="URL de imagen destacada"
-          value={form.image}
-          onChange={handleChange}
-          required
-          className="w-full p-2 border border-gray-300 rounded"
-        />
-
-        <div className="space-y-2">
-          <h3
-            className="text-xl font-semibold"
-            style={{ color: "rgb(71, 85, 105)" }}
+      {isPreview ? (
+        <div className="w-full bg-white p-4 rounded shadow">
+          <h1 className="text-5xl font-extrabold tracking-wider uppercase text-gray-800 text-center p-2">
+            {form?.title || ""}
+          </h1>
+          <p className="italic text-base text-[#4b5563] mb-20 mt-5 text-center">
+            {form?.description || ""}
+          </p>
+          <div dangerouslySetInnerHTML={{ __html: generateHTML() }} />
+          <button
+            type="button"
+            onClick={() => setIsPreview(false)}
+            className="mt-4 bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded"
           >
-            Cuerpo de la Noticia
-          </h3>
-          {blocks.map((block, idx) => (
-            <div key={block.id} className="border p-2 rounded bg-gray-50">
-              <div className="flex justify-between items-center mb-2">
-                <span className="capitalize font-medium">
-                  {block.type === "title"
-                    ? "Título"
-                    : block.type === "subtitle"
-                    ? "Subtítulo"
-                    : block.type === "paragraph"
-                    ? "Párrafo"
-                    : block.type === "image"
-                    ? "Imagen"
-                    : block.type === "list"
-                    ? "Lista"
-                    : block.type === "quote"
-                    ? "Cita"
-                    : block.type}
-                </span>
-                <div className="space-x-2">
+            Volver a Editar
+          </button>
+        </div>
+      ) : (
+        <form
+          onSubmit={handleSubmit}
+          className="space-y-4 w-full max-w-[400px]"
+        >
+          <input
+            type="text"
+            name="title"
+            placeholder="Título"
+            value={form.title}
+            onChange={handleChange}
+            required
+            className="w-full p-2 border border-gray-300 rounded"
+          />
+          <input
+            type="text"
+            name="description"
+            placeholder="Descripción"
+            value={form.description}
+            onChange={handleChange}
+            required
+            className="w-full p-2 border border-gray-300 rounded"
+          />
+          <select
+            name="category"
+            value={form.category}
+            onChange={handleChange}
+            required
+            className="w-full p-2 border border-gray-300 rounded"
+          >
+            <option value="" disabled>
+              Selecciona una categoría
+            </option>
+            {categorys.map((cat) => (
+              <option key={cat} value={cat}>
+                {cat}
+              </option>
+            ))}
+          </select>
+          <input
+            type="text"
+            name="image"
+            placeholder="URL de imagen destacada"
+            value={form.image}
+            onChange={handleChange}
+            required
+            className="w-full p-2 border border-gray-300 rounded"
+          />
+          <div className="space-y-2">
+            <h3 className="text-xl font-semibold">Cuerpo de la Noticia</h3>
+            <div className="grid grid-cols-3 gap-2 mt-4">
+              {["title", "subtitle", "paragraph", "image", "list", "quote"].map(
+                (type) => (
                   <button
+                    key={type}
                     type="button"
-                    onClick={() => moveBlock(block.id, "up")}
+                    onClick={() => addBlock(type)}
+                    className="bg-gray-200 hover:bg-gray-300 text-sm rounded px-2 py-1"
                   >
-                    ⬆️
+                    Añadir {type.charAt(0).toUpperCase() + type.slice(1)}
                   </button>
-                  <button
-                    type="button"
-                    onClick={() => moveBlock(block.id, "down")}
-                  >
-                    ⬇️
-                  </button>
-                  <button type="button" onClick={() => removeBlock(block.id)}>
-                    ❌
-                  </button>
-                </div>
-              </div>
-              {block.type === "image" ? (
-                <input
-                  type="text"
-                  placeholder="URL de la imagen"
-                  value={block.content}
-                  onChange={(e) => updateBlock(block.id, e.target.value)}
-                  className="w-full p-1 border border-gray-300 rounded"
-                />
-              ) : (
-                <textarea
-                  placeholder={`Contenido de ${
-                    block.type === "title"
-                      ? "título"
-                      : block.type === "subtitle"
-                      ? "subtítulo"
-                      : block.type === "paragraph"
-                      ? "párrafo"
-                      : block.type === "list"
-                      ? "lista (una línea por elemento)"
-                      : block.type === "quote"
-                      ? "cita"
-                      : block.type
-                  }`}
-                  value={block.content}
-                  onChange={(e) => updateBlock(block.id, e.target.value)}
-                  rows={block.type === "list" ? 4 : 2}
-                  className="w-full p-1 border border-gray-300 rounded"
-                />
+                )
               )}
             </div>
-          ))}
-
-          <div className="grid grid-cols-3 gap-2 mt-4">
-            {[
-              { type: "title", name: "Título" },
-              { type: "subtitle", name: "Subtítulo" },
-              { type: "paragraph", name: "Párrafo" },
-              { type: "image", name: "Imagen" },
-              { type: "list", name: "Lista" },
-              { type: "quote", name: "Cita" },
-            ].map(({ type, name }) => (
-              <button
-                key={type}
-                type="button"
-                onClick={() => addBlock(type)}
-                className="bg-gray-200 hover:bg-gray-300 text-sm rounded px-2 py-1"
-                style={{
-                  backgroundColor:
-                    type === "title"
-                      ? "rgba(194, 65, 12, 0.1)"
-                      : type === "quote"
-                      ? "rgba(241, 245, 249, 0.8)"
-                      : "rgb(241, 245, 249)",
-                }}
-              >
-                Añadir {name}
-              </button>
-            ))}
+            {blocks.map(renderBlock)}
           </div>
-        </div>
 
-        {blocks.length > 0 && (
-          <div className="mt-6">
-            <h3
-              className="text-xl font-semibold mb-2"
-              style={{ color: "rgb(71, 85, 105)" }}
+          <div className="flex justify-between mt-6">
+            <button
+              type="button"
+              onClick={() => setIsPreview(true)}
+              className="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded"
             >
-              Vista previa de la noticia
-            </h3>
-            <div style={previewStyles}>
-              <h1
-                style={{
-                  fontSize: "2.2rem",
-                  fontWeight: "bold",
-                  textAlign: "center",
-                  marginBottom: "0.5em",
-                  letterSpacing: "1px",
-                }}
-              >
-                {form.title || "Título de la noticia"}
-              </h1>
-              <p
-                style={{
-                  textAlign: "center",
-                  fontStyle: "italic",
-                  color: "rgb(85, 85, 85)",
-                  marginBottom: "2em",
-                }}
-              >
-                {form.description || "Descripción de la noticia"}
-              </p>
-              {blocks.map((block) => {
-                switch (block.type) {
-                  case "title":
-                    return (
-                      <h2
-                        key={block.id}
-                        style={{ color: "rgb(194, 65, 12)", marginTop: "2em" }}
-                      >
-                        {block.content}
-                      </h2>
-                    )
-                  case "subtitle":
-                    return (
-                      <h3
-                        key={block.id}
-                        style={{
-                          fontSize: "1.5rem",
-                          marginTop: "1.5em",
-                          color: "rgb(71, 85, 105)",
-                        }}
-                      >
-                        {block.content}
-                      </h3>
-                    )
-                  case "paragraph":
-                    return (
-                      <p key={block.id} style={{ lineHeight: "1.7" }}>
-                        {block.content}
-                      </p>
-                    )
-                  case "image":
-                    return block.content ? (
-                      <img
-                        key={block.id}
-                        src={block.content}
-                        alt=""
-                        style={{
-                          maxWidth: "100%",
-                          borderRadius: "12px",
-                          margin: "1em 0",
-                        }}
-                      />
-                    ) : (
-                      <div
-                        key={block.id}
-                        style={{
-                          height: "200px",
-                          background: "#eee",
-                          borderRadius: "12px",
-                          margin: "1em 0",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                        }}
-                      >
-                        Vista previa de la imagen
-                      </div>
-                    )
-                  case "list":
-                    return (
-                      <ul key={block.id} style={{ marginLeft: "2em" }}>
-                        {block.content.split("\n").map((item, i) => (
-                          <li key={i} style={{ marginBottom: "0.5em" }}>
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    )
-                  case "quote":
-                    return (
-                      <blockquote
-                        key={block.id}
-                        style={{
-                          background: "rgb(241, 245, 249)",
-                          borderLeft: "4px solid rgb(148, 163, 184)",
-                          padding: "1em",
-                          margin: "2em 0",
-                          color: "rgb(71, 85, 105)",
-                        }}
-                      >
-                        {block.content}
-                      </blockquote>
-                    )
-                  default:
-                    return null
-                }
-              })}
-            </div>
+              Vista Previa
+            </button>
+            <button
+              type="submit"
+              className="bg-orange-600 hover:bg-orange-700 px-4 py-2 rounded text-white"
+            >
+              Publicar Noticia
+            </button>
           </div>
-        )}
-
-        <button
-          type="submit"
-          className="w-full px-4 py-2 rounded hover:bg-blue-700 mt-6"
-          style={{ backgroundColor: "rgb(194, 65, 12)", color: "white" }}
-        >
-          Publicar Noticia
-        </button>
-      </form>
+        </form>
+      )}
     </main>
   )
 }
