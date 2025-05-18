@@ -6,6 +6,8 @@ import { useContext } from "react"
 import NavHeader from "../components/ui/navHeader"
 
 export default function NewsPage() {
+  window.scrollTo(0, 0)
+
   const { news } = useContext(NewsContext)
   changeTitle("Noticias")
 

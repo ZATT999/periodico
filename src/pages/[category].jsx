@@ -1,10 +1,13 @@
-import { Link, useParams } from "react-router"
-import LastNews from "../components/ui/lastNews"
 import NavHeader from "../components/ui/navHeader"
+import { changeTitle } from "../utils/changeTitle"
+import LastNews from "../components/ui/lastNews"
+import { Link, useParams } from "react-router"
 import MapNews from "../components/mapNews"
 
 export default function CategorysId({ allNews }) {
+  window.scrollTo(0, 0)
   const params = useParams()
+  changeTitle(`Noticias - ${params.category}`)
 
   const news = allNews.filter(
     (newsItem) => newsItem.category === params.category

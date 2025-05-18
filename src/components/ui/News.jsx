@@ -3,7 +3,7 @@ import HTMLReactParser from "html-react-parser/lib/index"
 import { DateIcon } from "./icons"
 
 export default function News({ news = {} }) {
-  const { category, date, author, content } = news
+  const { category, date, author, content, description, title } = news
 
   return (
     <article className="min-h-screen max-w-[1100px] mx-auto px-3 py-15 font-serif text-[#1e1b18]">
@@ -46,6 +46,12 @@ export default function News({ news = {} }) {
       <hr className="border-gray-300 my-6" />
 
       <section className="prose lg:prose-xl prose-h1:text-orange-600 prose-h2:text-orange-600 prose-p:text-[#111827] prose-img:rounded-xl prose-a:text-blue-700">
+        <h1 className="text-5xl font-extrabold tracking-wider uppercase text-gray-800 text-center p-2">
+          {title}
+        </h1>
+        <p className="italic text-base text-[#4b5563] mb-20 mt-5 text-center">
+          {description}
+        </p>
         {content ? HTMLReactParser(content) : ""}
       </section>
     </article>

@@ -11,6 +11,7 @@ import NewsId from "./pages/[id]"
 import Layout from "./layout"
 import CategorysId from "./pages/[category]"
 import CreateNews from "./pages/panel/createNews"
+import EditNews from "./pages/panel/editNews"
 
 export default function App() {
   const { user, loading } = useContext(UserContext)
@@ -42,6 +43,10 @@ export default function App() {
                 <Route
                   path="/admin/panel/create-news"
                   element={<CreateNews />}
+                />
+                <Route
+                  path="/admin/panel/edit-news/:id"
+                  element={<EditNews news={news} />}
                 />
               </>
             ) : (
