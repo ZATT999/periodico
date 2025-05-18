@@ -1,20 +1,20 @@
-import { NewsContext, UserContext } from "../context/context"
+import { NewsContext, UserContext } from "../../context/context"
 import { useContext, useState, useRef } from "react"
-import { getDate } from "../utils/getDate"
+import { getDate } from "../../utils/getDate"
 import { Link } from "react-router"
 import {
   DeleteIcon,
   EditIcon,
   OpenLockIcon,
   OpenLockOffIcon,
-} from "../components/ui/icons"
+} from "../../components/ui/icons"
 import {
   createNews,
   deleteNews,
   updateNews,
   toggleVisibility,
-} from "../services/newsService"
-import { createUser } from "../services/UserServices"
+} from "../../services/newsService"
+import { createUser } from "../../services/UserServices"
 import { toast } from "sonner"
 
 export default function Panel() {
@@ -159,12 +159,11 @@ export default function Panel() {
       </h3>
 
       <div className="flex justify-center mb-20 gap-4">
-        <button
-          onClick={() => openDialog(createNewsRef)}
-          className="bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 cursor-pointer"
-        >
+          <Link to="/admin/panel/create-news">
+        <button className="bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 cursor-pointer">
           Crear Noticia
         </button>
+          </Link>
         <button
           onClick={() => openDialog(userCreatedRef)}
           className="bg-green-600 text-white py-2 px-6 rounded-lg hover:bg-green-700 cursor-pointer"
@@ -215,74 +214,6 @@ export default function Panel() {
             <button
               type="submit"
               className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 cursor-pointer"
-            >
-              Crear
-            </button>
-          </div>
-        </form>
-      </dialog>
-
-      <dialog
-        ref={createNewsRef}
-        className="p-6 w-96 rounded-lg border border-blue-300 shadow-lg m-auto"
-      >
-        <h2 className="text-xl font-semibold mb-4 text-center">
-          Crear Noticia
-        </h2>
-        <form onSubmit={handleCreate} className="space-y-4">
-          <input
-            type="text"
-            name="title"
-            placeholder="Título"
-            className="w-full p-2 border border-gray-300 rounded-lg"
-            required
-          />
-          <input
-            type="text"
-            name="description"
-            placeholder="Descripción"
-            className="w-full p-2 border border-gray-300 rounded-lg"
-            required
-          />
-          <select
-            name="category"
-            className="w-full p-2 border border-gray-300 rounded-lg"
-            required
-          >
-            <option value="" disabled selected>
-              Selecciona una categoría
-            </option>
-            {categorys.map((category) => (
-              <option key={category} value={category}>
-                {category}
-              </option>
-            ))}
-          </select>
-          <input
-            type="text"
-            name="image"
-            placeholder="URL de Imagen"
-            className="w-full p-2 border border-gray-300 rounded-lg"
-            required
-          />
-          <textarea
-            name="content"
-            placeholder="Contenido"
-            className="w-full p-2 border border-gray-300 rounded-lg resize-none"
-            rows="5"
-            required
-          />
-          <div className="flex justify-end gap-3 mt-4">
-            <button
-              type="button"
-              onClick={() => closeDialog(createNewsRef)}
-              className="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 cursor-pointer"
-            >
-              Cancelar
-            </button>
-            <button
-              type="submit"
-              className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 cursor-pointer"
             >
               Crear
             </button>

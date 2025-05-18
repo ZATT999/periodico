@@ -5,11 +5,12 @@ import NotFound from "./pages/notFound"
 import NewsPage from "./pages/news"
 import { useContext } from "react"
 import Login from "./pages/login"
-import Panel from "./pages/panel"
+import Panel from "./pages/panel/panel"
 import { Toaster } from "sonner"
 import NewsId from "./pages/[id]"
 import Layout from "./layout"
 import CategorysId from "./pages/[category]"
+import CreateNews from "./pages/panel/createNews"
 
 export default function App() {
   const { user, loading } = useContext(UserContext)
@@ -36,7 +37,13 @@ export default function App() {
               element={<CategorysId allNews={news} />}
             />
             {user?.isAdmin ? (
-              <Route path="/admin/panel" element={<Panel />} />
+              <>
+                <Route path="/admin/panel" element={<Panel />} />
+                <Route
+                  path="/admin/panel/create-news"
+                  element={<CreateNews />}
+                />
+              </>
             ) : (
               <Route
                 path="/admin/panel"
