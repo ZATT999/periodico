@@ -15,7 +15,6 @@ import {
 export default function Panel() {
   const { news, setNews } = useContext(NewsContext)
   const userCreatedRef = useRef()
-  window.scrollTo(0, 0)
   changeTitle("Panel de Administración")
 
   const openDialog = (ref) => ref.current?.showModal()
