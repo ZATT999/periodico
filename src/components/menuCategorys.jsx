@@ -39,7 +39,7 @@ export default function MenuCategorys() {
             <h2 className="text-lg font-semibold text-gray-700 my-4 text-center">
               Categorías
             </h2>
-            <ul className="flex flex-col gap-3 px-4">
+            <ul className="flex flex-col gap-3 px-10 ">
               {categorys.map((category) => (
                 <li key={category}>
                   <Link
