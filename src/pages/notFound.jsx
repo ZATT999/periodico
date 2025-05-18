@@ -2,6 +2,8 @@ import { Link } from "react-router"
 import Header from "../components/header"
 
 export default function NotFound() {
+  window.scrollTo(0, 0)
+
   return (
     <>
       <Header />
