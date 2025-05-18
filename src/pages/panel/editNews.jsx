@@ -15,7 +15,6 @@ export default function EditNews({ news }) {
   const { setNews } = useContext(NewsContext)
   const { id } = useParams()
   const navigate = useNavigate()
-  window.scrollTo(0, 0)
   changeTitle("Editar Noticia")
 
   const newsData = news?.find((item) => item.id === id) || null
@@ -84,7 +83,6 @@ export default function EditNews({ news }) {
         })
         .filter(Boolean)
 
-      console.log("Bloques extraídos:", blocks)
       return blocks
     } catch (error) {
       console.error("Error al parsear HTML:", error)
@@ -94,7 +92,6 @@ export default function EditNews({ news }) {
 
   useEffect(() => {
     if (newsData) {
-      console.log("Contenido original:", newsData.content)
       const extractedBlocks = extractContentBlocks(newsData.content)
       setBlocks(extractedBlocks)
       setIsLoading(false)
@@ -185,19 +182,20 @@ export default function EditNews({ news }) {
       </div>
     `
 
+    console.log(id)
+
     updateNews(id, { ...form, content: html })
       .then(() => {
-        navigate("/admin/panel")
+        setNews((prevNews) =>
+          prevNews.map((item) => (item.id === id ? newsData : item))
+        )
         toast.success("Noticia actualizada exitosamente")
       })
       .catch(
         (error) => console.error("Error al actualizar la noticia:", error),
         toast.error("Error al actualizar la noticia")
       )
-
-    setNews((prevNews) =>
-      prevNews.map((item) => (item.id === id ? newsData : item))
-    )
+      .finally(() => navigate("/admin/panel"))
   }
 
   const renderBlock = (block) => {

@@ -17,7 +17,6 @@ export default function CreateNews() {
   const { user } = useContext(UserContext)
   const { setNews } = useContext(NewsContext)
   const navigate = useNavigate()
-  window.scrollTo(0, 0)
   changeTitle("Crear Noticia")
 
   const [form, setForm] = useState({
