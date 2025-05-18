@@ -6,6 +6,12 @@ export const getAllNews = () =>
     headers: { "Content-Type": "application/json" },
   })
 
+export const getNewsById = (id) =>
+  fetch(`${urlFetchs}/api/news/${id}`, {
+    method: "GET",
+    headers: { "Content-Type": "application/json" },
+  })
+
 export const createNews = (news) =>
   fetch(`${urlFetchs}/api/news`, {
     method: "POST",
