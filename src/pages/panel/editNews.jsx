@@ -113,7 +113,7 @@ export default function EditNews({ news }) {
   }
 
   const addBlock = (type) => {
-    setBlocks([{ id: crypto.randomUUID(), type, content: "" }, [...block ]])
+    setBlocks((prevBlock) => [{ id: crypto.randomUUID(), type, content: "" }, ...prevBlock])
   }
 
   const updateBlock = (id, value) => {
