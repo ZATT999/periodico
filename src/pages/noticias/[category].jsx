@@ -1,8 +1,8 @@
-import NavHeader from "../components/ui/navHeader"
-import { changeTitle } from "../utils/changeTitle"
-import LastNews from "../components/ui/lastNews"
+import NavHeader from "../../components/navHeader"
+import { changeTitle } from "../../utils/changeTitle"
+import LastNews from "../../components/lastNews"
 import { Link, useParams } from "react-router"
-import MapNews from "../components/mapNews"
+import MapNews from "../../components/mapNews"
 
 export default function CategorysId({ allNews }) {
   window.scrollTo(0, 0)

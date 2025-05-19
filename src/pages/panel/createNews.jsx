@@ -10,7 +10,7 @@ import {
   ArrowNarrowLeft,
   ArrowUpIcon,
   DeleteIcon,
-} from "../../components/ui/icons"
+} from "../../components/icons"
 
 export default function CreateNews() {
   const { categorys } = useContext(NewsContext)
@@ -25,6 +25,15 @@ export default function CreateNews() {
     category: "",
     image: "",
   })
+
+  const placeholders = {
+    title: "Título",
+    subtitle: "Subtítulo",
+    paragraph: "Párrafo",
+    image: "Imagen",
+    list: "Lista",
+    quote: "Cita",
+  }
 
   const [blocks, setBlocks] = useState([])
   const [isPreview, setIsPreview] = useState(false) // Estado para alternar vista previa
@@ -132,34 +141,40 @@ export default function CreateNews() {
   }
 
   const renderBlock = (block) => {
-    const placeholders = {
-      title: "Título",
-      subtitle: "Subtítulo",
-      paragraph: "Párrafo",
-      image: "URL de la imagen",
-      list: "Lista (una línea por elemento)",
-      quote: "Cita",
-    }
-
     return (
-      <div key={block.id} className="border p-2 rounded bg-gray-50 mb-2">
+      <div
+        key={block.id}
+        className=" p-2 rounded bg-gray-50 mb-3 shadow-md border-1 border-gray-300 animate-all transition-all"
+      >
         <div className="flex justify-between items-center mb-2">
           <span className="capitalize font-medium">
-            {placeholders[block.type]}
+            {placeholders[block.type] || block.type}
           </span>
           <div className="space-x-2">
-            <button type="button" onClick={() => moveBlock(block.id, "up")}>
-              <span className=" text-blue-400">
+            <button
+              type="button"
+              onClick={() => moveBlock(block.id, "up")}
+              className="px-2 py-1 bg-gray-200 rounded cursor-pointer"
+            >
+              <span className=" text-blue-400 cursor-pointer">
                 <ArrowUpIcon />
               </span>
             </button>
-            <button type="button" onClick={() => moveBlock(block.id, "down")}>
-              <span className="text-blue-400 ">
+            <button
+              type="button"
+              onClick={() => moveBlock(block.id, "down")}
+              className="px-2 py-1 bg-gray-200 rounded cursor-pointer"
+            >
+              <span className="text-blue-400 cursor-pointer">
                 <ArrowDownIcon />
               </span>
             </button>
-            <button type="button" onClick={() => removeBlock(block.id)}>
-              <span className="text-red-500">
+            <button
+              type="button"
+              onClick={() => removeBlock(block.id)}
+              className="px-2 py-1 bg-gray-200 rounded cursor-pointer"
+            >
+              <span className="text-red-500 cursor-pointer">
                 <DeleteIcon />
               </span>
             </button>
@@ -171,7 +186,7 @@ export default function CreateNews() {
             placeholder={placeholders[block.type]}
             value={block.content}
             onChange={(e) => updateBlock(block.id, e.target.value)}
-            className="w-full p-1 border border-gray-300 rounded"
+            className="w-full p-1 border border-gray-300 rounded outline-none"
           />
         ) : (
           <textarea
@@ -179,7 +194,9 @@ export default function CreateNews() {
             value={block.content}
             onChange={(e) => updateBlock(block.id, e.target.value)}
             rows={block.type === "list" ? 4 : 2}
-            className="w-full p-1 border border-gray-300 rounded"
+            className={`w-full p-1 border border-gray-300 rounded outline-none min-h-[40px] max-h-[300px] ${
+              block.type === "paragraph" ? "h-30" : ""
+            }`}
           />
         )}
       </div>
@@ -187,7 +204,7 @@ export default function CreateNews() {
   }
 
   return (
-    <main className="flex flex-col items-center min-h-screen py-10 w-full max-w-[800px] mx-auto relative">
+    <main className="flex flex-col items-center min-h-screen py-10 px-2 w-full max-w-[800px] mx-auto relative">
       <Link to="/admin/panel" className="absolute top-4 left-2  text-blue-500">
         <ArrowNarrowLeft size={30} />
       </Link>
@@ -267,9 +284,9 @@ export default function CreateNews() {
                     key={type}
                     type="button"
                     onClick={() => addBlock(type)}
-                    className="bg-gray-200 hover:bg-gray-300 text-sm rounded px-2 py-1"
+                    className="bg-gray-200 hover:bg-gray-300 text-sm rounded px-2 py-1 cursor-pointer"
                   >
-                    Añadir {type.charAt(0).toUpperCase() + type.slice(1)}
+                    Añadir {placeholders[type] || type}
                   </button>
                 )
               )}
@@ -280,14 +297,17 @@ export default function CreateNews() {
           <div className="flex justify-between mt-6">
             <button
               type="button"
-              onClick={() => setIsPreview(true)}
-              className="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded"
+              onClick={() => {
+                setIsPreview(true)
+                window.scrollTo(0, 0)
+              }}
+              className="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded cursor-pointer"
             >
               Vista Previa
             </button>
             <button
               type="submit"
-              className="bg-orange-600 hover:bg-orange-700 px-4 py-2 rounded text-white"
+              className="bg-green-500 hover:bg-green-700 px-4 py-2 rounded text-white cursor-pointer"
             >
               Publicar Noticia
             </button>

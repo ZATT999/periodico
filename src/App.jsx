@@ -1,17 +1,17 @@
 import { BrowserRouter, Link, Route, Routes } from "react-router"
 import { NewsContext, UserContext } from "./context/context"
-import Spinner from "./components/ui/spinner"
-import NotFound from "./pages/notFound"
-import NewsPage from "./pages/news"
-import { useContext } from "react"
-import Login from "./pages/login"
-import Panel from "./pages/panel/panel"
-import { Toaster } from "sonner"
-import NewsId from "./pages/[id]"
-import Layout from "./layout"
-import CategorysId from "./pages/[category]"
+import CategorysId from "./pages/noticias/[category]"
 import CreateNews from "./pages/panel/createNews"
 import EditNews from "./pages/panel/editNews"
+import Spinner from "./components/spinner"
+import NewPage from "./pages/noticias/[id]"
+import NotFound from "./pages/notFound"
+import Panel from "./pages/panel/panel"
+import { useContext } from "react"
+import Login from "./pages/login"
+import { Toaster } from "sonner"
+import News from "./pages/news"
+import Layout from "./layout"
 
 export default function App() {
   const { user, loading } = useContext(UserContext)
@@ -31,8 +31,8 @@ export default function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<Layout />}>
-            <Route path="/" element={<NewsPage />} />
-            <Route path="/noticia/:id" element={<NewsId />} />
+            <Route path="/" element={<News />} />
+            <Route path="/noticia/:id" element={<NewPage />} />
             <Route
               path="/noticias/:category"
               element={<CategorysId allNews={news} />}
@@ -40,12 +40,9 @@ export default function App() {
             {user?.isAdmin ? (
               <>
                 <Route path="/admin/panel" element={<Panel />} />
+                <Route path="/admin/panel/create" element={<CreateNews />} />
                 <Route
-                  path="/admin/panel/create-news"
-                  element={<CreateNews />}
-                />
-                <Route
-                  path="/admin/panel/edit-news/:id"
+                  path="/admin/panel/news/:id"
                   element={<EditNews news={news} />}
                 />
               </>

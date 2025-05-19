@@ -1,5 +1,5 @@
-import { getDate } from "../../utils/getDate"
-import MenuCategorys from "../menuCategorys"
+import { getDate } from "../utils/getDate"
+import SideBarMenu from "./sideBarMenu"
 import Categorys from "./categorys"
 import { DateIcon } from "./icons"
 
@@ -7,7 +7,7 @@ export default function NavHeader() {
   return (
     <>
       <section className="flex items-center justify-between gap-2 mb-4 text-gray-600 px-4">
-        <MenuCategorys />
+        <SideBarMenu />
         <span className="font-bold flex items-center gap-2">
           <DateIcon /> {getDate}
         </span>

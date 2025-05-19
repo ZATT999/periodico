@@ -10,11 +10,12 @@ import {
   EditIcon,
   OpenLockIcon,
   OpenLockOffIcon,
-} from "../../components/ui/icons"
+} from "../../components/icons"
 
 export default function Panel() {
   const { news, setNews } = useContext(NewsContext)
   const userCreatedRef = useRef()
+
   changeTitle("Panel de Administración")
 
   const openDialog = (ref) => ref.current?.showModal()
@@ -72,7 +73,7 @@ export default function Panel() {
       </h3>
 
       <div className="flex justify-center mb-20 gap-4">
-        <Link to="/admin/panel/create-news">
+        <Link to="/admin/panel/create">
           <button className="bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 cursor-pointer">
             Crear Noticia
           </button>
@@ -128,7 +129,7 @@ export default function Panel() {
         {news.map((newsItem) => (
           <article
             key={newsItem.id}
-            className="group w-auto h-auto group rounded-lg overflow-hidden shadow-md border-2 border-blue-200 hover:scale-101 transition-transform duration-300 mb-5"
+            className="group w-auto h-auto group rounded-lg overflow-hidden shadow-md border-1 border-blue-200 hover:scale-101 transition-transform duration-300 mb-5"
           >
             <Link to={`/noticia/${newsItem.id}`}>
               <img
@@ -153,7 +154,7 @@ export default function Panel() {
                     <DeleteIcon size={30} />
                   </button>
                   <Link
-                    to={`/admin/panel/edit-news/${newsItem.id}`}
+                    to={`/admin/panel/news/${newsItem.id}`}
                     className="text-blue-500"
                   >
                     <EditIcon size={30} />

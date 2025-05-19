@@ -1,14 +1,14 @@
 import { changeTitle } from "../utils/changeTitle"
-import LastNews from "../components/ui/lastNews"
+import LastNews from "../components/lastNews"
 import { NewsContext } from "../context/context"
+import NavHeader from "../components/navHeader"
 import MapNews from "../components/mapNews"
 import { useContext } from "react"
-import NavHeader from "../components/ui/navHeader"
 
-export default function NewsPage() {
+export default function News() {
   window.scrollTo(0, 0)
 
-  const { news } = useContext(NewsContext)
+  const { news, setNews } = useContext(NewsContext)
   changeTitle("Noticias")
 
   const visibleNews = news.filter((news) => news.visible === true)
@@ -21,7 +21,7 @@ export default function NewsPage() {
 
       <LastNews news={lastNew} />
 
-      <MapNews news={visibleNews} />
+      <MapNews news={visibleNews} setNews={setNews} />
     </>
   )
 }

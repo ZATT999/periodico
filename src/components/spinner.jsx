@@ -1,10 +1,7 @@
-import logo from "../../assets/logo.webp"
-
 export default function Spinner({ text = "" }) {
   return (
     <>
       <main className="flex flex-col items-center justify-center w-full h-screen">
-        <img src={logo} alt="logo" className="w-30 h-30 mb-4" />
         <div className="flex items-center justify-center">
           <div className="flex flex-col items-center">
             <div className="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>

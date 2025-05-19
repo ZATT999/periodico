@@ -1,8 +1,7 @@
-import { useNavigate } from "react-router"
 import HTMLReactParser from "html-react-parser/lib/index"
 import { DateIcon } from "./icons"
 
-export default function News({ news = {} }) {
+export default function NewsArticle({ news = {} }) {
   const { category, date, author, content, description, title } = news
 
   return (

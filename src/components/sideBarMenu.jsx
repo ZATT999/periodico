@@ -1,10 +1,10 @@
 import { Link } from "react-router"
 import logo from "../assets/logo.webp"
 import { NewsContext } from "../context/context"
-import { CloseIcon, HamburgerIcon } from "./ui/icons"
+import { CloseIcon, HamburgerIcon } from "./icons"
 import { useContext, useState } from "react"
 
-export default function MenuCategorys() {
+export default function SideBarMenu() {
   const [isOpen, setIsOpen] = useState(false)
   const { categorys } = useContext(NewsContext)
 

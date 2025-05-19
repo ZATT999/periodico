@@ -1,5 +1,5 @@
+import { NewsContext } from "../context/context"
 import { useContext } from "react"
-import { NewsContext } from "../../context/context"
 import { Link } from "react-router"
 
 export default function Categorys() {

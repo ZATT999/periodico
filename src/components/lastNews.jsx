@@ -11,7 +11,7 @@ export default function LastNews({ news = {}, title }) {
       <article className="flex flex-col justify-center p-3 md:flex-row gap-8 py-6 ">
         <div className="md:w-1/2">
           <Link to={`/noticia/${news.id}`}>
-            <h2 className="text-2xl md:text-3xl font-serif font-bold uppercase mb-2 leading-tight hover:text-sky-800 transition-all">
+            <h2 className="text-2xl md:text-3xl font-serif font-bold uppercase mb-2 leading-tight hover:text-sky-900 transition-all">
               {news.title}
             </h2>
           </Link>

@@ -1,14 +1,16 @@
 import { Link, useParams, useNavigate } from "react-router"
 import { updateNews } from "../../services/newsService"
 import { useContext, useState, useEffect } from "react"
+import { changeTitle } from "../../utils/changeTitle"
 import { NewsContext } from "../../context/context"
+import Spinner from "../../components/spinner"
 import { toast } from "sonner"
 import {
+  ArrowDownIcon,
   ArrowNarrowLeft,
   ArrowUpIcon,
   DeleteIcon,
-} from "../../components/ui/icons"
-import { changeTitle } from "../../utils/changeTitle"
+} from "../../components/icons"
 
 export default function EditNews({ news }) {
   const { categorys } = useContext(NewsContext)
@@ -18,14 +20,23 @@ export default function EditNews({ news }) {
   changeTitle("Editar Noticia")
 
   const newsData = news?.find((item) => item.id === id) || null
+  const [isLoading, setIsLoading] = useState(true)
+  const [blocks, setBlocks] = useState([])
   const [form, setForm] = useState({
     title: newsData?.title || "",
     description: newsData?.description || "",
     category: newsData?.category || "",
     image: newsData?.image || "",
   })
-  const [blocks, setBlocks] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
+
+  const placeholders = {
+    title: "Título",
+    subtitle: "Subtítulo",
+    paragraph: "Párrafo",
+    image: "Imagen",
+    list: "Lista",
+    quote: "Cita",
+  }
 
   const extractContentBlocks = (htmlContent) => {
     if (!htmlContent || typeof htmlContent !== "string") {
@@ -60,7 +71,6 @@ export default function EditNews({ news }) {
         { type: "image", tag: "img", attr: "src" },
         { type: "list", tag: "ul" },
         { type: "quote", tag: "blockquote" },
-        { type: "heading", tag: "h1" }, // Agregado para manejar h1
       ]
 
       const blocks = Array.from(contentContainer.children)
@@ -91,11 +101,11 @@ export default function EditNews({ news }) {
   }
 
   useEffect(() => {
-    if (newsData) {
-      const extractedBlocks = extractContentBlocks(newsData.content)
-      setBlocks(extractedBlocks)
-      setIsLoading(false)
-    }
+    if (!newsData) return setIsLoading(false)
+
+    const extractedBlocks = extractContentBlocks(newsData.content)
+    setBlocks(extractedBlocks)
+    setIsLoading(false)
   }, [newsData])
 
   const handleChange = (e) => {
@@ -143,8 +153,6 @@ export default function EditNews({ news }) {
       list: 'style="margin-left: 2em;"',
       quote:
         'style="background: rgb(241, 245, 249); border-left: 4px solid rgb(148, 163, 184); padding: 1em; margin: 2em 0px; color: rgb(71, 85, 105);"',
-      heading:
-        'style="font-size: 2.2rem; font-weight: bold; text-align: center;"',
     }
 
     return blocks
@@ -152,7 +160,6 @@ export default function EditNews({ news }) {
         const style = blockStyles[block.type] || ""
         switch (block.type) {
           case "title":
-          case "heading": // Maneja h1 como heading
             return `<h2 ${style}>${block.content}</h2>`
           case "subtitle":
             return `<h3 ${style}>${block.content}</h3>`
@@ -199,18 +206,11 @@ export default function EditNews({ news }) {
   }
 
   const renderBlock = (block) => {
-    const placeholders = {
-      title: "Título",
-      subtitle: "Subtítulo",
-      paragraph: "Párrafo",
-      image: "URL de la imagen",
-      list: "Lista (una línea por elemento)",
-      quote: "Cita",
-      heading: "Encabezado principal",
-    }
-
     return (
-      <div key={block.id} className="border p-2 rounded bg-gray-50 mb-2">
+      <div
+        key={block.id}
+        className="border-1 border-gray-200 p-2 rounded bg-gray-50 mb-2"
+      >
         <div className="flex justify-between items-center mb-2">
           <span className="capitalize font-medium">
             {placeholders[block.type] || block.type}
@@ -219,7 +219,7 @@ export default function EditNews({ news }) {
             <button
               type="button"
               onClick={() => moveBlock(block.id, "up")}
-              className="px-2 py-1 bg-gray-200 rounded"
+              className="px-2 py-1 bg-gray-200 rounded cursor-pointer"
             >
               <span className="text-blue-400">
                 <ArrowUpIcon />
@@ -228,16 +228,16 @@ export default function EditNews({ news }) {
             <button
               type="button"
               onClick={() => moveBlock(block.id, "down")}
-              className="px-2 py-1 bg-gray-200 rounded"
+              className="px-2 py-1 bg-gray-200 rounded cursor-pointer"
             >
               <span className="text-blue-400">
-                <ArrowUpIcon />
+                <ArrowDownIcon />
               </span>
             </button>
             <button
               type="button"
               onClick={() => removeBlock(block.id)}
-              className="px-2 py-1 bg-gray-200 rounded"
+              className="px-2 py-1 bg-gray-200 rounded cursor-pointer"
             >
               <span className="text-red-500">
                 <DeleteIcon />
@@ -251,7 +251,7 @@ export default function EditNews({ news }) {
             placeholder={placeholders[block.type]}
             value={block.content}
             onChange={(e) => updateBlock(block.id, e.target.value)}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 border border-gray-300 rounded outline-none"
           />
         ) : (
           <textarea
@@ -259,24 +259,26 @@ export default function EditNews({ news }) {
             value={block.content}
             onChange={(e) => updateBlock(block.id, e.target.value)}
             rows={block.type === "list" ? 4 : 2}
-            className="w-full p-2 border border-gray-300 rounded"
+            className={`w-full p-2 border border-gray-300 rounded outline-none min-h-[40px] max-h-[300px] ${
+              block.type === "paragraph" ? "h-30" : ""
+            }`}
           />
         )}
       </div>
     )
   }
 
-  if (isLoading) return <div className="text-center py-10">Cargando...</div>
+  if (isLoading) return <Spinner text="Cargando Noticia" />
   if (!newsData)
     return <div className="text-center py-10">Noticia no encontrada</div>
 
   return (
-    <main className="flex flex-col items-center min-h-screen py-10 w-full max-w-xl mx-auto relative">
+    <main className="flex flex-col items-center min-h-screen py-10 w-full max-w-[800px] mx-auto relative">
       <Link to="/admin/panel" className="absolute top-4 left-2 text-blue-500 ">
         <ArrowNarrowLeft size={30} />
       </Link>
       <h2 className="text-3xl font-bold mb-6 text-center">Editar Noticia</h2>
-      <form onSubmit={handleSubmit} className="space-y-4 w-full">
+      <form onSubmit={handleSubmit} className="space-y-4 w-full max-w-[400px]">
         <input
           type="text"
           name="title"
@@ -323,11 +325,6 @@ export default function EditNews({ news }) {
 
         <div className="space-y-2">
           <h3 className="text-xl font-semibold">Cuerpo de la Noticia</h3>
-          {blocks.length > 0 ? (
-            blocks.map(renderBlock)
-          ) : (
-            <p className="text-gray-500">No hay bloques de contenido</p>
-          )}
           <div className="grid grid-cols-3 gap-2 mt-4">
             {["title", "subtitle", "paragraph", "image", "list", "quote"].map(
               (type) => (
@@ -335,19 +332,23 @@ export default function EditNews({ news }) {
                   key={type}
                   type="button"
                   onClick={() => addBlock(type)}
-                  className="bg-gray-200 hover:bg-gray-300 text-sm rounded px-2 py-1"
+                  className="bg-gray-200 hover:bg-gray-300 text-sm rounded px-2 py-1 cursor-pointer"
                 >
-                  Añadir {type.charAt(0).toUpperCase() + type.slice(1)}
+                  Añadir {placeholders[type] || type}
                 </button>
               )
             )}
           </div>
+          {blocks.length > 0 ? (
+            blocks.map(renderBlock)
+          ) : (
+            <p className="text-gray-500">No hay bloques de contenido</p>
+          )}
         </div>
 
         <button
           type="submit"
-          className="w-full px-4 py-2 rounded hover:bg-orange-700 mt-6"
-          style={{ backgroundColor: "rgb(194, 65, 12)", color: "white" }}
+          className="w-full px-4 py-2 rounded bg-green-500 hover:bg-green-700 mt-6 text-white cursor-pointer"
         >
           Actualizar Noticia
         </button>

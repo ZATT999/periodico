@@ -1,7 +1,4 @@
-import { Link } from "react-router"
-import { useContext } from "react"
-import { NewsContext } from "../context/context"
-import { DateIcon } from "./ui/icons"
+import NewsCard from "./newsCard"
 
 export default function MapNews({ news, title }) {
   return (
@@ -12,32 +9,7 @@ export default function MapNews({ news, title }) {
 
       <section className="mansory px-2 md:px-5 ">
         {news.map((news) => (
-          <Link to={`/noticia/${news.id}`} key={news.id}>
-            <article className="group w-auto h-auto mb-[10px] rounded-2xl overflow-hidden shadow-md border-[2px] border-blue-200 transition-transform hover:scale-101 duration-200 ">
-              <img
-                src={news.image}
-                alt="Evento"
-                className="w-full h-full  max-h-[300px] object-cover group-hover:scale-105 transition-all duration-300"
-              />
-              <div className="w-full flex flex-col gap-4 px-4 py-5 bg-blue-50 ">
-                <h3 className="text-[15px] font-semibold text-black">
-                  {news.title}
-                </h3>
-
-                <div className="flex justify-between items-center  mt-3">
-                  <img
-                    src={news.author.avatar}
-                    alt={`${news.author.name}`}
-                    className="w-7 h-7 rounded-full border-1 border-blue-500"
-                  />
-
-                  <span className="text-[17px] flex gap-1 items-center">
-                    <DateIcon size={17} /> {news.date}
-                  </span>
-                </div>
-              </div>
-            </article>
-          </Link>
+          <NewsCard key={news.id} news={news} />
         ))}
       </section>
     </>
