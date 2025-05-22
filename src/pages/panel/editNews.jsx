@@ -113,7 +113,10 @@ export default function EditNews({ news }) {
   }
 
   const addBlock = (type) => {
-    setBlocks((prevBlock) => [{ id: crypto.randomUUID(), type, content: "" }, ...prevBlock])
+    setBlocks((prevBlock) => [
+      { id: crypto.randomUUID(), type, content: "" },
+      ...prevBlock,
+    ])
   }
 
   const updateBlock = (id, value) => {
@@ -145,12 +148,14 @@ export default function EditNews({ news }) {
 
   const generateHTML = () => {
     const blockStyles = {
-      title: 'style="color: rgb(194, 65, 12); margin-top: 2em;"',
+      title:
+        'style="color: black; font-size: 40px; text-align: center; font-weight: bold;"',
       subtitle:
         'style="font-size: 1.5rem; margin-top: 1.5em; color: rgb(71, 85, 105);"',
       paragraph: 'style="line-height: 1.7;"',
-      image: 'style="max-width: 100%; border-radius: 12px; margin: 1em 0px;"',
-      list: 'style="margin-left: 2em;"',
+      image:
+        'style="max-width: 500px; max-height: 450px; border-radius: 12px; margin: 1em auto;"',
+      list: 'style="margin-left: 2em; list-style-type: disc;"',
       quote:
         'style="background: rgb(241, 245, 249); border-left: 4px solid rgb(148, 163, 184); padding: 1em; margin: 2em 0px; color: rgb(71, 85, 105);"',
     }
