@@ -15,7 +15,7 @@ export const NewsProvider = ({ children }) => {
 
         if (!res.ok) throw new Error("Error al cargar las noticias")
 
-        setNews(data.news)
+        setNews(data.news.sort((a, b) => b.date - a.date))
         setCategorys(data.categorys)
         setLoading(false)
       } catch (error) {
