@@ -1,10 +1,10 @@
 import NewsCard from "./newsCard"
 
-export default function MapNews({ news, title }) {
+export default function MapNews({ news, category }) {
   return (
     <>
       <h1 className="text-2xl bg-[#f9fafb] border-y py-3 pl-5 font-semibold font-serif mb-10">
-        {title ?? "Noticias"}
+        Noticias {category === undefined ? "" : ` - ${category}`}
       </h1>
 
       <section className="mansory px-2 md:px-5 ">

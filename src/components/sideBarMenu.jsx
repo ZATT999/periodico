@@ -43,7 +43,11 @@ export default function SideBarMenu() {
               {categorys.map((category) => (
                 <li key={category}>
                   <Link
-                    to={`/noticias/${category}`}
+                    to={
+                      category === "Anuncios"
+                        ? "/anuncios"
+                        : `/noticias/${category}`
+                    }
                     className="block text-gray-600 hover:text-blue-500 font-medium transition border-b border-gray-200 pb-2"
                     onClick={() => setIsOpen(false)}
                   >

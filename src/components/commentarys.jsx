@@ -6,9 +6,9 @@ import { createCommentary, deleteCommentary } from "../services/newsService"
 import { getDateHour } from "../utils/getDate"
 import { Link } from "react-router"
 
-export function Commentarys({ InitialCommentarys, id }) {
+export function Commentarys({ InitialCommentarys = [], id }) {
   const { user } = useContext(UserContext)
-  const [commentarys, setCommentarys] = useState(InitialCommentarys ?? [])
+  const [commentarys, setCommentarys] = useState(InitialCommentarys)
 
   const handleDelete = (Commentaryid) => {
     setCommentarys((prevCommentarys) =>
@@ -96,7 +96,7 @@ export function Commentarys({ InitialCommentarys, id }) {
             </div>
             <div className="flex justify-between">
               <p className="text-sm mt-4">{commentary.content}</p>
-              {user.name === commentary.author.name || user.isAdmin ? (
+              {user?.name === commentary.author.name || user?.isAdmin ? (
                 <button
                   type="button"
                   onClick={() => handleDelete(commentary.id)}

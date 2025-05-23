@@ -12,12 +12,18 @@ import Login from "./pages/login"
 import { Toaster } from "sonner"
 import News from "./pages/news"
 import Layout from "./layout"
+import MapAdvertisements from "./components/mapAdvertisements"
+import Advertisements from "./pages/advertisements"
 
 export default function App() {
   const { user, loading } = useContext(UserContext)
   const { loading: loadingNews, news } = useContext(NewsContext)
 
   if (loading || loadingNews) return <Spinner />
+
+  const advertisements = news.filter(
+    (newsItem) => newsItem.category === "Anuncios"
+  )
 
   return (
     <>
@@ -32,10 +38,14 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<Layout />}>
             <Route path="/" element={<News />} />
-            <Route path="/noticia/:id" element={<NewPage />} />
+            <Route path="/noticia/:id" element={<NewPage />} />s
             <Route
               path="/noticias/:category"
               element={<CategorysId allNews={news} />}
+            />
+            <Route
+              path="/anuncios"
+              element={<Advertisements advertisements={advertisements} />}
             />
             {user?.isAdmin ? (
               <>

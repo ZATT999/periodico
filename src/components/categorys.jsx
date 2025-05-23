@@ -14,7 +14,15 @@ export default function Categorys() {
               key={index}
               className="decoration-blue-500 hover:text-black border-b-2 border-gray-700 p-0"
             >
-              <Link to={`/noticias/${category}`}>{category}</Link>
+              <Link
+                to={
+                  category === "Anuncios"
+                    ? "/anuncios"
+                    : `/noticias/${category}`
+                }
+              >
+                {category}
+              </Link>
             </li>
           ))}
         </ul>

@@ -3,6 +3,7 @@ import { changeTitle } from "../../utils/changeTitle"
 import LastNews from "../../components/lastNews"
 import { Link, useParams } from "react-router"
 import MapNews from "../../components/mapNews"
+import { AdvertisementsCard } from "../../components/advertisementsCard"
 
 export default function CategorysId({ allNews }) {
   window.scrollTo(0, 0)
@@ -11,6 +12,9 @@ export default function CategorysId({ allNews }) {
 
   const news = allNews.filter(
     (newsItem) => newsItem.category === params.category
+  )
+  const Advertisements = allNews.filter(
+    (newsItem) => newsItem.category === "Anuncios"
   )
 
   if (news.length === 0) {
@@ -30,11 +34,13 @@ export default function CategorysId({ allNews }) {
   return (
     <main>
       <NavHeader />
+      <AdvertisementsCard key={news.id} advertisements={Advertisements[0]} />
+
       <LastNews
         news={news[0]}
         title={`Ultimas Noticias - ${params.category}`}
       />
-      <MapNews news={news} title={`Noticias - ${params.category}`} />
+      <MapNews news={news} category={params.category} />
     </main>
   )
 }
