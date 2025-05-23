@@ -25,7 +25,7 @@ export function AdvertisementsCard({ advertisements }) {
           </div>
           <Link
             to={`/noticia/${advertisements.id}`}
-            className="overflow-hidden hidden max-h-[200px] max-w-[300px] m-auto sm:flex"
+            className="overflow-hidden hidden max-h-[200px] max-w-[300px] rounded m-auto sm:flex"
           >
             <img
               src={advertisements.image}
