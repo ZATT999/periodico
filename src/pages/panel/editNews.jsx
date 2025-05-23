@@ -194,8 +194,6 @@ export default function EditNews({ news }) {
       </div>
     `
 
-    console.log(id)
-
     setNews((prevNews) => [
       { ...newsData, content: html },
       ...prevNews.filter((item) => item.id !== id),
