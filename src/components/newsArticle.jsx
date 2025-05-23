@@ -1,5 +1,5 @@
 import HTMLReactParser from "html-react-parser/lib/index"
-import { DateIcon } from "./icons"
+import { DateIcon, OpenLockIcon } from "./icons"
 
 export default function NewsArticle({ news = {} }) {
   const { category, date, author, content, description, title, views } = news
@@ -23,7 +23,9 @@ export default function NewsArticle({ news = {} }) {
         </div>
       </section>
       <section className="flex items-center justify-between px-2 mb-3">
-        <span>{views} visualizaciones</span>
+        <span className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded-full w-fit flex gap-2 items-center">
+          {views} <OpenLockIcon size={18} />
+        </span>
         <div className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded-full w-fit">
           {category}
         </div>
