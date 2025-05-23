@@ -196,9 +196,10 @@ export default function EditNews({ news }) {
 
     console.log(id)
 
-    setNews((prevNews) =>
-      prevNews.map((item) => (item.id === id ? newsData : item))
-    )
+    setNews((prevNews) => [
+      ...prevNews.filter((item) => item.id !== id),
+      { ...newsData, content: html },
+    ])
 
     updateNews(id, { ...form, content: html })
       .then((res) => {
