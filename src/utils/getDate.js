@@ -1,7 +1,16 @@
-const date = new Date().toLocaleDateString("es-ES", {
+const dateDay = new Date().toLocaleDateString("es-ES", {
   year: "2-digit",
   month: "short",
   day: "numeric",
 })
 
-export const getDate = date.charAt(0).toUpperCase() + date.slice(1)
+const dateHour = new Date().toLocaleDateString("es-ES", {
+  year: "2-digit",
+  month: "short",
+  day: "numeric",
+  hour: "numeric",
+  minute: "numeric",
+})
+
+export const getDateHour = dateHour.charAt(0).toUpperCase() + dateHour.slice(1)
+export const getDate = dateDay.charAt(0).toUpperCase() + dateDay.slice(1)

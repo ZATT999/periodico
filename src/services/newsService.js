@@ -48,6 +48,6 @@ export const createCommentary = (commentary, id) =>
 
 export const deleteCommentary = (id, Commentaryid) =>
   fetch(`${urlFetchs}/api/news/${id}/commentarys/${Commentaryid}`, {
-    method: "DELETE",
+    method: "POST",
     headers: { "Content-Type": "application/json" },
   })
