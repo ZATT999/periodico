@@ -3,6 +3,7 @@ import { NewsContext } from "../../context/context"
 import { changeTitle } from "../../utils/changeTitle"
 import { useParams } from "react-router"
 import { useContext } from "react"
+import { Commentarys } from "../../components/commentarys"
 
 export default function NewPage() {
   const { news } = useContext(NewsContext)
@@ -16,6 +17,12 @@ export default function NewPage() {
   return (
     <>
       <NewsArticle news={newsFilter} />
+      <div className="mt-10 flex justify-center">
+        <Commentarys
+          InitialCommentarys={newsFilter?.commentarys}
+          id={newsFilter.id}
+        />
+      </div>
     </>
   )
 }

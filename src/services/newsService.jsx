@@ -38,3 +38,16 @@ export const toggleVisibility = (id) =>
     method: "PUT",
     headers: { "Content-Type": "application/json" },
   })
+
+export const createCommentary = (commentary, id) =>
+  fetch(`${urlFetchs}/api/news/${id}/commentarys`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(commentary),
+  })
+
+export const deleteCommentary = (id, Commentaryid) =>
+  fetch(`${urlFetchs}/api/news/${id}/commentarys/${Commentaryid}`, {
+    method: "DELETE",
+    headers: { "Content-Type": "application/json" },
+  })

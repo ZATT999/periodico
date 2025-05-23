@@ -1,22 +1,16 @@
 import HTMLReactParser from "html-react-parser/lib/index"
 import { DateIcon } from "./icons"
+import NavHeader from "./navHeader"
 
 export default function NewsArticle({ news = {} }) {
   const { category, date, author, content, description, title } = news
 
   return (
-    <article className="min-h-screen max-w-[1100px] mx-auto px-3 py-15 font-serif text-[#1e1b18]">
-      <header className="border-b border-black pb-6 text-center">
-        <h1 className="text-2xl @[250px]:text-3xl ml:text-5xl md:text-6xl font-extrabold tracking-wider uppercase text-gray-800">
-          CTE: Visión Empresarial
-        </h1>
-        <p className="italic text-base text-[#4b5563] mt-2">
-          Infórmate bien, decide mejor
-        </p>
-      </header>
+    <article className="min-h-screen max-w-[1100px] mx-auto px-2 ">
+      <NavHeader />
 
-      <section className="border-y  p-4 mb-10 bg-[#f9fafb] flex justify-between items-center">
-        <div className="flex items-center gap-2 ">
+      <section className="border-y p-4 mb-10 bg-[#f9fafb] flex justify-between items-center">
+        <div className="flex items-center gap-2">
           {author?.avatar && (
             <img
               src={author.avatar}
@@ -45,7 +39,7 @@ export default function NewsArticle({ news = {} }) {
       <hr className="border-gray-300 my-6" />
 
       <section className="prose lg:prose-xl prose-h1:text-orange-600 prose-h2:text-orange-600 prose-p:text-[#111827] prose-img:rounded-xl prose-a:text-blue-700">
-        <h1 className="text-5xl font-extrabold tracking-wider uppercase text-gray-800 text-center p-2">
+        <h1 className="text-5xl font-extrabold tracking-wider uppercase text-gray-800 text-center p-2 ">
           {title}
         </h1>
         <p className="italic text-base text-[#4b5563] mb-20 mt-5 text-center">
