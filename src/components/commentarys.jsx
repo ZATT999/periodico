@@ -11,6 +11,10 @@ export function Commentarys({ InitialCommentarys, id }) {
   const [commentarys, setCommentarys] = useState(InitialCommentarys ?? [])
 
   const handleDelete = (Commentaryid) => {
+    setCommentarys((prevCommentarys) =>
+      prevCommentarys.filter((commentary) => commentary.id !== Commentaryid)
+    )
+
     deleteCommentary(id, Commentaryid)
       .then((res) => {
         if (res.ok) return toast.success("Comentario eliminado exitosamente")
