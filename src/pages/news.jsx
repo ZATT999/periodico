@@ -11,7 +11,9 @@ export default function News() {
   const { news, setNews } = useContext(NewsContext)
   changeTitle("Noticias")
 
-  const visibleNews = news.filter((news) => news.visible === true)
+  const visibleNews = news.filter(
+    (news) => news.visible === true && news.category !== "Anuncios"
+  )
 
   const lastNew = visibleNews[0]
 
