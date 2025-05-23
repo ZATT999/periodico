@@ -2,11 +2,11 @@ import HTMLReactParser from "html-react-parser/lib/index"
 import { DateIcon } from "./icons"
 
 export default function NewsArticle({ news = {} }) {
-  const { category, date, author, content, description, title } = news
+  const { category, date, author, content, description, title, views } = news
 
   return (
     <article className="min-h-screen max-w-[1100px] mx-auto px-2 ">
-      <section className="border-y p-4 mb-10 bg-[#f9fafb] flex justify-between items-center">
+      <section className="border-y p-4 mb-4 bg-[#f9fafb] flex justify-between items-center">
         <div className="flex items-center gap-2">
           {author?.avatar && (
             <img
@@ -21,7 +21,9 @@ export default function NewsArticle({ news = {} }) {
           <DateIcon size={18} />
           <span className="text-sm">{date}</span>
         </div>
-
+      </section>
+      <section className="flex items-center justify-between px-2 mb-3">
+        <span>{views} visualizaciones</span>
         <div className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded-full w-fit">
           {category}
         </div>

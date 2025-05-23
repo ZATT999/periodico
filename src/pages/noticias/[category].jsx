@@ -13,7 +13,7 @@ export default function CategorysId({ allNews }) {
   const news = allNews.filter(
     (newsItem) => newsItem.category === params.category
   )
-  const Advertisements = allNews.filter(
+  const advertisements = allNews.filter(
     (newsItem) => newsItem.category === "Anuncios"
   )
 
@@ -34,7 +34,12 @@ export default function CategorysId({ allNews }) {
   return (
     <main>
       <NavHeader />
-      <AdvertisementsCard key={news.id} advertisements={Advertisements[0]} />
+      <AdvertisementsCard
+        key={news.id}
+        advertisements={
+          advertisements[(Math.random() * advertisements.length) | 0]
+        }
+      />
 
       <LastNews
         news={news[0]}

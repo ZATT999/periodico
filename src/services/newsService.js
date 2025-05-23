@@ -51,3 +51,9 @@ export const deleteCommentary = (id, Commentaryid) =>
     method: "POST",
     headers: { "Content-Type": "application/json" },
   })
+
+export const addVisited = (id) =>
+  fetch(`${urlFetchs}/api/news/${id}/visualizations`, {
+    method: "GET",
+    headers: { "Content-Type": "application/json" },
+  })
