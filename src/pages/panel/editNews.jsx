@@ -196,17 +196,18 @@ export default function EditNews({ news }) {
 
     console.log(id)
 
+    setNews((prevNews) =>
+      prevNews.map((item) => (item.id === id ? newsData : item))
+    )
+
     updateNews(id, { ...form, content: html })
-      .then(() => {
-        setNews((prevNews) =>
-          prevNews.map((item) => (item.id === id ? newsData : item))
-        )
-        toast.success("Noticia actualizada exitosamente")
+      .then((res) => {
+        if (res.ok) return toast.success("Noticia actualizada exitosamente")
       })
-      .catch(
-        (error) => console.error("Error al actualizar la noticia:", error),
-        toast.error("Error al actualizar la noticia")
-      )
+      .catch((error) => {
+        console.error("Error al actualizar la noticia:", error)
+        return toast.error("Error al actualizar la noticia")
+      })
       .finally(() => navigate("/admin/panel"))
   }
 
