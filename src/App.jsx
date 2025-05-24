@@ -61,7 +61,6 @@ export default function App() {
                 path="/admin/panel"
                 element={
                   <main>
-                    <h1 className="text-3xl text-center">por cachon</h1>
                     <h3>No tienes permisos para acceder a esta pagina</h3>
                     <Link to="/">Ir al inicio</Link>
                   </main>
