@@ -6,7 +6,6 @@ export function AdvertisementsCard({ advertisements }) {
     <>
       <article className="flex flex-col  bg-blue-50 mb-10  shadow-md gap-4 p-2 border-t-10 border-blue-400">
         <div className="flex gap-2 items-center justify-between">
-          <h2 className="text-3xl font-semibold text-blue-500">Anuncio</h2>
           <p className="text-sm text-gray-500 flex items-center gap-2">
             <DateIcon size={18} /> {advertisements.date}
           </p>
