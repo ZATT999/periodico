@@ -18,13 +18,13 @@ export default function NewPage() {
   )
 
   useEffect(() => {
-    window.scrollTo(0, 0)
-
     addVisited(newsFilter?.id)
       .then(() => {})
       .catch((err) => {
         console.log(err)
       })
+
+    window.scrollTo(0, 0)
   }, [])
 
   changeTitle(newsFilter?.title)
