@@ -5,7 +5,7 @@ export function AdvertisementsCard({ advertisements }) {
   return (
     <>
       <article className="flex flex-col  bg-blue-50 mb-10  shadow-md gap-4 p-2 border-t-10 border-blue-400">
-        <div className="flex gap-2 items-center justify-between">
+        <div className="flex gap-2 items-center justify-end">
           <p className="text-sm text-gray-500 flex items-center gap-2">
             <DateIcon size={18} /> {advertisements.date}
           </p>
