@@ -10,7 +10,6 @@ export default function News() {
   window.scrollTo(0, 0)
 
   const { news, setNews } = useContext(NewsContext)
-  changeTitle("Noticias")
 
   const visibleNews = news.filter(
     (news) => news.visible === true && news.category !== "Anuncios"
